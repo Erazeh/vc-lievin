@@ -1,0 +1,2062 @@
+{
+ "version": 1,
+ "generatedAt": "2026-10-21T03:51:43.353Z",
+ "config": {
+  "season": "2026/2027",
+  "codent": "LIFL",
+  "poule": "1MA",
+  "team": "LIEVIN 2",
+  "clubShort": "VC Liévin",
+  "siteUrl": "https://erazeh.github.io/vc-lievin/",
+  "arrivalBufferMinutes": 60,
+  "matchDurationMinutes": 120,
+  "zones": {
+   "promotion": 0,
+   "relegation": 0
+  },
+  "displayNames": {
+   "LIEVIN 2": "Liévin 2",
+   "AGNY 1": "Agny 1",
+   "COEUR DE FLANDRE 2": "Cœur de Flandre 2",
+   "WATTIGNIES 1": "Wattignies 1",
+   "ARRAS 1": "Arras 1",
+   "SAINT POL SUR MER 1": "Saint-Pol-sur-Mer 1",
+   "OIGNIES 1": "Oignies 1",
+   "DUNKERQUE 2": "Dunkerque 2",
+   "CALAIS SES 1": "Calais SES 1",
+   "LILLERS 1": "Lillers 1"
+  },
+  "shortNames": {
+   "LIEVIN 2": "LIÉ",
+   "AGNY 1": "AGN",
+   "COEUR DE FLANDRE 2": "CDF",
+   "WATTIGNIES 1": "WAT",
+   "ARRAS 1": "ARR",
+   "SAINT POL SUR MER 1": "SPM",
+   "OIGNIES 1": "OIG",
+   "DUNKERQUE 2": "DUN",
+   "CALAIS SES 1": "CAL",
+   "LILLERS 1": "LIL"
+  }
+ },
+ "source": {
+  "season": "2026/2027",
+  "codent": "LIFL",
+  "poule": "1MA",
+  "calendarUrl": "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2026/2027&codent=LIFL&poule=1MA",
+  "pouleTitle": "1MA - REGIONALE 1 MASCULINS HDF POULE A",
+  "pouleLabel": "Régionale 1 Masculins HDF · Poule A"
+ },
+ "homeVenue": "salle-noel-josephe-62800",
+ "standings": [
+  {
+   "rank": 1,
+   "team": "AGNY 1",
+   "pts": 8,
+   "played": 3,
+   "won": 3,
+   "lost": 0,
+   "forfeits": 0,
+   "r30": 1,
+   "r31": 1,
+   "r32": 1,
+   "r23": 0,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 9,
+   "setsAgainst": 3,
+   "setsRatio": 3,
+   "ptsFor": 278,
+   "ptsAgainst": 238,
+   "ptsRatio": 1.168,
+   "equipe": "6",
+   "clubId": "0622020",
+   "website": null
+  },
+  {
+   "rank": 2,
+   "team": "COEUR DE FLANDRE 2",
+   "pts": 4,
+   "played": 2,
+   "won": 2,
+   "lost": 0,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 2,
+   "r23": 0,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 6,
+   "setsAgainst": 4,
+   "setsRatio": 1.5,
+   "ptsFor": 216,
+   "ptsAgainst": 210,
+   "ptsRatio": 1.029,
+   "equipe": "9",
+   "clubId": "0599142",
+   "website": null
+  },
+  {
+   "rank": 3,
+   "team": "WATTIGNIES 1",
+   "pts": 4,
+   "played": 3,
+   "won": 2,
+   "lost": 1,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 2,
+   "r23": 0,
+   "r13": 0,
+   "r03": 1,
+   "setsFor": 6,
+   "setsAgainst": 7,
+   "setsRatio": 0.857,
+   "ptsFor": 267,
+   "ptsAgainst": 282,
+   "ptsRatio": 0.947,
+   "equipe": "3",
+   "clubId": "0595763",
+   "website": "http://wattigniesvolley.fr/"
+  },
+  {
+   "rank": 4,
+   "team": "ARRAS 1",
+   "pts": 4,
+   "played": 2,
+   "won": 1,
+   "lost": 1,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 1,
+   "r32": 0,
+   "r23": 1,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 5,
+   "setsAgainst": 4,
+   "setsRatio": 1.25,
+   "ptsFor": 193,
+   "ptsAgainst": 191,
+   "ptsRatio": 1.01,
+   "equipe": "8",
+   "clubId": "0628859",
+   "website": "http://rcavb.clubeo.com/"
+  },
+  {
+   "rank": 5,
+   "team": "SAINT POL SUR MER 1",
+   "pts": 3,
+   "played": 2,
+   "won": 1,
+   "lost": 1,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 1,
+   "r23": 1,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 5,
+   "setsAgainst": 5,
+   "setsRatio": 1,
+   "ptsFor": 217,
+   "ptsAgainst": 209,
+   "ptsRatio": 1.038,
+   "equipe": "7",
+   "clubId": "0595712",
+   "website": "http://www2.vcsp-saintpol.com/"
+  },
+  {
+   "rank": 6,
+   "team": "OIGNIES 1",
+   "pts": 3,
+   "played": 2,
+   "won": 1,
+   "lost": 1,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 1,
+   "r23": 1,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 5,
+   "setsAgainst": 5,
+   "setsRatio": 1,
+   "ptsFor": 200,
+   "ptsAgainst": 211,
+   "ptsRatio": 0.948,
+   "equipe": "10",
+   "clubId": "0622439",
+   "website": "https://www.facebook.com/etoileoigniesvolleyball/"
+  },
+  {
+   "rank": 7,
+   "team": "DUNKERQUE 2",
+   "pts": 2,
+   "played": 2,
+   "won": 1,
+   "lost": 1,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 1,
+   "r23": 0,
+   "r13": 1,
+   "r03": 0,
+   "setsFor": 4,
+   "setsAgainst": 5,
+   "setsRatio": 0.8,
+   "ptsFor": 203,
+   "ptsAgainst": 196,
+   "ptsRatio": 1.036,
+   "equipe": "5",
+   "clubId": "0599848",
+   "website": "http://www.dglvb.fr"
+  },
+  {
+   "rank": 8,
+   "team": "LIEVIN 2",
+   "pts": 2,
+   "played": 2,
+   "won": 0,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 0,
+   "r23": 2,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 4,
+   "setsAgainst": 6,
+   "setsRatio": 0.667,
+   "ptsFor": 203,
+   "ptsAgainst": 213,
+   "ptsRatio": 0.953,
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null
+  },
+  {
+   "rank": 9,
+   "team": "CALAIS SES 1",
+   "pts": 2,
+   "played": 2,
+   "won": 0,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 0,
+   "r23": 2,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 4,
+   "setsAgainst": 6,
+   "setsRatio": 0.667,
+   "ptsFor": 195,
+   "ptsAgainst": 208,
+   "ptsRatio": 0.938,
+   "equipe": "4",
+   "clubId": "0623082",
+   "website": "http://www.stella-calais-volley.fr/"
+  },
+  {
+   "rank": 10,
+   "team": "LILLERS 1",
+   "pts": 1,
+   "played": 2,
+   "won": 0,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 0,
+   "r23": 1,
+   "r13": 1,
+   "r03": 0,
+   "setsFor": 3,
+   "setsAgainst": 6,
+   "setsRatio": 0.5,
+   "ptsFor": 191,
+   "ptsAgainst": 205,
+   "ptsRatio": 0.932,
+   "equipe": "2",
+   "clubId": "0622023",
+   "website": "http://lillers-val.clubeo.com/"
+  }
+ ],
+ "teams": {
+  "AGNY 1": {
+   "equipe": "6",
+   "clubId": "0622020",
+   "website": null,
+   "clubName": "AS Volley-Ball d'Agny",
+   "colors": "ORANGE ET NOIR",
+   "mainVenue": "salle-leo-lagrange-62217",
+   "backupVenue": null
+  },
+  "COEUR DE FLANDRE 2": {
+   "equipe": "9",
+   "clubId": "0599142",
+   "website": null,
+   "clubName": "Volley Ball Cœur de Flandre",
+   "colors": "BLEU BLANC",
+   "mainVenue": "salle-natalys-dumez-59270",
+   "backupVenue": "salle-jean-bouin-59190"
+  },
+  "WATTIGNIES 1": {
+   "equipe": "3",
+   "clubId": "0595763",
+   "website": "http://wattigniesvolley.fr/",
+   "clubName": "Volley Ball Club Wattignies",
+   "colors": "BLEU ET JAUNE",
+   "mainVenue": "salle-pierre-de-coubertin-59139",
+   "backupVenue": "salle-roland-garros-59139"
+  },
+  "ARRAS 1": {
+   "equipe": "8",
+   "clubId": "0628859",
+   "website": "http://rcavb.clubeo.com/",
+   "clubName": "Racing Club d'Arras",
+   "colors": "ROUGE ET BLEU",
+   "mainVenue": "salle-lycee-jules-ferry-62000",
+   "backupVenue": "salle-lycee-guy-mollet-62000"
+  },
+  "SAINT POL SUR MER 1": {
+   "equipe": "7",
+   "clubId": "0595712",
+   "website": "http://www2.vcsp-saintpol.com/",
+   "clubName": "Volley Club Saint Polois",
+   "colors": "VERT BLANC",
+   "mainVenue": "complexe-de-la-ferme-marchand-59430",
+   "backupVenue": "salle-coubertin-59430"
+  },
+  "OIGNIES 1": {
+   "equipe": "10",
+   "clubId": "0622439",
+   "website": "https://www.facebook.com/etoileoigniesvolleyball/",
+   "clubName": "Étoile d'Oignies",
+   "colors": "BLEU ET BLANC",
+   "mainVenue": "complexe-coubertin-lemaire-62590",
+   "backupVenue": "salle-lycee-joliot-curie-62590"
+  },
+  "DUNKERQUE 2": {
+   "equipe": "5",
+   "clubId": "0599848",
+   "website": "http://www.dglvb.fr",
+   "clubName": "Dunkerque Grand Littoral V.B.",
+   "colors": "BLANC BLEU",
+   "mainVenue": "salle-lycee-jean-bart-59140",
+   "backupVenue": "salle-college-guilleminot-59140"
+  },
+  "LIEVIN 2": {
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null,
+   "clubName": "Volley Club Liévin",
+   "colors": "ROUGE ET BLANC",
+   "mainVenue": "salle-noel-josephe-62800",
+   "backupVenue": "salle-senechal-62800"
+  },
+  "CALAIS SES 1": {
+   "equipe": "4",
+   "clubId": "0623082",
+   "website": "http://www.stella-calais-volley.fr/",
+   "clubName": "Stella Edu SP Calais",
+   "colors": "BLANC BLEU",
+   "mainVenue": "salle-porte-de-lille-62100",
+   "backupVenue": "college-jean-jaures-62100"
+  },
+  "LILLERS 1": {
+   "equipe": "2",
+   "clubId": "0622023",
+   "website": "http://lillers-val.clubeo.com/",
+   "clubName": "FLJEP Lillers",
+   "colors": "BLEU BLANC ORANGE",
+   "mainVenue": "salle-delplace-62190",
+   "backupVenue": "salle-coubertin-62190"
+  }
+ },
+ "venues": {
+  "salle-noel-josephe-62800": {
+   "name": "SALLE NOEL JOSEPHE",
+   "street": "RUE ALBAN DU SOUICH",
+   "postcode": "62800",
+   "city": "LIEVIN",
+   "floor": "type taraflex",
+   "capacity": 500,
+   "lat": 50.43029,
+   "lon": 2.772443,
+   "geoPrecision": "street",
+   "driveKm": 0,
+   "driveMin": 0,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-senechal-62800": {
+   "name": "SALLE SÉNÉCHAL",
+   "street": "RUE ENTRE DEUX MONTS",
+   "postcode": "62800",
+   "city": "LIEVIN",
+   "floor": "type taraflex",
+   "capacity": 100,
+   "lat": 50.4202,
+   "lon": 2.787948,
+   "geoPrecision": "locality",
+   "driveKm": 2.1,
+   "driveMin": 4,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-lycee-jules-ferry-62000": {
+   "name": "SALLE LYCEE JULES FERRY",
+   "street": "20 AVENUE JEAN ZAY",
+   "postcode": "62000",
+   "city": "ARRAS",
+   "lat": 50.284123,
+   "lon": 2.745051,
+   "geoPrecision": "housenumber",
+   "driveKm": 24,
+   "driveMin": 25,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-lycee-guy-mollet-62000": {
+   "name": "SALLE LYCEE GUY MOLLET",
+   "street": "RUE RAOUL FRANCOIS",
+   "postcode": "62000",
+   "city": "ARRAS",
+   "lat": 50.281716,
+   "lon": 2.793674,
+   "geoPrecision": "street",
+   "driveKm": 22.4,
+   "driveMin": 22,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "complexe-de-la-ferme-marchand-59430": {
+   "name": "COMPLEXE DE LA FERME MARCHAND",
+   "street": "77 RUE EDMOND FLAMAND",
+   "postcode": "59430",
+   "city": "SAINT POL SUR MER",
+   "lat": 51.03317,
+   "lon": 2.334386,
+   "geoPrecision": "housenumber",
+   "driveKm": 103.1,
+   "driveMin": 75,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-coubertin-59430": {
+   "name": "SALLE COUBERTIN",
+   "street": "CENTRE CULTUREL COCTEAU, BOULEVARD DE L'AURORE",
+   "postcode": "59430",
+   "city": "SAINT POL SUR MER",
+   "lat": 51.025027,
+   "lon": 2.338049,
+   "geoPrecision": "street",
+   "driveKm": 102.8,
+   "driveMin": 74,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-leo-lagrange-62217": {
+   "name": "SALLE LEO LAGRANGE",
+   "street": "RUE DU 135 ÈME RI",
+   "postcode": "62217",
+   "city": "AGNY",
+   "lat": 50.256953,
+   "lon": 2.75651,
+   "geoPrecision": "street",
+   "driveKm": 27.4,
+   "driveMin": 30,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "complexe-coubertin-lemaire-62590": {
+   "name": "COMPLEXE COUBERTIN LEMAIRE",
+   "street": "STADE MUNICIPAL, AVENUE DES SPORTS",
+   "postcode": "62590",
+   "city": "OIGNIES",
+   "lat": 50.472295,
+   "lon": 2.994847,
+   "geoPrecision": "street",
+   "driveKm": 21.1,
+   "driveMin": 25,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-lycee-joliot-curie-62590": {
+   "name": "SALLE LYCEE JOLIOT CURIE",
+   "street": "ACCES PAR RUE CASIMIR BEUGNET",
+   "postcode": "62590",
+   "city": "OIGNIES",
+   "lat": 50.467007,
+   "lon": 2.999788,
+   "geoPrecision": "street",
+   "driveKm": 23.5,
+   "driveMin": 24,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-natalys-dumez-59270": {
+   "name": "SALLE NATALYS DUMEZ",
+   "street": "RUE DES VIVIERS",
+   "postcode": "59270",
+   "city": "BAILLEUL",
+   "floor": "Synthétique",
+   "capacity": 500,
+   "lat": 50.740657,
+   "lon": 2.735715,
+   "geoPrecision": "street",
+   "driveKm": 56.9,
+   "driveMin": 47,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-jean-bouin-59190": {
+   "name": "SALLE JEAN BOUIN",
+   "street": "61 RUE LOUIS WAREIN",
+   "postcode": "59190",
+   "city": "HAZEBROUCK",
+   "floor": "Synthétique",
+   "lat": 50.724543,
+   "lon": 2.531457,
+   "geoPrecision": "housenumber",
+   "driveKm": 47,
+   "driveMin": 50,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-delplace-62190": {
+   "name": "SALLE DELPLACE",
+   "street": "AVENUE DU GÉNÉRAL DE GAULLE",
+   "postcode": "62190",
+   "city": "LILLERS",
+   "lat": 50.559776,
+   "lon": 2.473843,
+   "geoPrecision": "street",
+   "driveKm": 31.8,
+   "driveMin": 24,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-coubertin-62190": {
+   "name": "SALLE COUBERTIN",
+   "street": "RUE MARCEL PAILLEUX",
+   "postcode": "62190",
+   "city": "LILLERS",
+   "lat": 50.557189,
+   "lon": 2.471744,
+   "geoPrecision": "street",
+   "driveKm": 31.9,
+   "driveMin": 24,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-porte-de-lille-62100": {
+   "name": "SALLE PORTE DE LILLE",
+   "street": "RUE DE VALENCIENNES, A16 CALAIS BOULOGNE SORTIE 44",
+   "postcode": "62100",
+   "city": "CALAIS",
+   "floor": "TARAFLEX",
+   "capacity": 1499,
+   "lat": 50.941721,
+   "lon": 1.854596,
+   "geoPrecision": "street",
+   "driveKm": 95.7,
+   "driveMin": 62,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "college-jean-jaures-62100": {
+   "name": "COLLÈGE JEAN JAURÈS",
+   "street": "RUE DUTERTRE",
+   "postcode": "62100",
+   "city": "CALAIS",
+   "lat": 50.952995,
+   "lon": 1.855948,
+   "geoPrecision": "street",
+   "driveKm": 95.9,
+   "driveMin": 64,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244",
+   "note": "DERRIÈRE LA MAIRIE"
+  },
+  "salle-lycee-jean-bart-59140": {
+   "name": "SALLE LYCEE JEAN BART",
+   "street": "RUE DU 110EME R.I.",
+   "postcode": "59140",
+   "city": "DUNKERQUE",
+   "lat": 51.042437,
+   "lon": 2.384912,
+   "geoPrecision": "street",
+   "driveKm": 104.3,
+   "driveMin": 79,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-college-guilleminot-59140": {
+   "name": "SALLE COLLEGE GUILLEMINOT",
+   "street": "RUE DES ARBRES",
+   "postcode": "59140",
+   "city": "DUNKERQUE",
+   "lat": 51.039676,
+   "lon": 2.381887,
+   "geoPrecision": "street",
+   "driveKm": 103.5,
+   "driveMin": 79,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-pierre-de-coubertin-59139": {
+   "name": "SALLE PIERRE DE COUBERTIN",
+   "street": "4 RUE GAGARINE",
+   "postcode": "59139",
+   "city": "WATTIGNIES",
+   "lat": 50.587954,
+   "lon": 3.039321,
+   "geoPrecision": "housenumber",
+   "driveKm": 38.7,
+   "driveMin": 33,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  },
+  "salle-roland-garros-59139": {
+   "name": "SALLE ROLAND GARROS",
+   "street": "RUE ROLAND GARROS",
+   "postcode": "59139",
+   "city": "WATTIGNIES",
+   "lat": 50.591735,
+   "lon": 3.0465,
+   "geoPrecision": "street",
+   "driveKm": 38.9,
+   "driveMin": 34,
+   "routeSource": "osrm",
+   "routeFrom": "50.43029,2.77244"
+  }
+ },
+ "matches": [
+  {
+   "code": "1MA001",
+   "journee": 1,
+   "date": "2026-10-03",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "OIGNIES 1",
+   "played": true,
+   "sets": [
+    2,
+    3
+   ],
+   "setScores": [
+    [
+     19,
+     25
+    ],
+    [
+     25,
+     20
+    ],
+    [
+     16,
+     25
+    ],
+    [
+     25,
+     20
+    ],
+    [
+     13,
+     15
+    ]
+   ],
+   "points": [
+    98,
+    105
+   ],
+   "forfeit": false,
+   "referee": "TAILLIEZ REYNALD",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA001",
+   "venue": "salle-noel-josephe-62800",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA002",
+   "journee": 1,
+   "date": "2026-10-03",
+   "time": "20:30",
+   "home": "LILLERS 1",
+   "away": "COEUR DE FLANDRE 2",
+   "played": true,
+   "sets": [
+    2,
+    3
+   ],
+   "setScores": [
+    [
+     27,
+     25
+    ],
+    [
+     20,
+     25
+    ],
+    [
+     25,
+     18
+    ],
+    [
+     22,
+     25
+    ],
+    [
+     11,
+     15
+    ]
+   ],
+   "points": [
+    105,
+    108
+   ],
+   "forfeit": false,
+   "referee": "VLAMYNCK SEBASTIEN",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA002",
+   "venue": "salle-delplace-62190",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA003",
+   "journee": 1,
+   "date": "2026-10-04",
+   "time": "13:00",
+   "home": "WATTIGNIES 1",
+   "away": "ARRAS 1",
+   "played": true,
+   "sets": [
+    3,
+    2
+   ],
+   "setScores": [
+    [
+     22,
+     25
+    ],
+    [
+     25,
+     19
+    ],
+    [
+     25,
+     16
+    ],
+    [
+     18,
+     25
+    ],
+    [
+     15,
+     11
+    ]
+   ],
+   "points": [
+    105,
+    96
+   ],
+   "forfeit": false,
+   "referee": "DOCHEZ VINCENT",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA003",
+   "venue": "salle-pierre-de-coubertin-59139",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA004",
+   "journee": 1,
+   "date": "2026-10-04",
+   "time": "11:00",
+   "home": "CALAIS SES 1",
+   "away": "SAINT POL SUR MER 1",
+   "played": true,
+   "sets": [
+    2,
+    3
+   ],
+   "setScores": [
+    [
+     15,
+     25
+    ],
+    [
+     25,
+     21
+    ],
+    [
+     25,
+     19
+    ],
+    [
+     21,
+     25
+    ],
+    [
+     14,
+     16
+    ]
+   ],
+   "points": [
+    100,
+    106
+   ],
+   "forfeit": false,
+   "referee": "DANGLEANT LILIA",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA004",
+   "venue": "salle-porte-de-lille-62100",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA005",
+   "journee": 1,
+   "date": "2026-10-03",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "AGNY 1",
+   "played": true,
+   "sets": [
+    1,
+    3
+   ],
+   "setScores": [
+    [
+     24,
+     26
+    ],
+    [
+     20,
+     25
+    ],
+    [
+     27,
+     25
+    ],
+    [
+     19,
+     25
+    ]
+   ],
+   "points": [
+    90,
+    101
+   ],
+   "forfeit": false,
+   "referee": "BERTIN JEAN",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA005",
+   "venue": "salle-lycee-jean-bart-59140",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA006",
+   "journee": 2,
+   "date": "2026-10-10",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "OIGNIES 1",
+   "played": true,
+   "sets": [
+    3,
+    2
+   ],
+   "setScores": [
+    [
+     23,
+     25
+    ],
+    [
+     25,
+     27
+    ],
+    [
+     25,
+     19
+    ],
+    [
+     25,
+     19
+    ],
+    [
+     15,
+     5
+    ]
+   ],
+   "points": [
+    113,
+    95
+   ],
+   "forfeit": false,
+   "referee": "BERTIN JEAN",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA006",
+   "venue": "salle-lycee-jean-bart-59140",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA007",
+   "journee": 2,
+   "date": "2026-10-10",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "CALAIS SES 1",
+   "played": true,
+   "sets": [
+    3,
+    2
+   ],
+   "setScores": [
+    [
+     22,
+     25
+    ],
+    [
+     25,
+     16
+    ],
+    [
+     15,
+     25
+    ],
+    [
+     25,
+     18
+    ],
+    [
+     15,
+     11
+    ]
+   ],
+   "points": [
+    102,
+    95
+   ],
+   "forfeit": false,
+   "referee": "TERNEL LUCAS",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA007",
+   "venue": "salle-leo-lagrange-62217",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA008",
+   "journee": 2,
+   "date": "2026-10-10",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "WATTIGNIES 1",
+   "played": true,
+   "sets": [
+    2,
+    3
+   ],
+   "setScores": [
+    [
+     21,
+     25
+    ],
+    [
+     29,
+     27
+    ],
+    [
+     23,
+     25
+    ],
+    [
+     25,
+     17
+    ],
+    [
+     13,
+     15
+    ]
+   ],
+   "points": [
+    111,
+    109
+   ],
+   "forfeit": false,
+   "referee": "GROUX BENOIT",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA008",
+   "venue": "complexe-de-la-ferme-marchand-59430",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA009",
+   "journee": 2,
+   "date": "2026-10-10",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "LILLERS 1",
+   "played": true,
+   "sets": [
+    3,
+    1
+   ],
+   "setScores": [
+    [
+     22,
+     25
+    ],
+    [
+     25,
+     16
+    ],
+    [
+     25,
+     22
+    ],
+    [
+     25,
+     23
+    ]
+   ],
+   "points": [
+    97,
+    86
+   ],
+   "forfeit": false,
+   "referee": "CECCHI CHRISTOPHE",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA009",
+   "venue": "salle-lycee-jules-ferry-62000",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA010",
+   "journee": 2,
+   "date": "2026-10-10",
+   "time": "20:30",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "LIEVIN 2",
+   "played": true,
+   "sets": [
+    3,
+    2
+   ],
+   "setScores": [
+    [
+     25,
+     22
+    ],
+    [
+     19,
+     25
+    ],
+    [
+     25,
+     19
+    ],
+    [
+     24,
+     26
+    ],
+    [
+     15,
+     13
+    ]
+   ],
+   "points": [
+    108,
+    105
+   ],
+   "forfeit": false,
+   "referee": "HABOUL ATIF",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA010",
+   "venue": "salle-natalys-dumez-59270",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA011",
+   "journee": 3,
+   "date": "2026-10-24",
+   "time": "20:00",
+   "home": "OIGNIES 1",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": "AGNY",
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA012",
+   "journee": 3,
+   "date": "2026-10-24",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "SALLE NOEL JOSEPHE",
+   "referee": "HARNES VB",
+   "venue": "salle-noel-josephe-62800"
+  },
+  {
+   "code": "1MA013",
+   "journee": 3,
+   "date": "2026-10-24",
+   "time": "18:00",
+   "home": "LILLERS 1",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": "LE TOUQUET",
+   "venue": "salle-delplace-62190"
+  },
+  {
+   "code": "1MA014",
+   "journee": 3,
+   "date": "2026-10-18",
+   "time": "14:00",
+   "home": "WATTIGNIES 1",
+   "away": "AGNY 1",
+   "played": true,
+   "sets": [
+    0,
+    3
+   ],
+   "setScores": [
+    [
+     18,
+     25
+    ],
+    [
+     20,
+     25
+    ],
+    [
+     15,
+     25
+    ]
+   ],
+   "points": [
+    53,
+    75
+   ],
+   "forfeit": false,
+   "referee": "CHARLERY KLARA",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA014",
+   "venue": "salle-pierre-de-coubertin-59139",
+   "venueGuessed": true
+  },
+  {
+   "code": "1MA015",
+   "journee": 3,
+   "date": "2026-11-10",
+   "time": "20:30",
+   "home": "CALAIS SES 1",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": "DANGLEANT LILIA",
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA016",
+   "journee": 4,
+   "date": "2026-10-31",
+   "time": "19:00",
+   "home": "CALAIS SES 1",
+   "away": "OIGNIES 1",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": "CALAIS LIS",
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA017",
+   "journee": 4,
+   "date": "2026-10-31",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JEAN BART",
+   "referee": "SAINT POL SUR MER",
+   "venue": "salle-lycee-jean-bart-59140"
+  },
+  {
+   "code": "1MA018",
+   "journee": 4,
+   "date": "2026-10-31",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": "NOYELLES SOUS LENS",
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA019",
+   "journee": 4,
+   "date": "2026-11-05",
+   "time": "20:30",
+   "home": "SAINT POL SUR MER 1",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": "LE TOUQUET",
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA020",
+   "journee": 4,
+   "date": "2026-10-31",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": "LIEVIN",
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA021",
+   "journee": 5,
+   "date": "2026-11-08",
+   "time": "15:00",
+   "home": "OIGNIES 1",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": "NOYELLES SOUS LENS",
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA022",
+   "journee": 5,
+   "date": "2026-11-08",
+   "time": "13:30",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "SALLE NATALYS DUMEZ",
+   "referee": "LI YUWEI",
+   "venue": "salle-natalys-dumez-59270"
+  },
+  {
+   "code": "1MA023",
+   "journee": 5,
+   "date": "2026-11-07",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "AGNY 1",
+   "played": false,
+   "venueName": "SALLE SÉNÉCHAL",
+   "referee": "LILLERS",
+   "venue": "salle-senechal-62800"
+  },
+  {
+   "code": "1MA024",
+   "journee": 5,
+   "date": "2026-11-07",
+   "time": "20:30",
+   "home": "LILLERS 1",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": "CALAIS SES",
+   "venue": "salle-delplace-62190"
+  },
+  {
+   "code": "1MA025",
+   "journee": 5,
+   "date": "2026-11-08",
+   "time": "13:00",
+   "home": "WATTIGNIES 1",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "referee": "LE GODEC BRIGITTE",
+   "venue": "salle-pierre-de-coubertin-59139"
+  },
+  {
+   "code": "1MA026",
+   "journee": 6,
+   "date": "2026-11-22",
+   "time": "11:00",
+   "home": "WATTIGNIES 1",
+   "away": "OIGNIES 1",
+   "played": false,
+   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "referee": "POILLION JEAN",
+   "venue": "salle-pierre-de-coubertin-59139"
+  },
+  {
+   "code": "1MA027",
+   "journee": 6,
+   "date": "2026-11-21",
+   "time": "19:00",
+   "home": "CALAIS SES 1",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": "DEFER SIMON",
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA028",
+   "journee": 6,
+   "date": "2026-11-21",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "SALLE LYCEE JEAN BART",
+   "referee": "LILLERS",
+   "venue": "salle-lycee-jean-bart-59140"
+  },
+  {
+   "code": "1MA029",
+   "journee": 6,
+   "date": "2026-11-21",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": "ARRAS",
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA030",
+   "journee": 6,
+   "date": "2026-11-21",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": "DUNKERQUE",
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA031",
+   "journee": 7,
+   "date": "2026-11-29",
+   "time": "15:00",
+   "home": "OIGNIES 1",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": "HARNES VB",
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA032",
+   "journee": 7,
+   "date": "2026-11-28",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "AGNY 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": "NOYELLES SOUS LENS",
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA033",
+   "journee": 7,
+   "date": "2026-11-29",
+   "time": "13:30",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "SALLE NATALYS DUMEZ",
+   "referee": "SPYCHALA GREGORY",
+   "venue": "salle-natalys-dumez-59270"
+  },
+  {
+   "code": "1MA034",
+   "journee": 7,
+   "date": "2026-11-28",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "SALLE NOEL JOSEPHE",
+   "referee": "AGNY",
+   "venue": "salle-noel-josephe-62800"
+  },
+  {
+   "code": "1MA035",
+   "journee": 7,
+   "date": "2026-11-29",
+   "time": "15:00",
+   "home": "LILLERS 1",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": "BERCK SUR MER",
+   "venue": "salle-delplace-62190"
+  },
+  {
+   "code": "1MA036",
+   "journee": 8,
+   "date": "2026-12-05",
+   "time": "18:00",
+   "home": "LILLERS 1",
+   "away": "OIGNIES 1",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": "AGNY",
+   "venue": "salle-delplace-62190"
+  },
+  {
+   "code": "1MA037",
+   "journee": 8,
+   "date": "2026-12-06",
+   "time": "13:00",
+   "home": "WATTIGNIES 1",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "referee": null,
+   "venue": "salle-pierre-de-coubertin-59139"
+  },
+  {
+   "code": "1MA038",
+   "journee": 8,
+   "date": "2026-12-06",
+   "time": "15:00",
+   "home": "CALAIS SES 1",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": "DANGLEANT LILIA",
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA039",
+   "journee": 8,
+   "date": "2026-12-05",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JEAN BART",
+   "referee": "CALAIS SES",
+   "venue": "salle-lycee-jean-bart-59140"
+  },
+  {
+   "code": "1MA040",
+   "journee": 8,
+   "date": "2026-12-05",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": "HARNES VB",
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA041",
+   "journee": 9,
+   "date": "2027-01-10",
+   "time": "15:00",
+   "home": "OIGNIES 1",
+   "away": "AGNY 1",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": null,
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA042",
+   "journee": 9,
+   "date": "2027-01-09",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": null,
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA043",
+   "journee": 9,
+   "date": "2027-01-09",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": null,
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA044",
+   "journee": 9,
+   "date": "2027-01-10",
+   "time": "13:30",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "SALLE NATALYS DUMEZ",
+   "referee": null,
+   "venue": "salle-natalys-dumez-59270"
+  },
+  {
+   "code": "1MA045",
+   "journee": 9,
+   "date": "2027-01-09",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "SALLE NOEL JOSEPHE",
+   "referee": null,
+   "venue": "salle-noel-josephe-62800"
+  },
+  {
+   "code": "1MA046",
+   "journee": 10,
+   "date": "2027-01-24",
+   "time": "15:00",
+   "home": "OIGNIES 1",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": null,
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA047",
+   "journee": 10,
+   "date": "2027-01-23",
+   "time": "20:00",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "SALLE JEAN BOUIN",
+   "referee": null,
+   "venue": "salle-jean-bouin-59190"
+  },
+  {
+   "code": "1MA048",
+   "journee": 10,
+   "date": "2027-01-23",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": null,
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA049",
+   "journee": 10,
+   "date": "2027-01-23",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": null,
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA050",
+   "journee": 10,
+   "date": "2027-01-23",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": null,
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA051",
+   "journee": 11,
+   "date": "2027-01-31",
+   "time": "15:00",
+   "home": "OIGNIES 1",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": null,
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA052",
+   "journee": 11,
+   "date": "2027-01-30",
+   "time": "19:00",
+   "home": "CALAIS SES 1",
+   "away": "AGNY 1",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": null,
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA053",
+   "journee": 11,
+   "date": "2027-01-31",
+   "time": "13:00",
+   "home": "WATTIGNIES 1",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "referee": null,
+   "venue": "salle-pierre-de-coubertin-59139"
+  },
+  {
+   "code": "1MA054",
+   "journee": 11,
+   "date": "2027-01-30",
+   "time": "20:30",
+   "home": "LILLERS 1",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": null,
+   "venue": "salle-delplace-62190"
+  },
+  {
+   "code": "1MA055",
+   "journee": 11,
+   "date": "2027-01-30",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "SALLE NOEL JOSEPHE",
+   "referee": null,
+   "venue": "salle-noel-josephe-62800"
+  },
+  {
+   "code": "1MA056",
+   "journee": 12,
+   "date": "2026-12-19",
+   "time": "20:00",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "OIGNIES 1",
+   "played": false,
+   "venueName": "SALLE NATALYS DUMEZ",
+   "referee": "DUNKERQUE",
+   "venue": "salle-natalys-dumez-59270"
+  },
+  {
+   "code": "1MA057",
+   "journee": 12,
+   "date": "2027-02-06",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": null,
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA058",
+   "journee": 12,
+   "date": "2027-02-06",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": null,
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA059",
+   "journee": 12,
+   "date": "2027-02-06",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": null,
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA060",
+   "journee": 12,
+   "date": "2027-02-06",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JEAN BART",
+   "referee": null,
+   "venue": "salle-lycee-jean-bart-59140"
+  },
+  {
+   "code": "1MA061",
+   "journee": 13,
+   "date": "2027-02-14",
+   "time": "15:00",
+   "home": "OIGNIES 1",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": null,
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA062",
+   "journee": 13,
+   "date": "2027-02-14",
+   "time": "13:00",
+   "home": "WATTIGNIES 1",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "referee": null,
+   "venue": "salle-pierre-de-coubertin-59139"
+  },
+  {
+   "code": "1MA063",
+   "journee": 13,
+   "date": "2027-02-13",
+   "time": "18:00",
+   "home": "LILLERS 1",
+   "away": "AGNY 1",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": null,
+   "venue": "salle-delplace-62190"
+  },
+  {
+   "code": "1MA064",
+   "journee": 13,
+   "date": "2027-02-13",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "SALLE NOEL JOSEPHE",
+   "referee": null,
+   "venue": "salle-noel-josephe-62800"
+  },
+  {
+   "code": "1MA065",
+   "journee": 13,
+   "date": "2027-02-14",
+   "time": "13:30",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "SALLE NATALYS DUMEZ",
+   "referee": null,
+   "venue": "salle-natalys-dumez-59270"
+  },
+  {
+   "code": "1MA066",
+   "journee": 14,
+   "date": "2027-03-13",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "OIGNIES 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": null,
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA067",
+   "journee": 14,
+   "date": "2027-03-13",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": null,
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA068",
+   "journee": 14,
+   "date": "2027-03-28",
+   "time": "10:30",
+   "home": "AGNY 1",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": null,
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA069",
+   "journee": 14,
+   "date": "2027-03-13",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JEAN BART",
+   "referee": null,
+   "venue": "salle-lycee-jean-bart-59140"
+  },
+  {
+   "code": "1MA070",
+   "journee": 14,
+   "date": "2027-03-13",
+   "time": "19:00",
+   "home": "CALAIS SES 1",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": null,
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA071",
+   "journee": 15,
+   "date": "2027-03-27",
+   "time": null,
+   "home": "OIGNIES 1",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": null,
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA072",
+   "journee": 15,
+   "date": "2027-03-20",
+   "time": "20:30",
+   "home": "LILLERS 1",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": null,
+   "venue": "salle-delplace-62190"
+  },
+  {
+   "code": "1MA073",
+   "journee": 15,
+   "date": "2027-03-20",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "SALLE NOEL JOSEPHE",
+   "referee": null,
+   "venue": "salle-noel-josephe-62800"
+  },
+  {
+   "code": "1MA074",
+   "journee": 15,
+   "date": "2027-03-21",
+   "time": "13:30",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "AGNY 1",
+   "played": false,
+   "venueName": "SALLE NATALYS DUMEZ",
+   "referee": null,
+   "venue": "salle-natalys-dumez-59270"
+  },
+  {
+   "code": "1MA075",
+   "journee": 15,
+   "date": "2027-03-20",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": null,
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA076",
+   "journee": 16,
+   "date": "2027-04-03",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "OIGNIES 1",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": null,
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA077",
+   "journee": 16,
+   "date": "2027-04-03",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": null,
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA078",
+   "journee": 16,
+   "date": "2027-04-03",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "SALLE LYCEE JEAN BART",
+   "referee": null,
+   "venue": "salle-lycee-jean-bart-59140"
+  },
+  {
+   "code": "1MA079",
+   "journee": 16,
+   "date": "2027-04-04",
+   "time": "11:00",
+   "home": "CALAIS SES 1",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": null,
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA080",
+   "journee": 16,
+   "date": "2027-04-04",
+   "time": "15:00",
+   "home": "WATTIGNIES 1",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "referee": null,
+   "venue": "salle-pierre-de-coubertin-59139"
+  },
+  {
+   "code": "1MA081",
+   "journee": 17,
+   "date": "2027-04-11",
+   "time": "15:00",
+   "home": "OIGNIES 1",
+   "away": "LILLERS 1",
+   "played": false,
+   "venueName": "COMPLEXE COUBERTIN LEMAIRE",
+   "referee": null,
+   "venue": "complexe-coubertin-lemaire-62590"
+  },
+  {
+   "code": "1MA082",
+   "journee": 17,
+   "date": "2027-04-17",
+   "time": "21:00",
+   "home": "LIEVIN 2",
+   "away": "WATTIGNIES 1",
+   "played": false,
+   "venueName": "SALLE NOEL JOSEPHE",
+   "referee": null,
+   "venue": "salle-noel-josephe-62800"
+  },
+  {
+   "code": "1MA083",
+   "journee": 17,
+   "date": "2027-04-11",
+   "time": "16:00",
+   "home": "COEUR DE FLANDRE 2",
+   "away": "CALAIS SES 1",
+   "played": false,
+   "venueName": "SALLE NATALYS DUMEZ",
+   "referee": null,
+   "venue": "salle-natalys-dumez-59270"
+  },
+  {
+   "code": "1MA084",
+   "journee": 17,
+   "date": "2027-04-10",
+   "time": "18:00",
+   "home": "ARRAS 1",
+   "away": "DUNKERQUE 2",
+   "played": false,
+   "venueName": "SALLE LYCEE JULES FERRY",
+   "referee": null,
+   "venue": "salle-lycee-jules-ferry-62000"
+  },
+  {
+   "code": "1MA085",
+   "journee": 17,
+   "date": "2027-04-10",
+   "time": "20:00",
+   "home": "SAINT POL SUR MER 1",
+   "away": "AGNY 1",
+   "played": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND",
+   "referee": null,
+   "venue": "complexe-de-la-ferme-marchand-59430"
+  },
+  {
+   "code": "1MA086",
+   "journee": 18,
+   "date": "2027-05-01",
+   "time": "21:00",
+   "home": "AGNY 1",
+   "away": "OIGNIES 1",
+   "played": false,
+   "venueName": "SALLE LEO LAGRANGE",
+   "referee": null,
+   "venue": "salle-leo-lagrange-62217"
+  },
+  {
+   "code": "1MA087",
+   "journee": 18,
+   "date": "2027-05-01",
+   "time": "20:30",
+   "home": "DUNKERQUE 2",
+   "away": "SAINT POL SUR MER 1",
+   "played": false,
+   "venueName": "SALLE LYCEE JEAN BART",
+   "referee": null,
+   "venue": "salle-lycee-jean-bart-59140"
+  },
+  {
+   "code": "1MA088",
+   "journee": 18,
+   "date": "2027-05-02",
+   "time": "15:00",
+   "home": "CALAIS SES 1",
+   "away": "ARRAS 1",
+   "played": false,
+   "venueName": "SALLE PORTE DE LILLE",
+   "referee": null,
+   "venue": "salle-porte-de-lille-62100"
+  },
+  {
+   "code": "1MA089",
+   "journee": 18,
+   "date": "2027-05-02",
+   "time": "13:00",
+   "home": "WATTIGNIES 1",
+   "away": "COEUR DE FLANDRE 2",
+   "played": false,
+   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "referee": null,
+   "venue": "salle-pierre-de-coubertin-59139"
+  },
+  {
+   "code": "1MA090",
+   "journee": 18,
+   "date": "2027-05-01",
+   "time": "20:30",
+   "home": "LILLERS 1",
+   "away": "LIEVIN 2",
+   "played": false,
+   "venueName": "SALLE DELPLACE",
+   "referee": null,
+   "venue": "salle-delplace-62190"
+  }
+ ]
+}

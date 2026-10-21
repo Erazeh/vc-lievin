@@ -1,0 +1,11 @@
+{
+  "name": "vc-lievin-r1",
+  "private": true,
+  "type": "module",
+  "description": "Site de l'équipe Liévin 2 (Régionale 1 Masculins HDF), mis à jour chaque jour depuis la FFVB.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "update": "node scripts/update.mjs",
+    "serve": "npx --yes http-server@14.1.1 -p 8080 -c-1 ."
+  }
+}

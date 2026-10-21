@@ -1,0 +1,1261 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//VC Lievin//Calendrier R1//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Régionale 1 Masculins HDF · Poule A · Volley
+X-WR-TIMEZONE:Europe/Paris
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:1MA001-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261003T210000
+DTEND;TZID=Europe/Paris:20261003T230000
+SUMMARY:Liévin 2 2-3 Oignies 1
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 1\nSalle Noë
+ l Josèphe — Rue Alban du Souich\, 62800 Liévin\nArbitrage : Tailliez R
+ eynald\nSets : 19-25\, 25-20\, 16-25\, 25-20\, 13-15\nFeuille de match : h
+ ttps://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&c
+ odent=LIFL&codmatch=1MA001\nToutes les infos : https://erazeh.github.io/vc
+ -lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA002-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261003T203000
+DTEND;TZID=Europe/Paris:20261003T223000
+SUMMARY:Lillers 1 2-3 Cœur de Flandre 2
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 1\nSalle Delp
+ lace — Avenue du Général de Gaulle\, 62190 Lillers\nArbitrage : Vlamyn
+ ck Sebastien\nSets : 27-25\, 20-25\, 25-18\, 22-25\, 11-15\nFeuille de mat
+ ch : https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/
+ 2027&codent=LIFL&codmatch=1MA002\nToutes les infos : https://erazeh.github
+ .io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA003-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261004T130000
+DTEND;TZID=Europe/Paris:20261004T150000
+SUMMARY:Wattignies 1 3-2 Arras 1
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 1\nSalle Pier
+ re de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nArbitrage : Dochez 
+ Vincent\nSets : 22-25\, 25-19\, 25-16\, 18-25\, 15-11\nFeuille de match : 
+ https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&
+ codent=LIFL&codmatch=1MA003\nToutes les infos : https://erazeh.github.io/v
+ c-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA004-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261004T110000
+DTEND;TZID=Europe/Paris:20261004T130000
+SUMMARY:Calais SES 1 2-3 Saint-Pol-sur-Mer 1
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 1\nSalle Port
+ e de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 62100
+  Calais\nArbitrage : Dangleant Lilia\nSets : 15-25\, 25-21\, 25-19\, 21-25
+ \, 14-16\nFeuille de match : https://www.ffvbbeach.org/ffvbapp/resu/ffvoll
+ ey_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA004\nToutes les infos
+  : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA005-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261003T203000
+DTEND;TZID=Europe/Paris:20261003T223000
+SUMMARY:Dunkerque 2 1-3 Agny 1
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 1\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nArbitrage : Bertin
+  Jean\nSets : 24-26\, 20-25\, 27-25\, 19-25\nFeuille de match : https://ww
+ w.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIF
+ L&codmatch=1MA005\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA006-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261010T203000
+DTEND;TZID=Europe/Paris:20261010T223000
+SUMMARY:Dunkerque 2 3-2 Oignies 1
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 2\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nArbitrage : Bertin
+  Jean\nSets : 23-25\, 25-27\, 25-19\, 25-19\, 15-5\nFeuille de match : htt
+ ps://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&cod
+ ent=LIFL&codmatch=1MA006\nToutes les infos : https://erazeh.github.io/vc-l
+ ievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA007-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261010T210000
+DTEND;TZID=Europe/Paris:20261010T230000
+SUMMARY:Agny 1 3-2 Calais SES 1
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 2\nSalle Léo
+  Lagrange — Rue du 135 e RI\, 62217 Agny\nArbitrage : Ternel Lucas\nSets
+  : 22-25\, 25-16\, 15-25\, 25-18\, 15-11\nFeuille de match : https://www.f
+ fvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&c
+ odmatch=1MA007\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA008-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261010T200000
+DTEND;TZID=Europe/Paris:20261010T220000
+SUMMARY:Saint-Pol-sur-Mer 1 2-3 Wattignies 1
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 2\nComplexe d
+ e la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\nA
+ rbitrage : Groux Benoit\nSets : 21-25\, 29-27\, 23-25\, 25-17\, 13-15\nFeu
+ ille de match : https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?s
+ aison=2026/2027&codent=LIFL&codmatch=1MA008\nToutes les infos : https://er
+ azeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA009-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261010T180000
+DTEND;TZID=Europe/Paris:20261010T200000
+SUMMARY:Arras 1 3-1 Lillers 1
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 2\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nArbitrage : Cecchi C
+ hristophe\nSets : 22-25\, 25-16\, 25-22\, 25-23\nFeuille de match : https:
+ //www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent
+ =LIFL&codmatch=1MA009\nToutes les infos : https://erazeh.github.io/vc-liev
+ in/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA010-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261010T203000
+DTEND;TZID=Europe/Paris:20261010T223000
+SUMMARY:Cœur de Flandre 2 3-2 Liévin 2
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 2\nSalle Nata
+ lys Dumez — Rue des Viviers\, 59270 Bailleul\nArbitrage : Haboul Atif\nS
+ ets : 25-22\, 19-25\, 25-19\, 24-26\, 15-13\nFeuille de match : https://ww
+ w.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIF
+ L&codmatch=1MA010\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA011-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261024T200000
+DTEND;TZID=Europe/Paris:20261024T220000
+SUMMARY:Oignies 1 – Cœur de Flandre 2
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 3\nComplexe C
+ oubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\n
+ Arbitrage : Agny\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA012-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261024T210000
+DTEND;TZID=Europe/Paris:20261024T230000
+SUMMARY:Liévin 2 – Arras 1
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 3\nSalle Noë
+ l Josèphe — Rue Alban du Souich\, 62800 Liévin\nArbitrage : Harnes VB\
+ nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA013-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261024T180000
+DTEND;TZID=Europe/Paris:20261024T200000
+SUMMARY:Lillers 1 – Saint-Pol-sur-Mer 1
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 3\nSalle Delp
+ lace — Avenue du Général de Gaulle\, 62190 Lillers\nArbitrage : Le Tou
+ quet\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA014-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261018T140000
+DTEND;TZID=Europe/Paris:20261018T160000
+SUMMARY:Wattignies 1 0-3 Agny 1
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 3\nSalle Pier
+ re de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nArbitrage : Charler
+ y Klara\nSets : 18-25\, 20-25\, 15-25\nFeuille de match : https://www.ffvb
+ beach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codm
+ atch=1MA014\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA015-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261110T203000
+DTEND;TZID=Europe/Paris:20261110T223000
+SUMMARY:Calais SES 1 – Dunkerque 2
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 3\nSalle Port
+ e de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 62100
+  Calais\nArbitrage : Dangleant Lilia\nToutes les infos : https://erazeh.gi
+ thub.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA016-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261031T190000
+DTEND;TZID=Europe/Paris:20261031T210000
+SUMMARY:Calais SES 1 – Oignies 1
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 4\nSalle Port
+ e de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 62100
+  Calais\nArbitrage : Calais Lis\nToutes les infos : https://erazeh.github.
+ io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA017-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261031T203000
+DTEND;TZID=Europe/Paris:20261031T223000
+SUMMARY:Dunkerque 2 – Wattignies 1
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 4\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nArbitrage : Saint 
+ Pol sur Mer\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA018-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261031T210000
+DTEND;TZID=Europe/Paris:20261031T230000
+SUMMARY:Agny 1 – Lillers 1
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 4\nSalle Léo
+  Lagrange — Rue du 135 e RI\, 62217 Agny\nArbitrage : Noyelles sous Lens
+ \nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA019-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261105T203000
+DTEND;TZID=Europe/Paris:20261105T223000
+SUMMARY:Saint-Pol-sur-Mer 1 – Liévin 2
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 4\nComplexe d
+ e la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\nA
+ rbitrage : Le Touquet\nToutes les infos : https://erazeh.github.io/vc-liev
+ in/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA020-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261031T180000
+DTEND;TZID=Europe/Paris:20261031T200000
+SUMMARY:Arras 1 – Cœur de Flandre 2
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 4\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nArbitrage : Liévin\
+ nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA021-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261108T150000
+DTEND;TZID=Europe/Paris:20261108T170000
+SUMMARY:Oignies 1 – Arras 1
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 5\nComplexe C
+ oubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\n
+ Arbitrage : Noyelles sous Lens\nToutes les infos : https://erazeh.github.i
+ o/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA022-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261108T133000
+DTEND;TZID=Europe/Paris:20261108T153000
+SUMMARY:Cœur de Flandre 2 – Saint-Pol-sur-Mer 1
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 5\nSalle Nata
+ lys Dumez — Rue des Viviers\, 59270 Bailleul\nArbitrage : Li Yuwei\nTout
+ es les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA023-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261107T210000
+DTEND;TZID=Europe/Paris:20261107T230000
+SUMMARY:Liévin 2 – Agny 1
+LOCATION:Salle Sénéchal\, Rue Entre Deux Monts\, 62800 Liévin
+GEO:50.420200;2.787948
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 5\nSalle Sén
+ échal — Rue Entre Deux Monts\, 62800 Liévin\nArbitrage : Lillers\nTout
+ es les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA024-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261107T203000
+DTEND;TZID=Europe/Paris:20261107T223000
+SUMMARY:Lillers 1 – Dunkerque 2
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 5\nSalle Delp
+ lace — Avenue du Général de Gaulle\, 62190 Lillers\nArbitrage : Calais
+  SES\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA025-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261108T130000
+DTEND;TZID=Europe/Paris:20261108T150000
+SUMMARY:Wattignies 1 – Calais SES 1
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 5\nSalle Pier
+ re de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nArbitrage : Le Gode
+ c Brigitte\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA026-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261122T110000
+DTEND;TZID=Europe/Paris:20261122T130000
+SUMMARY:Wattignies 1 – Oignies 1
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 6\nSalle Pier
+ re de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nArbitrage : Poillio
+ n Jean\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA027-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261121T190000
+DTEND;TZID=Europe/Paris:20261121T210000
+SUMMARY:Calais SES 1 – Lillers 1
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 6\nSalle Port
+ e de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 62100
+  Calais\nArbitrage : Defer Simon\nToutes les infos : https://erazeh.github
+ .io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA028-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261121T203000
+DTEND;TZID=Europe/Paris:20261121T223000
+SUMMARY:Dunkerque 2 – Liévin 2
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 6\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nArbitrage : Liller
+ s\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA029-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261121T210000
+DTEND;TZID=Europe/Paris:20261121T230000
+SUMMARY:Agny 1 – Cœur de Flandre 2
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 6\nSalle Léo
+  Lagrange — Rue du 135 e RI\, 62217 Agny\nArbitrage : Arras\nToutes les 
+ infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA030-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261121T200000
+DTEND;TZID=Europe/Paris:20261121T220000
+SUMMARY:Saint-Pol-sur-Mer 1 – Arras 1
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 6\nComplexe d
+ e la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\nA
+ rbitrage : Dunkerque\nToutes les infos : https://erazeh.github.io/vc-lievi
+ n/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA031-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261129T150000
+DTEND;TZID=Europe/Paris:20261129T170000
+SUMMARY:Oignies 1 – Saint-Pol-sur-Mer 1
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 7\nComplexe C
+ oubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\n
+ Arbitrage : Harnes VB\nToutes les infos : https://erazeh.github.io/vc-liev
+ in/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA032-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261128T180000
+DTEND;TZID=Europe/Paris:20261128T200000
+SUMMARY:Arras 1 – Agny 1
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 7\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nArbitrage : Noyelles
+  sous Lens\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA033-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261129T133000
+DTEND;TZID=Europe/Paris:20261129T153000
+SUMMARY:Cœur de Flandre 2 – Dunkerque 2
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 7\nSalle Nata
+ lys Dumez — Rue des Viviers\, 59270 Bailleul\nArbitrage : Spychala Grego
+ ry\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA034-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261128T210000
+DTEND;TZID=Europe/Paris:20261128T230000
+SUMMARY:Liévin 2 – Calais SES 1
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 7\nSalle Noë
+ l Josèphe — Rue Alban du Souich\, 62800 Liévin\nArbitrage : Agny\nTout
+ es les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA035-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261129T150000
+DTEND;TZID=Europe/Paris:20261129T170000
+SUMMARY:Lillers 1 – Wattignies 1
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 7\nSalle Delp
+ lace — Avenue du Général de Gaulle\, 62190 Lillers\nArbitrage : Berck 
+ sur Mer\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA036-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261205T180000
+DTEND;TZID=Europe/Paris:20261205T200000
+SUMMARY:Lillers 1 – Oignies 1
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 8\nSalle Delp
+ lace — Avenue du Général de Gaulle\, 62190 Lillers\nArbitrage : Agny\n
+ Toutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA037-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261206T130000
+DTEND;TZID=Europe/Paris:20261206T150000
+SUMMARY:Wattignies 1 – Liévin 2
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 8\nSalle Pier
+ re de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nToutes les infos : 
+ https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA038-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261206T150000
+DTEND;TZID=Europe/Paris:20261206T170000
+SUMMARY:Calais SES 1 – Cœur de Flandre 2
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 8\nSalle Port
+ e de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 62100
+  Calais\nArbitrage : Dangleant Lilia\nToutes les infos : https://erazeh.gi
+ thub.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA039-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261205T203000
+DTEND;TZID=Europe/Paris:20261205T223000
+SUMMARY:Dunkerque 2 – Arras 1
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 8\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nArbitrage : Calais
+  SES\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA040-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261205T210000
+DTEND;TZID=Europe/Paris:20261205T230000
+SUMMARY:Agny 1 – Saint-Pol-sur-Mer 1
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 8\nSalle Léo
+  Lagrange — Rue du 135 e RI\, 62217 Agny\nArbitrage : Harnes VB\nToutes 
+ les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA041-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270110T150000
+DTEND;TZID=Europe/Paris:20270110T170000
+SUMMARY:Oignies 1 – Agny 1
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 9\nComplexe C
+ oubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\n
+ Toutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA042-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270109T200000
+DTEND;TZID=Europe/Paris:20270109T220000
+SUMMARY:Saint-Pol-sur-Mer 1 – Dunkerque 2
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 9\nComplexe d
+ e la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\nT
+ outes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA043-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270109T180000
+DTEND;TZID=Europe/Paris:20270109T200000
+SUMMARY:Arras 1 – Calais SES 1
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 9\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA044-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270110T133000
+DTEND;TZID=Europe/Paris:20270110T153000
+SUMMARY:Cœur de Flandre 2 – Wattignies 1
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 9\nSalle Nata
+ lys Dumez — Rue des Viviers\, 59270 Bailleul\nToutes les infos : https:/
+ /erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA045-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270109T210000
+DTEND;TZID=Europe/Paris:20270109T230000
+SUMMARY:Liévin 2 – Lillers 1
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 9\nSalle Noë
+ l Josèphe — Rue Alban du Souich\, 62800 Liévin\nToutes les infos : htt
+ ps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA046-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270124T150000
+DTEND;TZID=Europe/Paris:20270124T170000
+SUMMARY:Oignies 1 – Liévin 2
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 10\nComplexe 
+ Coubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\
+ nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA047-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270123T200000
+DTEND;TZID=Europe/Paris:20270123T220000
+SUMMARY:Cœur de Flandre 2 – Lillers 1
+LOCATION:Salle Jean Bouin\, 61 Rue Louis Warein\, 59190 Hazebrouck
+GEO:50.724543;2.531457
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 10\nSalle Jea
+ n Bouin — 61 Rue Louis Warein\, 59190 Hazebrouck\nToutes les infos : htt
+ ps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA048-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270123T180000
+DTEND;TZID=Europe/Paris:20270123T200000
+SUMMARY:Arras 1 – Wattignies 1
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 10\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA049-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270123T200000
+DTEND;TZID=Europe/Paris:20270123T220000
+SUMMARY:Saint-Pol-sur-Mer 1 – Calais SES 1
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 10\nComplexe 
+ de la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\n
+ Toutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA050-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270123T210000
+DTEND;TZID=Europe/Paris:20270123T230000
+SUMMARY:Agny 1 – Dunkerque 2
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 10\nSalle Lé
+ o Lagrange — Rue du 135 e RI\, 62217 Agny\nToutes les infos : https://er
+ azeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA051-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270131T150000
+DTEND;TZID=Europe/Paris:20270131T170000
+SUMMARY:Oignies 1 – Dunkerque 2
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 11\nComplexe 
+ Coubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\
+ nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA052-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270130T190000
+DTEND;TZID=Europe/Paris:20270130T210000
+SUMMARY:Calais SES 1 – Agny 1
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 11\nSalle Por
+ te de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 6210
+ 0 Calais\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA053-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270131T130000
+DTEND;TZID=Europe/Paris:20270131T150000
+SUMMARY:Wattignies 1 – Saint-Pol-sur-Mer 1
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 11\nSalle Pie
+ rre de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA054-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270130T203000
+DTEND;TZID=Europe/Paris:20270130T223000
+SUMMARY:Lillers 1 – Arras 1
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 11\nSalle Del
+ place — Avenue du Général de Gaulle\, 62190 Lillers\nToutes les infos 
+ : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA055-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270130T210000
+DTEND;TZID=Europe/Paris:20270130T230000
+SUMMARY:Liévin 2 – Cœur de Flandre 2
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 11\nSalle No
+ ël Josèphe — Rue Alban du Souich\, 62800 Liévin\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA056-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20261219T200000
+DTEND;TZID=Europe/Paris:20261219T220000
+SUMMARY:Cœur de Flandre 2 – Oignies 1
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 12\nSalle Nat
+ alys Dumez — Rue des Viviers\, 59270 Bailleul\nArbitrage : Dunkerque\nTo
+ utes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA057-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270206T180000
+DTEND;TZID=Europe/Paris:20270206T200000
+SUMMARY:Arras 1 – Liévin 2
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 12\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA058-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270206T200000
+DTEND;TZID=Europe/Paris:20270206T220000
+SUMMARY:Saint-Pol-sur-Mer 1 – Lillers 1
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 12\nComplexe 
+ de la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\n
+ Toutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA059-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270206T210000
+DTEND;TZID=Europe/Paris:20270206T230000
+SUMMARY:Agny 1 – Wattignies 1
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 12\nSalle Lé
+ o Lagrange — Rue du 135 e RI\, 62217 Agny\nToutes les infos : https://er
+ azeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA060-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270206T203000
+DTEND;TZID=Europe/Paris:20270206T223000
+SUMMARY:Dunkerque 2 – Calais SES 1
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 12\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA061-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270214T150000
+DTEND;TZID=Europe/Paris:20270214T170000
+SUMMARY:Oignies 1 – Calais SES 1
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 13\nComplexe 
+ Coubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\
+ nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA062-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270214T130000
+DTEND;TZID=Europe/Paris:20270214T150000
+SUMMARY:Wattignies 1 – Dunkerque 2
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 13\nSalle Pie
+ rre de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA063-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270213T180000
+DTEND;TZID=Europe/Paris:20270213T200000
+SUMMARY:Lillers 1 – Agny 1
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 13\nSalle Del
+ place — Avenue du Général de Gaulle\, 62190 Lillers\nToutes les infos 
+ : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA064-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270213T210000
+DTEND;TZID=Europe/Paris:20270213T230000
+SUMMARY:Liévin 2 – Saint-Pol-sur-Mer 1
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 13\nSalle No
+ ël Josèphe — Rue Alban du Souich\, 62800 Liévin\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA065-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270214T133000
+DTEND;TZID=Europe/Paris:20270214T153000
+SUMMARY:Cœur de Flandre 2 – Arras 1
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 13\nSalle Nat
+ alys Dumez — Rue des Viviers\, 59270 Bailleul\nToutes les infos : https:
+ //erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA066-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270313T180000
+DTEND;TZID=Europe/Paris:20270313T200000
+SUMMARY:Arras 1 – Oignies 1
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 14\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA067-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270313T200000
+DTEND;TZID=Europe/Paris:20270313T220000
+SUMMARY:Saint-Pol-sur-Mer 1 – Cœur de Flandre 2
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 14\nComplexe 
+ de la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\n
+ Toutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA068-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270328T103000
+DTEND;TZID=Europe/Paris:20270328T123000
+SUMMARY:Agny 1 – Liévin 2
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 14\nSalle Lé
+ o Lagrange — Rue du 135 e RI\, 62217 Agny\nToutes les infos : https://er
+ azeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA069-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270313T203000
+DTEND;TZID=Europe/Paris:20270313T223000
+SUMMARY:Dunkerque 2 – Lillers 1
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 14\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA070-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270313T190000
+DTEND;TZID=Europe/Paris:20270313T210000
+SUMMARY:Calais SES 1 – Wattignies 1
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 14\nSalle Por
+ te de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 6210
+ 0 Calais\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA071-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;VALUE=DATE:20270327
+DTEND;VALUE=DATE:20270328
+SUMMARY:Oignies 1 – Wattignies 1
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 15\nComplexe 
+ Coubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\
+ nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA072-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270320T203000
+DTEND;TZID=Europe/Paris:20270320T223000
+SUMMARY:Lillers 1 – Calais SES 1
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 15\nSalle Del
+ place — Avenue du Général de Gaulle\, 62190 Lillers\nToutes les infos 
+ : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA073-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270320T210000
+DTEND;TZID=Europe/Paris:20270320T230000
+SUMMARY:Liévin 2 – Dunkerque 2
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 15\nSalle No
+ ël Josèphe — Rue Alban du Souich\, 62800 Liévin\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA074-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270321T133000
+DTEND;TZID=Europe/Paris:20270321T153000
+SUMMARY:Cœur de Flandre 2 – Agny 1
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 15\nSalle Nat
+ alys Dumez — Rue des Viviers\, 59270 Bailleul\nToutes les infos : https:
+ //erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA075-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270320T180000
+DTEND;TZID=Europe/Paris:20270320T200000
+SUMMARY:Arras 1 – Saint-Pol-sur-Mer 1
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 15\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA076-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270403T200000
+DTEND;TZID=Europe/Paris:20270403T220000
+SUMMARY:Saint-Pol-sur-Mer 1 – Oignies 1
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 16\nComplexe 
+ de la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\n
+ Toutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA077-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270403T210000
+DTEND;TZID=Europe/Paris:20270403T230000
+SUMMARY:Agny 1 – Arras 1
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 16\nSalle Lé
+ o Lagrange — Rue du 135 e RI\, 62217 Agny\nToutes les infos : https://er
+ azeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA078-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270403T203000
+DTEND;TZID=Europe/Paris:20270403T223000
+SUMMARY:Dunkerque 2 – Cœur de Flandre 2
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 16\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA079-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270404T110000
+DTEND;TZID=Europe/Paris:20270404T130000
+SUMMARY:Calais SES 1 – Liévin 2
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 16\nSalle Por
+ te de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 6210
+ 0 Calais\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA080-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270404T150000
+DTEND;TZID=Europe/Paris:20270404T170000
+SUMMARY:Wattignies 1 – Lillers 1
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 16\nSalle Pie
+ rre de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA081-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270411T150000
+DTEND;TZID=Europe/Paris:20270411T170000
+SUMMARY:Oignies 1 – Lillers 1
+LOCATION:Complexe Coubertin Lemaire\, Stade Municipal\, Avenue des Sports\,
+  62590 Oignies
+GEO:50.472295;2.994847
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 17\nComplexe 
+ Coubertin Lemaire — Stade Municipal\, Avenue des Sports\, 62590 Oignies\
+ nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA082-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270417T210000
+DTEND;TZID=Europe/Paris:20270417T230000
+SUMMARY:Liévin 2 – Wattignies 1
+LOCATION:Salle Noël Josèphe\, Rue Alban du Souich\, 62800 Liévin
+GEO:50.430290;2.772443
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 17\nSalle No
+ ël Josèphe — Rue Alban du Souich\, 62800 Liévin\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA083-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270411T160000
+DTEND;TZID=Europe/Paris:20270411T180000
+SUMMARY:Cœur de Flandre 2 – Calais SES 1
+LOCATION:Salle Natalys Dumez\, Rue des Viviers\, 59270 Bailleul
+GEO:50.740657;2.735715
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 17\nSalle Nat
+ alys Dumez — Rue des Viviers\, 59270 Bailleul\nToutes les infos : https:
+ //erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA084-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270410T180000
+DTEND;TZID=Europe/Paris:20270410T200000
+SUMMARY:Arras 1 – Dunkerque 2
+LOCATION:Salle Lycée Jules Ferry\, 20 Avenue Jean Zay\, 62000 Arras
+GEO:50.284123;2.745051
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 17\nSalle Lyc
+ ée Jules Ferry — 20 Avenue Jean Zay\, 62000 Arras\nToutes les infos : h
+ ttps://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA085-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270410T200000
+DTEND;TZID=Europe/Paris:20270410T220000
+SUMMARY:Saint-Pol-sur-Mer 1 – Agny 1
+LOCATION:Complexe de la Ferme Marchand\, 77 Rue Edmond Flamand\, 59430 Sain
+ t-Pol-sur-Mer
+GEO:51.033170;2.334386
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 17\nComplexe 
+ de la Ferme Marchand — 77 Rue Edmond Flamand\, 59430 Saint-Pol-sur-Mer\n
+ Toutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA086-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270501T210000
+DTEND;TZID=Europe/Paris:20270501T230000
+SUMMARY:Agny 1 – Oignies 1
+LOCATION:Salle Léo Lagrange\, Rue du 135 e RI\, 62217 Agny
+GEO:50.256953;2.756510
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 18\nSalle Lé
+ o Lagrange — Rue du 135 e RI\, 62217 Agny\nToutes les infos : https://er
+ azeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA087-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270501T203000
+DTEND;TZID=Europe/Paris:20270501T223000
+SUMMARY:Dunkerque 2 – Saint-Pol-sur-Mer 1
+LOCATION:Salle Lycée Jean Bart\, Rue du 110EME R.I.\, 59140 Dunkerque
+GEO:51.042437;2.384912
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 18\nSalle Lyc
+ ée Jean Bart — Rue du 110EME R.I.\, 59140 Dunkerque\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA088-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270502T150000
+DTEND;TZID=Europe/Paris:20270502T170000
+SUMMARY:Calais SES 1 – Arras 1
+LOCATION:Salle Porte de Lille\, Rue de Valenciennes\, A16 Calais Boulogne S
+ ortie 44\, 62100 Calais
+GEO:50.941721;1.854596
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 18\nSalle Por
+ te de Lille — Rue de Valenciennes\, A16 Calais Boulogne Sortie 44\, 6210
+ 0 Calais\nToutes les infos : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA089-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270502T130000
+DTEND;TZID=Europe/Paris:20270502T150000
+SUMMARY:Wattignies 1 – Cœur de Flandre 2
+LOCATION:Salle Pierre de Coubertin\, 4 Rue Gagarine\, 59139 Wattignies
+GEO:50.587954;3.039321
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 18\nSalle Pie
+ rre de Coubertin — 4 Rue Gagarine\, 59139 Wattignies\nToutes les infos :
+  https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+BEGIN:VEVENT
+UID:1MA090-2026-2027@vc-lievin-r1
+DTSTAMP:20261021T035148Z
+DTSTART;TZID=Europe/Paris:20270501T203000
+DTEND;TZID=Europe/Paris:20270501T223000
+SUMMARY:Lillers 1 – Liévin 2
+LOCATION:Salle Delplace\, Avenue du Général de Gaulle\, 62190 Lillers
+GEO:50.559776;2.473843
+DESCRIPTION:Régionale 1 Masculins HDF · Poule A · Journée 18\nSalle Del
+ place — Avenue du Général de Gaulle\, 62190 Lillers\nToutes les infos 
+ : https://erazeh.github.io/vc-lievin/
+URL:https://erazeh.github.io/vc-lievin/
+END:VEVENT
+END:VCALENDAR

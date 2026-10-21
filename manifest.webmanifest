@@ -1,0 +1,16 @@
+{
+  "name": "VC Liévin · Régionale 1",
+  "short_name": "VC Liévin",
+  "description": "Prochain match, résultats, classement et déplacements de Liévin 2.",
+  "lang": "fr",
+  "start_url": "./#accueil",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F1F0EE",
+  "theme_color": "#D3122B",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/icon-180.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

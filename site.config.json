@@ -1,0 +1,35 @@
+{
+  "season": "2026/2027",
+  "codent": "LIFL",
+  "poule": "1MA",
+  "team": "LIEVIN 2",
+  "clubShort": "VC Liévin",
+  "siteUrl": "https://erazeh.github.io/vc-lievin/",
+  "arrivalBufferMinutes": 60,
+  "matchDurationMinutes": 120,
+  "zones": { "promotion": 0, "relegation": 0 },
+  "displayNames": {
+    "LIEVIN 2": "Liévin 2",
+    "AGNY 1": "Agny 1",
+    "COEUR DE FLANDRE 2": "Cœur de Flandre 2",
+    "WATTIGNIES 1": "Wattignies 1",
+    "ARRAS 1": "Arras 1",
+    "SAINT POL SUR MER 1": "Saint-Pol-sur-Mer 1",
+    "OIGNIES 1": "Oignies 1",
+    "DUNKERQUE 2": "Dunkerque 2",
+    "CALAIS SES 1": "Calais SES 1",
+    "LILLERS 1": "Lillers 1"
+  },
+  "shortNames": {
+    "LIEVIN 2": "LIÉ",
+    "AGNY 1": "AGN",
+    "COEUR DE FLANDRE 2": "CDF",
+    "WATTIGNIES 1": "WAT",
+    "ARRAS 1": "ARR",
+    "SAINT POL SUR MER 1": "SPM",
+    "OIGNIES 1": "OIG",
+    "DUNKERQUE 2": "DUN",
+    "CALAIS SES 1": "CAL",
+    "LILLERS 1": "LIL"
+  }
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VC Liévin R1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Liévin 2, Régionale 1 Masculins Hauts-de-France : prochain match, résultats, classement, salles et itinéraires. Mis à jour chaque jour depuis la FFVB.">
+<meta name="theme-color" content="#D3122B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="VC Liévin">
+<meta property="og:title" content="VC Liévin · Régionale 1 Masculins">
+<meta property="og:description" content="Prochain match, résultats, classement et déplacements de Liévin 2.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="#accueil" data-nav-home>
+      <span class="crest" aria-hidden="true">VCL</span>
+      <span class="brand__txt"><span class="brand__name" id="brand-name">Liévin 2</span><span class="brand__sub" id="brand-sub">R1 Masculins HDF · Poule A</span></span>
+    </a>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#accueil" data-nav="accueil">Accueil</a>
+      <a href="#calendrier" data-nav="calendrier">Calendrier</a>
+      <a href="#classement" data-nav="classement">Classement</a>
+      <a href="#adversaires" data-nav="adversaires">Adversaires</a>
+      <a href="#stats" data-nav="stats">Stats</a>
+    </nav>
+    <div class="topbar__tools">
+      <a class="fresh" id="fresh" href="https://www.ffvbbeach.org/" target="_blank" rel="noopener"><span>Chargement…</span></a>
+      <button class="iconbtn" id="theme" type="button" data-action="theme" aria-label="Changer de thème"></button>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="app" aria-live="polite">
+  <div class="skeleton" aria-label="Chargement du calendrier FFVB"><div></div><div></div><div></div></div>
+  <noscript><p>Ce site a besoin de JavaScript pour afficher le calendrier.</p></noscript>
+</main>
+<footer class="foot"><div class="foot__in" id="foot"></div></footer>
+<nav class="tabbar" aria-label="Sections">
+  <a href="#accueil" data-nav="accueil">Accueil</a>
+  <a href="#calendrier" data-nav="calendrier">Calendrier</a>
+  <a href="#classement" data-nav="classement">Classement</a>
+  <a href="#adversaires" data-nav="adversaires">Adversaires</a>
+  <a href="#stats" data-nav="stats">Stats</a>
+</nav>
+<dialog class="sheet" id="sheet" aria-label="Détails"></dialog>
+<dialog class="poster" id="poster" aria-label="Affiche"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

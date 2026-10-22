@@ -572,3 +572,8 @@ button.fresh:hover { border-color: var(--line-strong); color: var(--ink); }
   .phone__us img { animation: icon-pulse 2.4s 1.2s ease-in-out 2; }
   @keyframes icon-pulse { 50% { transform: scale(1.12); } }
 }
+.diag { margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+.diag summary { cursor: pointer; font-weight: 600; }
+.diag dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 16px; margin: 10px 0 0; }
+.diag dt { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.diag dd { margin: 0; color: var(--ink); }

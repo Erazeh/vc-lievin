@@ -107,7 +107,7 @@ const state = {
   sim: {},
   installTab: DEVICE.platform
 };
-const push = { sub: null, busy: false, topics: (() => { try { return JSON.parse(store.get('topics')) || TOPICS.map(t => t[0]); } catch { return TOPICS.map(t => t[0]); } })() };
+const push = { sub: null, busy: false, error: null, topics: (() => { try { return JSON.parse(store.get('topics')) || TOPICS.map(t => t[0]); } catch { return TOPICS.map(t => t[0]); } })() };
 
 // ---------- Modèle ----------
 
@@ -1352,6 +1352,17 @@ function notifCard() {
     </div>
     ${actions ? `<div class="btns" style="margin-top:14px">${actions}</div>` : ''}
     ${push.busy ? '<p class="note" style="margin-top:8px">Un instant…</p>' : ''}
+    ${push.error ? `<div class="alert" style="margin-top:12px">${icon('alert')}<div>${esc(push.error)}</div></div>` : ''}
+    <details class="diag"><summary>Infos techniques</summary>
+      <dl>${[
+        ['Appareil', `${{ ios: 'iPhone / iPad', android: 'Android', desktop: 'Ordinateur' }[DEVICE.platform]} ${osVersion()}`],
+        ['App installée', DEVICE.standalone ? 'oui' : 'non (ouverte dans le navigateur)'],
+        ['Notifications possibles', ready ? 'oui' : 'non'],
+        ['Autorisation', { granted: 'accordée', denied: 'refusée', default: 'pas encore demandée' }[perm] || perm],
+        ['Service hors connexion', swReg?.active ? 'actif' : 'pas encore actif'],
+        ['Abonnement', push.sub ? 'enregistré' : 'aucun']
+      ].map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+    </details>
   </section>`;
 }
 
@@ -1427,10 +1438,25 @@ async function pushCall(path, body) {
   return json;
 }
 
-async function pushInit() {
+let swReg = null; // gardé sous la main : sur iPhone, l'abonnement doit partir sans attente du geste
+const osVersion = () => (UA.match(/OS (\d+)[._](\d+)/) || UA.match(/Android (\d+)/) || []).slice(1).join('.');
+
+/** Envoie au service de notifications ce qui a échoué sur l'appareil, pour pouvoir diagnostiquer à distance. */
+function report(where, e) {
+  if (!D?.config.pushApi) return;
+  const body = JSON.stringify({
+    where, name: e?.name || null, message: String(e?.message || e || '').slice(0, 300),
+    device: DEVICE.platform, os: osVersion(), standalone: DEVICE.standalone,
+    permission: 'Notification' in window ? Notification.permission : 'absent', sw: Boolean(swReg?.active), push: 'PushManager' in window
+  });
+  fetch(D.config.pushApi.replace(/\/$/, '') + '/log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true }).catch(() => {});
+}
+
+async function pushInit(reg) {
+  if (reg) swReg = reg;
   if (!pushReady() || !D || !pushConfigured()) return;
-  const reg = await navigator.serviceWorker.ready;
-  push.sub = await reg.pushManager.getSubscription();
+  swReg = await navigator.serviceWorker.ready;
+  push.sub = await swReg.pushManager.getSubscription();
   // Une fois par semaine, on rappelle au service que cet appareil est abonné.
   const last = +store.get('pushSync') || 0;
   if (push.sub && Notification.permission === 'granted' && Date.now() - last > 7 * 864e5) {
@@ -1439,38 +1465,55 @@ async function pushInit() {
   if (state.view === 'app' || state.view === 'accueil') render();
 }
 
+/** Réabonnement sans geste (autorisation déjà accordée), par exemple quand le navigateur a renouvelé ses clés. */
 async function subscribe() {
-  const reg = await navigator.serviceWorker.ready;
+  const reg = swReg || await navigator.serviceWorker.ready;
   const key = urlBytes(D.config.vapidPublicKey);
-  try {
-    return (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
-  } catch (e) {
-    // Ancien abonnement lié à une autre clé : on le remplace.
-    const old = await reg.pushManager.getSubscription();
-    if (!old) throw e;
-    await old.unsubscribe();
-    return reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
-  }
+  return (await reg.pushManager.getSubscription()) || reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
 }
 
-async function enablePush() {
+function explain(e, step) {
+  if (step === 'service') return `Le service de notifications n'a pas répondu (${e.message}). Réessayez dans un instant.`;
+  if (e?.name === 'NotAllowedError') {
+    return DEVICE.ios
+      ? 'L\'iPhone a refusé l\'autorisation. Ouvrez Réglages › Notifications › VC Liévin, activez « Autoriser les notifications », puis réessayez.'
+      : 'L\'autorisation a été refusée. Autorisez les notifications pour ce site dans les réglages, puis réessayez.';
+  }
+  if (e?.name === 'InvalidStateError') return 'Un ancien abonnement gênait : il vient d\'être supprimé. Touchez à nouveau « Activer les notifications ».';
+  return `Le téléphone n'a pas pu créer l'abonnement (${e?.name || 'erreur'} : ${e?.message || 'inconnue'}).`;
+}
+
+function enablePush() {
   const topics = chosenTopics();
   if (!topics.length) return toast('Choisissez au moins un type de notification.');
-  // La demande d'autorisation doit partir directement du geste de l'utilisateur (exigence iOS).
-  const asked = Notification.requestPermission();
+  if (!swReg) {
+    push.error = 'L\'app finit de se préparer. Patientez quelques secondes, puis touchez à nouveau le bouton.';
+    report('enable:no-sw', null);
+    render();
+    return;
+  }
+  // Sur iPhone, subscribe() doit être appelé immédiatement dans le geste : il affiche lui-même la demande d'autorisation.
+  const pending = swReg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBytes(D.config.vapidPublicKey) });
   push.busy = true;
+  push.error = null;
   render();
+  finishEnable(pending, topics);
+}
+
+async function finishEnable(pending, topics) {
+  let step = 'subscribe';
   try {
-    const perm = await asked;
-    if (perm !== 'granted') throw new Error(perm === 'denied' ? 'Notifications refusées : autorisez-les dans les réglages du téléphone.' : 'Autorisation non accordée.');
-    push.sub = await subscribe();
+    push.sub = await pending;
+    step = 'service';
     await pushCall('/subscribe', { subscription: push.sub.toJSON(), topics });
     push.topics = topics;
     store.set('topics', JSON.stringify(topics));
     store.set('pushSync', String(Date.now()));
     toast('Notifications activées');
   } catch (e) {
-    toast(e.message || 'Activation impossible pour le moment.');
+    if (e?.name === 'InvalidStateError') await swReg.pushManager.getSubscription().then(o => o?.unsubscribe()).catch(() => {});
+    push.error = explain(e, step);
+    report(`enable:${step}`, e);
   }
   push.busy = false;
   render();
@@ -1490,8 +1533,13 @@ async function savePush() {
 async function testPush() {
   try {
     await pushCall('/test', { endpoint: push.sub.endpoint });
+    push.error = null;
     toast('Notification de test envoyée');
-  } catch (e) { toast(e.message); }
+  } catch (e) {
+    push.error = `Le test n'a pas pu partir : ${e.message}`;
+    report('test', e);
+    render();
+  }
 }
 
 async function disablePush() {
@@ -1659,7 +1707,7 @@ async function start() {
   // Recalcule les états « prochain match », « en cours »… toutes les 10 minutes.
   setInterval(() => { M = buildModel(); if (!document.querySelector('dialog[open]')) render(); }, 600e3);
   if ('serviceWorker' in navigator && /^https:|^http:\/\/localhost/.test(location.href) && window.top === window) {
-    navigator.serviceWorker.register('sw.js').then(pushInit).catch(() => {});
+    navigator.serviceWorker.register('sw.js').then(pushInit).catch(e => report('sw:register', e));
   }
   navigator.clearAppBadge?.().catch(() => {});
 }

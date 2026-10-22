@@ -1,11 +1,12 @@
 // Hors connexion : l'interface est servie depuis le cache, les données restent « réseau d'abord ».
 // Notifications : affiche ce qu'envoie le service push et ouvre l'app au bon endroit.
-const CACHE = 'vcl-v2';
+const CACHE = 'vcl-v3';
 const SHELL = ['./', 'index.html', 'assets/styles.css', 'assets/app.js', 'assets/lib.js', 'assets/qr.js', 'assets/icon.svg',
   'assets/icon-180.png', 'assets/icon-512.png', 'assets/badge-96.png', 'manifest.webmanifest', 'data/data.json'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // Un fichier manquant ne doit jamais empêcher l'activation (et donc les notifications).
+  e.waitUntil(caches.open(CACHE).then(c => Promise.allSettled(SHELL.map(u => c.add(u)))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {

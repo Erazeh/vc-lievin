@@ -118,6 +118,12 @@ export default {
       return json({ ok: true }, 200, allowed);
     }
 
+    if (url.pathname === '/log') {
+      // Erreurs remontées par l'app (aucune donnée personnelle) : visibles avec « wrangler tail ».
+      console.warn('app', JSON.stringify(body).slice(0, 600));
+      return json({ ok: true }, 200, allowed);
+    }
+
     if (url.pathname === '/test') {
       if (typeof body.endpoint !== 'string') return json({ error: 'Adresse manquante' }, 400, allowed);
       const key = `sub:${await hash(body.endpoint)}`;

@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "vc-lievin-push",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "kv_namespaces": [{ "binding": "KV" }],
+  // Le service se rappelle lui-même pour envoyer par lots (limite de sous-requêtes).
+  "services": [{ "binding": "SELF", "service": "vc-lievin-push" }],
+  "triggers": { "crons": ["*/15 * * * *"] },
+  "vars": {
+    "SITE_URL": "https://erazeh.github.io/vc-lievin/",
+    "ALLOWED_ORIGIN": "https://erazeh.github.io",
+    "VAPID_SUBJECT": "https://erazeh.github.io/vc-lievin/",
+    "VAPID_PUBLIC_KEY": "BEZZQhYcbdnSKO9ccFEJE6hv-xWqIkKGRy9V6YghMdbm-BwiX3-uw2w1mPEEbmPCdji83-cvwQCZYAhFzyfOAhA"
+  },
+  // VAPID_PRIVATE_KEY est un secret : npx wrangler secret put VAPID_PRIVATE_KEY
+  "observability": { "enabled": true }
+}

@@ -22,6 +22,41 @@ et mis à jour automatiquement plusieurs fois par jour.
 - **Affiches** prêtes pour Instagram / Facebook (prochain match et résultat), installable sur l'écran d'accueil
   du téléphone, thème clair et sombre.
 
+## Application iPhone et Android
+
+Le site est une **application web installable** : une seule app pour iPhone et Android, sans App Store ni Play Store,
+sans compte, gratuite et toujours à jour.
+
+- Page **Application** (`#app`, bouton téléphone en haut) : étapes d'installation adaptées à l'appareil détecté
+  (iPhone, Android, ordinateur), alerte si le lien est ouvert dans Instagram / Facebook / Messenger,
+  bouton d'installation en un geste sur Android et ordinateur.
+- **QR code** à montrer à l'entraînement et **affiche à imprimer** pour le gymnase : le code ouvre directement la page
+  d'installation.
+- Une fois installée : plein écran, fonctionne hors connexion, raccourcis (appui long sur l'icône Android),
+  données rechargées à chaque retour dans l'app, pastille sur l'icône quand un résultat arrive.
+
+## Notifications
+
+Le dossier `push/` contient un petit service Cloudflare Workers (gratuit) :
+
+- l'app installée s'y abonne (`/subscribe`) avec les sujets choisis : rappels de match (veille 18h et 3 h avant,
+  avec l'heure de départ), résultats, changements d'horaire ou de salle, arbitrages du club ;
+- toutes les 15 minutes, il relit `data/data.json` du site, détecte ce qui est nouveau et envoie les notifications
+  (Web Push chiffré, compatible iPhone iOS 16.4+ et Android) ;
+- `npm test` dans `push/` vérifie le chiffrement avec l'implémentation de référence et la détection des événements.
+
+Mise en service (une fois) :
+
+```bash
+cd push && npm install
+npx wrangler login
+npx wrangler secret put VAPID_PRIVATE_KEY
+npx wrangler deploy
+```
+
+Puis renseigner l'adresse du service dans `site.config.json` (`pushApi`). La clé publique (`vapidPublicKey`)
+y est déjà ; la clé privée ne doit jamais être publiée.
+
 ## Comment marche la mise à jour
 
 `scripts/update.mjs` (Node 20+, sans dépendance) :

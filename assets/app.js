@@ -1,6 +1,7 @@
 import {
   kickoff, teamName, shortName, prettyName, prettyCity, computeStandings, compareRows, applyResult, matchPoints, buildIcs, matchEvent
 } from './lib.js';
+import { QR } from './qr.js';
 
 // ---------- Petits outils ----------
 
@@ -44,7 +45,14 @@ const ICONS = {
   alert: '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/>',
   car: '<path d="M5 16l1.5-5a2 2 0 0 1 2-1.5h7a2 2 0 0 1 2 1.5L19 16M3 16h18v3H3zM7 19v2M17 19v2"/>',
   sheet: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/>',
-  whistle: '<circle cx="8" cy="14" r="5"/><path d="M11.5 10.5L21 7v4l-6.5 1.8"/><circle cx="8" cy="14" r="1.2"/>'
+  whistle: '<circle cx="8" cy="14" r="5"/><path d="M11.5 10.5L21 7v4l-6.5 1.8"/><circle cx="8" cy="14" r="1.2"/>',
+  phone: '<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3"/>',
+  bell: '<path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  iosShare: '<path d="M12 3v12M8 7l4-4 4 4"/><path d="M7 11H5.5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1H17"/>',
+  addSquare: '<rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M12 8v8M8 12h8"/>',
+  dotsV: '<circle cx="12" cy="5" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="12" cy="19" r="1.2"/>',
+  dotsH: '<circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/>'
 };
 const icon = (n, cls = '') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
 
@@ -55,8 +63,29 @@ const VIEWS = [
   { id: 'calendrier', label: 'Calendrier', icon: 'calendar' },
   { id: 'classement', label: 'Classement', icon: 'podium' },
   { id: 'adversaires', label: 'Adversaires', icon: 'users' },
-  { id: 'stats', label: 'Stats', icon: 'bars' }
+  { id: 'stats', label: 'Stats', icon: 'bars' },
+  { id: 'app', label: 'Application', icon: 'phone' }
 ];
+
+// Appareil, mode installé et navigateurs intégrés aux réseaux sociaux (où l'installation est impossible).
+const UA = navigator.userAgent;
+const IN_APP = [[/Instagram/i, 'Instagram'], [/FBAN|FBAV|FB_IAB/i, 'Facebook'], [/Messenger/i, 'Messenger'], [/Snapchat/i, 'Snapchat'],
+  [/LinkedInApp/i, 'LinkedIn'], [/TikTok|musical_ly|BytedanceWebview/i, 'TikTok'], [/Line\//, 'LINE']];
+const DEVICE = {
+  ios: /iPhone|iPad|iPod/.test(UA) || (/Macintosh/.test(UA) && navigator.maxTouchPoints > 1),
+  android: /Android/i.test(UA),
+  inApp: IN_APP.find(([re]) => re.test(UA))?.[1] ?? null,
+  standalone: matchMedia('(display-mode: standalone)').matches || navigator.standalone === true
+};
+DEVICE.platform = DEVICE.ios ? 'ios' : DEVICE.android ? 'android' : 'desktop';
+DEVICE.iosOtherBrowser = DEVICE.ios && /CriOS|FxiOS|EdgiOS|OPiOS/.test(UA);
+const TOPICS = [
+  ['reminders', 'Rappels de match', 'La veille à 18h et 3 h avant, avec l\'heure de départ conseillée'],
+  ['results', 'Résultats', 'Le score dès que la FFVB le publie, avec la place au classement'],
+  ['changes', 'Changements', 'Match déplacé, nouvel horaire ou nouvelle salle'],
+  ['referee', 'Arbitrages du club', 'La veille d\'un match que le club doit arbitrer']
+];
+let installPrompt = null;
 
 const RES = {
   W: { label: 'Victoire', letter: 'V', chip: 'win' },
@@ -75,8 +104,10 @@ const state = {
   pouleTeam: '',
   showAll: false,
   simJ: null,
-  sim: {}
+  sim: {},
+  installTab: DEVICE.platform
 };
+const push = { sub: null, busy: false, topics: (() => { try { return JSON.parse(store.get('topics')) || TOPICS.map(t => t[0]); } catch { return TOPICS.map(t => t[0]); } })() };
 
 // ---------- Modèle ----------
 
@@ -259,7 +290,7 @@ function previousMeeting(m) {
 function render() {
   const v = VIEWS.find(x => x.id === state.view) ? state.view : 'accueil';
   document.querySelectorAll('[data-nav]').forEach(a => a.setAttribute('aria-current', a.dataset.nav === v ? 'page' : 'false'));
-  const html = { accueil: viewHome, calendrier: viewCalendar, classement: viewStandings, adversaires: viewOpponents, stats: viewStats }[v]();
+  const html = { accueil: viewHome, calendrier: viewCalendar, classement: viewStandings, adversaires: viewOpponents, stats: viewStats, app: viewApp }[v]();
   $('#app').innerHTML = `<div class="view">${html}</div>`;
   drawCharts();
   document.title = v === 'accueil' ? `${D.config.clubShort ?? 'VC Liévin'} R1` : `${VIEWS.find(x => x.id === v).label} · ${N(M.T)}`;
@@ -271,8 +302,12 @@ function renderChrome() {
   const age = (Date.now() - Date.parse(D.generatedAt)) / 36e5;
   const ago = age < 1 ? 'il y a moins d\'1 h' : age < 24 ? `il y a ${Math.floor(age)} h` : `le ${fmt(new Date(D.generatedAt), { day: 'numeric', month: 'short' })}`;
   fresh.dataset.state = age > 36 ? 'late' : 'ok';
-  fresh.href = D.source.calendarUrl;
-  fresh.title = `Données FFVB récupérées le ${fmt(new Date(D.generatedAt), { dateStyle: 'full', timeStyle: 'short' })}`;
+  fresh.title = `Données FFVB récupérées le ${fmt(new Date(D.generatedAt), { dateStyle: 'full', timeStyle: 'short' })}. Touchez pour actualiser.`;
+  const ab = $('#appbtn');
+  const abLabel = DEVICE.standalone ? 'Notifications' : 'Installer l\'application';
+  ab.innerHTML = icon(DEVICE.standalone ? 'bell' : 'phone');
+  ab.setAttribute('aria-label', abLabel);
+  ab.title = abLabel;
   fresh.innerHTML = `<span>Mis à jour ${ago}</span>`;
   $('#brand-sub').textContent = D.source.pouleLabel.replace('Régionale 1 Masculins', 'R1 Masculins');
   $('#brand-name').textContent = N(M.T);
@@ -289,6 +324,7 @@ function viewHome() {
   <div class="cols cols--home">
     <div class="stack">
       ${heroHTML()}
+      ${appPromo()}
       ${M.pending.map(m => `<div class="alert">${icon('clock')}<div><b>Résultat en attente</b> · ${esc(N(m.home))} – ${esc(N(m.away))} (${esc(shortDate(m))}). La FFVB ne l'a pas encore publié ; il apparaîtra ici dès sa saisie.</div></div>`).join('')}
       <div class="cols cols--2">
         ${lastResultCard()}
@@ -1120,9 +1156,28 @@ async function poster(kind, m) {
   g.fillStyle = W; g.textBaseline = 'alphabetic';
   g.font = disp(900, 54); g.fillText((D.config.clubShort || 'VC Liévin').toUpperCase(), 72, 120);
   g.globalAlpha = 0.85; g.font = body(600, 28); g.fillText(D.source.pouleLabel.toUpperCase(), 72, 164); g.globalAlpha = 1;
-  const p = persp(m);
+  const p = m ? persp(m) : null;
   const tagBox = (txt, y) => { g.font = disp(900, 50); const w = g.measureText(txt).width + 44; g.fillStyle = W; g.fillRect(72, y - 50, w, 66); g.fillStyle = RED; g.fillText(txt, 94, y); g.fillStyle = W; };
-  if (kind === 'result' && m.played) {
+  if (kind === 'app') {
+    // Affiche à imprimer pour le gymnase : le QR code ouvre la page d'installation.
+    tagBox('L\'APPLI DE L\'ÉQUIPE', 300);
+    g.font = disp(900, 150);
+    ['SCANNEZ,', 'INSTALLEZ,', 'SUIVEZ-NOUS.'].forEach((t, i) => { g.globalAlpha = i === 2 ? 1 : 0.86; g.fillText(t, 68, 470 + i * 140); });
+    g.globalAlpha = 1;
+    const box = 380, bx = 72, by = 830, pad = 34;
+    g.fillStyle = W;
+    g.beginPath(); g.roundRect(bx, by, box, box, 24); g.fill();
+    g.save(); g.translate(bx + pad, by + pad); g.scale((box - 2 * pad) / QR.size, (box - 2 * pad) / QR.size);
+    g.fillStyle = '#17151B'; g.fill(new Path2D(QR.path)); g.restore();
+    g.fillStyle = W; g.font = body(600, 36);
+    ['Rappels avant chaque match', 'Résultats en direct', 'Classement à jour', 'iPhone et Android, gratuit'].forEach((t, i) => {
+      g.beginPath(); g.arc(512, by + 52 + i * 70 - 12, 7, 0, Math.PI * 2); g.fill();
+      g.fillText(t, 536, by + 52 + i * 70);
+    });
+    g.globalAlpha = 0.85; g.font = '700 30px "JetBrains Mono", ui-monospace, monospace';
+    g.fillText(QR.url.replace(/^https:\/\//, '').replace(/#app$/, ''), 500, by + box - 14);
+    g.globalAlpha = 1;
+  } else if (kind === 'result' && m.played) {
     tagBox(p.win ? 'VICTOIRE' : 'DÉFAITE', 330);
     const names = [N(m.home), N(m.away)].map(s => s.toUpperCase());
     const s = Math.min(fit(names[0], x => disp(900, x), 700, 130), fit(names[1], x => disp(900, x), 700, 130));
@@ -1156,9 +1211,9 @@ async function poster(kind, m) {
   }
   g.fillStyle = RED; g.font = body(700, 26); g.fillText(`${N(M.T).toUpperCase()} · SAISON ${D.source.season}`, 72, 1330);
   const url = c.toDataURL('image/png');
-  const file = `affiche-${m.code}-${kind}.png`;
+  const file = m ? `affiche-${m.code}-${kind}.png` : 'affiche-app-vc-lievin.png';
   dlg.innerHTML = `<div class="poster__in">
-    <img src="${url}" alt="Affiche ${esc(N(m.home))} – ${esc(N(m.away))}" width="1080" height="1350">
+    <img src="${url}" alt="${m ? `Affiche ${esc(N(m.home))} – ${esc(N(m.away))}` : 'Affiche : installez l\'app VC Liévin'}" width="1080" height="1350">
     <div class="btns">
       <a class="btn btn--primary" href="${url}" download="${file}">${icon('download')}Télécharger</a>
       <button class="btn" type="button" data-action="poster-share" data-file="${file}">${icon('share')}Partager</button>
@@ -1178,6 +1233,313 @@ async function sharePoster(file) {
     try { await navigator.share({ files: [f] }); } catch { /* annulé */ }
   } else download(file, blob);
 }
+
+// ---------- Application mobile : installation et notifications ----------
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  installPrompt = e;
+  if (M && state.view === 'app') render();
+});
+window.addEventListener('appinstalled', () => { installPrompt = null; toast('Application installée'); });
+
+const pushReady = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+const pushConfigured = () => Boolean(D.config.pushApi && D.config.vapidPublicKey);
+const appUrl = () => new URL('#app', D.config.siteUrl || location.href).href;
+
+function appPromo() {
+  if (!DEVICE.standalone && (DEVICE.ios || DEVICE.android) && !store.get('promoHidden')) {
+    return `<aside class="promo" aria-label="Installer l'application">
+      <img src="assets/icon-180.png" alt="" width="48" height="48">
+      <div><b>L'app VC Liévin sur votre téléphone</b><span>Rappels de match et résultats en notification, en 3 gestes.</span></div>
+      <a class="btn btn--primary btn--sm" href="#app">Installer</a>
+      <button type="button" class="iconbtn promo__x" data-action="promo-hide" data-key="promoHidden" aria-label="Masquer">${icon('x')}</button>
+    </aside>`;
+  }
+  if (DEVICE.standalone && pushReady() && pushConfigured() && !push.sub && Notification.permission === 'default' && !store.get('pushPromoHidden')) {
+    return `<aside class="promo" aria-label="Notifications">
+      <span class="promo__icon">${icon('bell')}</span>
+      <div><b>Soyez prévenu avant chaque match</b><span>Rappels, résultats et changements d'horaire.</span></div>
+      <a class="btn btn--primary btn--sm" href="#app">Activer</a>
+      <button type="button" class="iconbtn promo__x" data-action="promo-hide" data-key="pushPromoHidden" aria-label="Masquer">${icon('x')}</button>
+    </aside>`;
+  }
+  return '';
+}
+
+function viewApp() {
+  return `
+  <div class="pagehead"><div><h1>L'application</h1><p>${DEVICE.standalone
+    ? 'VC Liévin est installée sur cet appareil. Réglez ici vos notifications.'
+    : 'VC Liévin sur l\'écran d\'accueil de votre téléphone : gratuite, sans store ni compte, toujours à jour.'}</p></div></div>
+  <div class="cols cols--home">
+    <div class="stack">
+      ${DEVICE.standalone ? installedCard() : installCard()}
+      ${notifCard()}
+    </div>
+    <div class="stack">
+      ${phoneMock()}
+      ${shareAppCard()}
+    </div>
+  </div>`;
+}
+
+function installedCard() {
+  return `<section class="card"><div class="card__head"><h2 class="card__title">Application installée</h2><span class="chip chip--win">${icon('check', 'i-inline')} Active</span></div>
+    <p class="small">Elle se met à jour toute seule, comme le site. Touchez la pastille « Mis à jour » en haut pour recharger les données à tout moment.</p></section>`;
+}
+
+const ichip = (name, label = '') => `<span class="ichip">${icon(name)}${label ? `<span>${esc(label)}</span>` : ''}</span>`;
+
+function installCard() {
+  const tab = state.installTab;
+  const tabs = [['ios', 'iPhone'], ['android', 'Android'], ['desktop', 'Ordinateur']];
+  const steps = list => `<ol class="steps">${list.map((x, i) => `<li><span class="steps__n">${i + 1}</span><div>${x}</div></li>`).join('')}</ol>`;
+  let body = '';
+  if (tab === 'ios') {
+    body = `
+      ${DEVICE.ios && DEVICE.inApp ? `<div class="alert">${icon('alert')}<div><b>Vous êtes dans l'appli ${esc(DEVICE.inApp)}.</b> L'installation n'y est pas possible : touchez ${ichip('dotsH')} puis « Ouvrir dans le navigateur », et suivez ces étapes dans Safari.</div></div>` : ''}
+      ${DEVICE.iosOtherBrowser ? '<p class="note">Vous utilisez un autre navigateur que Safari : l\'étape « Partager » se trouve dans son menu. Safari reste le plus simple.</p>' : ''}
+      ${steps([
+        `<b>Touchez Partager</b> ${ichip('iosShare')}<br><span class="muted small">En bas de Safari. Sur iOS 26, touchez d'abord ${ichip('dotsH')} puis « Partager ».</span>`,
+        `<b>Choisissez « Sur l'écran d'accueil »</b> ${ichip('addSquare')}<br><span class="muted small">Faites défiler la liste si vous ne le voyez pas.</span>`,
+        `<b>Touchez « Ajouter »</b><br><span class="muted small">Laissez « Ouvrir en tant qu'app web » activé s'il est proposé.</span>`,
+        `<b>Ouvrez VC Liévin depuis l'écran d'accueil</b><br><span class="muted small">Puis activez les notifications sur cette même page.</span>`
+      ])}`;
+  } else if (tab === 'android') {
+    body = `
+      ${DEVICE.android && DEVICE.inApp ? `<div class="alert">${icon('alert')}<div><b>Vous êtes dans l'appli ${esc(DEVICE.inApp)}.</b> Touchez ${ichip('dotsV')} puis « Ouvrir dans Chrome », et revenez sur cette page.</div></div>` : ''}
+      ${installPrompt ? `<button type="button" class="btn btn--primary btn--big" data-action="install">${icon('download')}Installer l'application</button><p class="note">Un seul geste : l'icône VC Liévin rejoint vos applis.</p>` : steps([
+        '<b>Ouvrez ce lien dans Chrome</b><br><span class="muted small">Ou Samsung Internet, Edge, Firefox.</span>',
+        `<b>Touchez le menu</b> ${ichip('dotsV')}<br><span class="muted small">En haut à droite dans Chrome, en bas dans Samsung Internet.</span>`,
+        '<b>« Installer l\'application »</b><br><span class="muted small">Ou « Ajouter à l\'écran d\'accueil » selon le téléphone.</span>',
+        '<b>Confirmez</b><br><span class="muted small">L\'icône apparaît avec vos applis. Ouvrez-la et activez les notifications.</span>'
+      ])}`;
+  } else {
+    body = `
+      <div class="qrline">${qrSVG('qr--md')}<div><b>Scannez avec l'appareil photo du téléphone</b><p class="small muted">La page d'installation s'ouvre directement, avec les bonnes étapes pour iPhone ou Android.</p></div></div>
+      ${installPrompt ? `<button type="button" class="btn" data-action="install">${icon('download')}Installer aussi sur cet ordinateur</button>` : ''}`;
+  }
+  return `<section class="card" aria-labelledby="inst-t">
+    <div class="card__head"><h2 class="card__title" id="inst-t">Installer en 30 secondes</h2></div>
+    <div class="seg" role="group" aria-label="Appareil" style="margin-bottom:16px">${tabs.map(([k, l]) => `<button type="button" data-action="installtab" data-tab="${k}" aria-pressed="${tab === k}">${l}</button>`).join('')}</div>
+    ${body}
+  </section>`;
+}
+
+function notifCard() {
+  const conf = pushConfigured();
+  const ready = pushReady();
+  const perm = 'Notification' in window ? Notification.permission : 'default';
+  const usable = conf && ready && perm !== 'denied' && !push.busy;
+  let status = '';
+  if (!conf) status = '<p class="note">La mise en service des notifications est en cours : ce réglage s\'activera tout seul très bientôt.</p>';
+  else if (!ready) status = DEVICE.ios && !DEVICE.standalone
+    ? '<p class="note">Sur iPhone, les notifications s\'activent depuis l\'app installée (iOS 16.4 ou plus récent) : installez-la, ouvrez-la depuis l\'écran d\'accueil, puis revenez ici.</p>'
+    : '<p class="note">Ce navigateur ne gère pas les notifications. Essayez Chrome, Safari ou Firefox.</p>';
+  else if (perm === 'denied') status = `<div class="alert">${icon('alert')}<div>Les notifications sont bloquées pour VC Liévin. Autorisez-les dans les réglages ${DEVICE.ios ? '(Réglages › Notifications › VC Liévin)' : 'du téléphone ou du navigateur'}, puis revenez ici.</div></div>`;
+  const actions = !usable ? '' : push.sub
+    ? `<button type="button" class="btn btn--primary" data-action="push-save">Enregistrer mes choix</button>
+       <button type="button" class="btn" data-action="push-test">${icon('bell')}Envoyer un test</button>
+       <button type="button" class="btn" data-action="push-off">Désactiver</button>`
+    : `<button type="button" class="btn btn--primary btn--big" data-action="push-on">${icon('bell')}Activer les notifications</button>`;
+  return `<section class="card" aria-labelledby="notif-t">
+    <div class="card__head"><h2 class="card__title" id="notif-t">Notifications</h2>${push.sub ? `<span class="chip chip--win">${icon('check', 'i-inline')} Activées</span>` : ''}</div>
+    ${status}
+    <div class="switches">${TOPICS.map(([k, label, desc]) => `
+      <label class="switch${usable ? '' : ' is-off'}"><input type="checkbox" data-topic="${k}"${push.topics.includes(k) ? ' checked' : ''}${usable ? '' : ' disabled'}>
+        <span class="switch__ui" aria-hidden="true"></span><span class="switch__txt"><b>${label}</b><small>${desc}</small></span></label>`).join('')}
+    </div>
+    ${actions ? `<div class="btns" style="margin-top:14px">${actions}</div>` : ''}
+    ${push.busy ? '<p class="note" style="margin-top:8px">Un instant…</p>' : ''}
+  </section>`;
+}
+
+function phoneMock() {
+  const m = M.next;
+  let title = 'Victoire 3-1 contre Arras 1', body = '25-20 · 23-25 · 25-18 · 25-22 · +3 pts';
+  if (m) {
+    const v = venueOf(m), t = travel(m);
+    title = `Demain ${hour(m.time)} : ${N(m.home)} – ${N(m.away)}`;
+    body = [v && `${vName(v)}${v.city ? ', ' + vCity(v) : ''}`, t && `${t.drive ? 'départ' : 'arrivée'} conseillé${t.drive ? '' : 'e'} ${clock(t.at)}`].filter(Boolean).join(' · ');
+  }
+  const ghosts = n => Array.from({ length: n }, () => '<i></i>').join('');
+  return `<section class="card mockcard" aria-labelledby="mock-t">
+    <div class="card__head"><h2 class="card__title" id="mock-t">Sur votre écran</h2><span class="eyebrow">Aperçu</span></div>
+    <div class="phone" role="img" aria-label="Aperçu : l'icône VC Liévin sur l'écran d'accueil et une notification de rappel de match">
+      <div class="phone__screen">
+        <div class="phone__bar"><span>${fmt(new Date(), { hour: '2-digit', minute: '2-digit' })}</span><span class="phone__island"></span><span>5G</span></div>
+        <div class="phone__notif"><img src="assets/icon-180.png" alt=""><div><div class="phone__app"><b>VC Liévin</b><span>maintenant</span></div><p><strong>${esc(title)}</strong>${esc(body)}</p></div></div>
+        <div class="phone__grid">${ghosts(5)}<span class="phone__us"><img src="assets/icon-180.png" alt=""><small>VC Liévin</small></span>${ghosts(6)}</div>
+        <div class="phone__dock">${ghosts(4)}</div>
+      </div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:12px">Exemple réel : le rappel que recevront les joueurs la veille du prochain match.</p>
+  </section>`;
+}
+
+function qrSVG(cls = '') {
+  return `<svg class="qr ${cls}" viewBox="-4 -4 ${QR.size + 8} ${QR.size + 8}" role="img" aria-label="QR code vers ${esc(QR.url)}" shape-rendering="crispEdges">
+    <rect x="-4" y="-4" width="${QR.size + 8}" height="${QR.size + 8}" fill="#FFFFFF"/><path d="${QR.path}" fill="#17151B"/></svg>`;
+}
+
+function shareAppCard() {
+  return `<section class="card" aria-labelledby="share-t">
+    <div class="card__head"><h2 class="card__title" id="share-t">Partager à l'équipe</h2></div>
+    <div class="qrline">${qrSVG('qr--lg')}<div class="stack" style="gap:10px">
+      <p class="small">Montrez ce code à l'entraînement : il ouvre directement la page d'installation, avec les étapes adaptées au téléphone.</p>
+      <div class="btns">
+        <button type="button" class="btn btn--primary btn--sm" data-action="share-app">${icon('share')}Envoyer le lien</button>
+        <button type="button" class="btn btn--sm" data-action="poster" data-kind="app">${icon('image')}Affiche pour le gymnase</button>
+      </div>
+    </div></div>
+  </section>`;
+}
+
+async function installApp() {
+  if (!installPrompt) return;
+  installPrompt.prompt();
+  try { await installPrompt.userChoice; } catch { /* fermé */ }
+  installPrompt = null;
+  render();
+}
+
+async function shareApp() {
+  const url = appUrl();
+  const text = `L'app de ${N(M.T)} : prochain match, résultats, classement et rappels. Installez-la ici :`;
+  if (navigator.share) {
+    try { await navigator.share({ title: 'VC Liévin', text, url }); return; } catch (e) { if (e.name === 'AbortError') return; }
+  }
+  copy(`${text} ${url}`, 'Lien d\'installation copié');
+}
+
+// ----- Notifications push -----
+
+const urlBytes = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (s.length % 4)) % 4)), c => c.charCodeAt(0));
+const chosenTopics = () => [...document.querySelectorAll('[data-topic]')].filter(i => i.checked).map(i => i.dataset.topic);
+
+async function pushCall(path, body) {
+  const res = await fetch(D.config.pushApi.replace(/\/$/, '') + path, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+  });
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(json.error || `Le service de notifications a répondu ${res.status}.`);
+  return json;
+}
+
+async function pushInit() {
+  if (!pushReady() || !D || !pushConfigured()) return;
+  const reg = await navigator.serviceWorker.ready;
+  push.sub = await reg.pushManager.getSubscription();
+  // Une fois par semaine, on rappelle au service que cet appareil est abonné.
+  const last = +store.get('pushSync') || 0;
+  if (push.sub && Notification.permission === 'granted' && Date.now() - last > 7 * 864e5) {
+    pushCall('/subscribe', { subscription: push.sub.toJSON(), topics: push.topics }).then(() => store.set('pushSync', String(Date.now()))).catch(() => {});
+  }
+  if (state.view === 'app' || state.view === 'accueil') render();
+}
+
+async function subscribe() {
+  const reg = await navigator.serviceWorker.ready;
+  const key = urlBytes(D.config.vapidPublicKey);
+  try {
+    return (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
+  } catch (e) {
+    // Ancien abonnement lié à une autre clé : on le remplace.
+    const old = await reg.pushManager.getSubscription();
+    if (!old) throw e;
+    await old.unsubscribe();
+    return reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
+  }
+}
+
+async function enablePush() {
+  const topics = chosenTopics();
+  if (!topics.length) return toast('Choisissez au moins un type de notification.');
+  // La demande d'autorisation doit partir directement du geste de l'utilisateur (exigence iOS).
+  const asked = Notification.requestPermission();
+  push.busy = true;
+  render();
+  try {
+    const perm = await asked;
+    if (perm !== 'granted') throw new Error(perm === 'denied' ? 'Notifications refusées : autorisez-les dans les réglages du téléphone.' : 'Autorisation non accordée.');
+    push.sub = await subscribe();
+    await pushCall('/subscribe', { subscription: push.sub.toJSON(), topics });
+    push.topics = topics;
+    store.set('topics', JSON.stringify(topics));
+    store.set('pushSync', String(Date.now()));
+    toast('Notifications activées');
+  } catch (e) {
+    toast(e.message || 'Activation impossible pour le moment.');
+  }
+  push.busy = false;
+  render();
+}
+
+async function savePush() {
+  const topics = chosenTopics();
+  if (!topics.length) return disablePush();
+  try {
+    await pushCall('/subscribe', { subscription: push.sub.toJSON(), topics });
+    push.topics = topics;
+    store.set('topics', JSON.stringify(topics));
+    toast('Choix enregistrés');
+  } catch (e) { toast(e.message); }
+}
+
+async function testPush() {
+  try {
+    await pushCall('/test', { endpoint: push.sub.endpoint });
+    toast('Notification de test envoyée');
+  } catch (e) { toast(e.message); }
+}
+
+async function disablePush() {
+  try {
+    await pushCall('/unsubscribe', { endpoint: push.sub.endpoint }).catch(() => {});
+    await push.sub.unsubscribe();
+  } finally {
+    push.sub = null;
+    toast('Notifications désactivées');
+    render();
+  }
+}
+
+navigator.serviceWorker?.addEventListener('message', async e => {
+  if (e.data?.type !== 'resubscribe' || !D || !pushConfigured() || Notification.permission !== 'granted') return;
+  try { push.sub = await subscribe(); await pushCall('/subscribe', { subscription: push.sub.toJSON(), topics: push.topics }); } catch { /* prochaine fois */ }
+});
+
+// ----- Données fraîches à chaque retour dans l'app -----
+
+let lastFetch = 0;
+async function loadData() {
+  const res = await fetch('data/data.json', { cache: 'no-cache' });
+  if (!res.ok) throw new Error(res.status);
+  lastFetch = Date.now();
+  return res.json();
+}
+
+async function refreshData(manual) {
+  try {
+    const d = await loadData();
+    const changed = d.generatedAt !== D.generatedAt;
+    const before = M.next?.code;
+    D = d;
+    M = buildModel();
+    renderChrome();
+    if ((changed || M.next?.code !== before || manual) && !document.querySelector('dialog[open]')) render();
+    if (manual) toast(changed ? 'Nouvelles données chargées' : 'Les données sont déjà à jour');
+  } catch {
+    if (manual) toast('Pas de connexion : les données affichées sont conservées');
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible' || !D) return;
+  navigator.clearAppBadge?.().catch(() => {});
+  if (Date.now() - lastFetch > 10 * 60e3) refreshData(false);
+});
 
 // ---------- Événements ----------
 
@@ -1213,6 +1575,15 @@ document.addEventListener('click', e => {
     case 'showall': state.showAll = !state.showAll; render(); break;
     case 'simreset': state.sim = {}; render(); break;
     case 'theme': toggleTheme(); break;
+    case 'refresh': refreshData(true); break;
+    case 'install': installApp(); break;
+    case 'installtab': state.installTab = el.dataset.tab; render(); break;
+    case 'promo-hide': store.set(el.dataset.key, '1'); render(); break;
+    case 'push-on': enablePush(); break;
+    case 'push-save': savePush(); break;
+    case 'push-test': testPush(); break;
+    case 'push-off': disablePush(); break;
+    case 'share-app': shareApp(); break;
   }
 });
 
@@ -1276,9 +1647,7 @@ async function start() {
   const hv = location.hash.slice(1);
   if (VIEWS.some(x => x.id === hv)) state.view = hv;
   try {
-    const res = await fetch('data/data.json', { cache: 'no-cache' });
-    if (!res.ok) throw new Error(res.status);
-    D = await res.json();
+    D = await loadData();
   } catch (e) {
     $('#app').innerHTML = `<div class="card"><p><b>Impossible de charger les données.</b></p><p class="small muted">Vérifiez votre connexion puis rechargez la page.</p></div>`;
     return;
@@ -1290,8 +1659,9 @@ async function start() {
   // Recalcule les états « prochain match », « en cours »… toutes les 10 minutes.
   setInterval(() => { M = buildModel(); if (!document.querySelector('dialog[open]')) render(); }, 600e3);
   if ('serviceWorker' in navigator && /^https:|^http:\/\/localhost/.test(location.href) && window.top === window) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+    navigator.serviceWorker.register('sw.js').then(pushInit).catch(() => {});
   }
+  navigator.clearAppBadge?.().catch(() => {});
 }
 
 start();

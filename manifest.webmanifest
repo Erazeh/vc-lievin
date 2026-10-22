@@ -1,16 +1,27 @@
 {
+  "id": "./",
   "name": "VC Liévin · Régionale 1",
   "short_name": "VC Liévin",
-  "description": "Prochain match, résultats, classement et déplacements de Liévin 2.",
+  "description": "Prochain match, résultats, classement et déplacements de Liévin 2, avec rappels et résultats en notification.",
   "lang": "fr",
+  "dir": "ltr",
   "start_url": "./#accueil",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F1F0EE",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#D3122B",
   "theme_color": "#D3122B",
+  "categories": ["sports"],
   "icons": [
-    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
-    { "src": "assets/icon-180.png", "sizes": "180x180", "type": "image/png" }
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Prochain match", "short_name": "Match", "url": "./#accueil", "icons": [{ "src": "assets/icon-180.png", "sizes": "180x180" }] },
+    { "name": "Calendrier", "url": "./#calendrier", "icons": [{ "src": "assets/icon-180.png", "sizes": "180x180" }] },
+    { "name": "Classement", "url": "./#classement", "icons": [{ "src": "assets/icon-180.png", "sizes": "180x180" }] }
   ]
 }

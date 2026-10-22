@@ -1,0 +1,14 @@
+{
+  "name": "vc-lievin-push",
+  "private": true,
+  "type": "module",
+  "description": "Notifications push du site VC Liévin (Cloudflare Worker)",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "test": "node test/crypto.test.mjs"
+  },
+  "devDependencies": {
+    "http_ece": "^1.2.0",
+    "wrangler": "^4.151.3"
+  }
+}

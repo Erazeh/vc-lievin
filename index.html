@@ -7,7 +7,9 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Liévin 2, Régionale 1 Masculins Hauts-de-France : prochain match, résultats, classement, salles et itinéraires. Mis à jour chaque jour depuis la FFVB.">
 <meta name="theme-color" content="#D3122B">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="VC Liévin">
 <meta property="og:title" content="VC Liévin · Régionale 1 Masculins">
 <meta property="og:description" content="Prochain match, résultats, classement et déplacements de Liévin 2.">
@@ -35,7 +37,8 @@
       <a href="#stats" data-nav="stats">Stats</a>
     </nav>
     <div class="topbar__tools">
-      <a class="fresh" id="fresh" href="https://www.ffvbbeach.org/" target="_blank" rel="noopener"><span>Chargement…</span></a>
+      <button class="fresh" id="fresh" type="button" data-action="refresh"><span>Chargement…</span></button>
+      <a class="iconbtn appbtn" id="appbtn" href="#app" data-nav="app" aria-label="Installer l'application"></a>
       <button class="iconbtn" id="theme" type="button" data-action="theme" aria-label="Changer de thème"></button>
     </div>
   </div>

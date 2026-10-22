@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-22T02:44:33.784Z",
+ "generatedAt": "2026-10-22T02:53:43.150Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -8,7 +8,7 @@
   "team": "LIEVIN 2",
   "clubShort": "VC Liévin",
   "siteUrl": "https://erazeh.github.io/vc-lievin/",
-  "pushApi": "",
+  "pushApi": "https://vc-lievin-push.vc-lievin-push.workers.dev",
   "vapidPublicKey": "BEZZQhYcbdnSKO9ccFEJE6hv-xWqIkKGRy9V6YghMdbm-BwiX3-uw2w1mPEEbmPCdji83-cvwQCZYAhFzyfOAhA",
   "arrivalBufferMinutes": 60,
   "matchDurationMinutes": 120,

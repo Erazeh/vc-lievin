@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-05T12:18:18.490Z",
+ "generatedAt": "2026-11-06T12:05:35.522Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -125,6 +125,30 @@
   },
   {
    "rank": 4,
+   "team": "SAINT POL SUR MER 1",
+   "pts": 5,
+   "played": 4,
+   "won": 2,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 2,
+   "r23": 1,
+   "r13": 0,
+   "r03": 1,
+   "setsFor": 8,
+   "setsAgainst": 10,
+   "setsRatio": 0.8,
+   "ptsFor": 381,
+   "ptsAgainst": 383,
+   "ptsRatio": 0.995,
+   "equipe": "7",
+   "clubId": "0595712",
+   "website": "http://www2.vcsp-saintpol.com/"
+  },
+  {
+   "rank": 5,
    "team": "WATTIGNIES 1",
    "pts": 5,
    "played": 4,
@@ -148,7 +172,31 @@
    "website": "http://wattigniesvolley.fr/"
   },
   {
-   "rank": 5,
+   "rank": 6,
+   "team": "LIEVIN 2",
+   "pts": 5,
+   "played": 4,
+   "won": 1,
+   "lost": 3,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 1,
+   "r23": 3,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 9,
+   "setsAgainst": 11,
+   "setsRatio": 0.818,
+   "ptsFor": 409,
+   "ptsAgainst": 416,
+   "ptsRatio": 0.983,
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null
+  },
+  {
+   "rank": 7,
    "team": "ARRAS 1",
    "pts": 5,
    "played": 4,
@@ -172,7 +220,7 @@
    "website": "http://rcavb.clubeo.com/"
   },
   {
-   "rank": 6,
+   "rank": 8,
    "team": "DUNKERQUE 2",
    "pts": 4,
    "played": 3,
@@ -196,31 +244,7 @@
    "website": "http://www.dglvb.fr"
   },
   {
-   "rank": 7,
-   "team": "LIEVIN 2",
-   "pts": 4,
-   "played": 3,
-   "won": 1,
-   "lost": 2,
-   "forfeits": 0,
-   "r30": 0,
-   "r31": 0,
-   "r32": 1,
-   "r23": 2,
-   "r13": 0,
-   "r03": 0,
-   "setsFor": 7,
-   "setsAgainst": 8,
-   "setsRatio": 0.875,
-   "ptsFor": 310,
-   "ptsAgainst": 310,
-   "ptsRatio": 1,
-   "equipe": "1",
-   "clubId": "0628986",
-   "website": null
-  },
-  {
-   "rank": 8,
+   "rank": 9,
    "team": "CALAIS SES 1",
    "pts": 4,
    "played": 3,
@@ -244,7 +268,7 @@
    "website": "http://www.stella-calais-volley.fr/"
   },
   {
-   "rank": 9,
+   "rank": 10,
    "team": "LILLERS 1",
    "pts": 4,
    "played": 4,
@@ -266,30 +290,6 @@
    "equipe": "2",
    "clubId": "0622023",
    "website": "http://lillers-val.clubeo.com/"
-  },
-  {
-   "rank": 10,
-   "team": "SAINT POL SUR MER 1",
-   "pts": 3,
-   "played": 3,
-   "won": 1,
-   "lost": 2,
-   "forfeits": 0,
-   "r30": 0,
-   "r31": 0,
-   "r32": 1,
-   "r23": 1,
-   "r13": 0,
-   "r03": 1,
-   "setsFor": 5,
-   "setsAgainst": 8,
-   "setsRatio": 0.625,
-   "ptsFor": 275,
-   "ptsAgainst": 284,
-   "ptsRatio": 0.968,
-   "equipe": "7",
-   "clubId": "0595712",
-   "website": "http://www2.vcsp-saintpol.com/"
   }
  ],
  "teams": {
@@ -320,6 +320,15 @@
    "mainVenue": "complexe-coubertin-lemaire-62590",
    "backupVenue": "salle-lycee-joliot-curie-62590"
   },
+  "SAINT POL SUR MER 1": {
+   "equipe": "7",
+   "clubId": "0595712",
+   "website": "http://www2.vcsp-saintpol.com/",
+   "clubName": "Volley Club Saint Polois",
+   "colors": "VERT BLANC",
+   "mainVenue": "complexe-de-la-ferme-marchand-59430",
+   "backupVenue": "salle-coubertin-59430"
+  },
   "WATTIGNIES 1": {
    "equipe": "3",
    "clubId": "0595763",
@@ -328,6 +337,15 @@
    "colors": "BLEU ET JAUNE",
    "mainVenue": "salle-pierre-de-coubertin-59139",
    "backupVenue": "salle-roland-garros-59139"
+  },
+  "LIEVIN 2": {
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null,
+   "clubName": "Volley Club Liévin",
+   "colors": "ROUGE ET BLANC",
+   "mainVenue": "salle-noel-josephe-62800",
+   "backupVenue": "salle-senechal-62800"
   },
   "ARRAS 1": {
    "equipe": "8",
@@ -347,15 +365,6 @@
    "mainVenue": "salle-lycee-jean-bart-59140",
    "backupVenue": "salle-college-guilleminot-59140"
   },
-  "LIEVIN 2": {
-   "equipe": "1",
-   "clubId": "0628986",
-   "website": null,
-   "clubName": "Volley Club Liévin",
-   "colors": "ROUGE ET BLANC",
-   "mainVenue": "salle-noel-josephe-62800",
-   "backupVenue": "salle-senechal-62800"
-  },
   "CALAIS SES 1": {
    "equipe": "4",
    "clubId": "0623082",
@@ -373,15 +382,6 @@
    "colors": "BLEU BLANC ORANGE",
    "mainVenue": "salle-delplace-62190",
    "backupVenue": "salle-coubertin-62190"
-  },
-  "SAINT POL SUR MER 1": {
-   "equipe": "7",
-   "clubId": "0595712",
-   "website": "http://www2.vcsp-saintpol.com/",
-   "clubName": "Volley Club Saint Polois",
-   "colors": "VERT BLANC",
-   "mainVenue": "complexe-de-la-ferme-marchand-59430",
-   "backupVenue": "salle-coubertin-59430"
   }
  },
  "venues": {
@@ -1389,10 +1389,43 @@
    "time": "20:30",
    "home": "SAINT POL SUR MER 1",
    "away": "LIEVIN 2",
-   "played": false,
-   "venueName": "COMPLEXE DE LA FERME MARCHAND",
-   "referee": "LE TOUQUET",
-   "venue": "complexe-de-la-ferme-marchand-59430"
+   "played": true,
+   "sets": [
+    3,
+    2
+   ],
+   "setScores": [
+    [
+     25,
+     18
+    ],
+    [
+     25,
+     20
+    ],
+    [
+     18,
+     25
+    ],
+    [
+     23,
+     25
+    ],
+    [
+     15,
+     11
+    ]
+   ],
+   "points": [
+    106,
+    99
+   ],
+   "forfeit": false,
+   "referee": "BOUDRY LUCIEN",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA019",
+   "venue": "complexe-de-la-ferme-marchand-59430",
+   "venueGuessed": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND"
   },
   {
    "code": "1MA020",

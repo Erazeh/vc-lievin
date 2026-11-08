@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-07T11:03:01.454Z",
+ "generatedAt": "2026-11-08T01:36:37.124Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -54,23 +54,23 @@
   {
    "rank": 1,
    "team": "AGNY 1",
-   "pts": 11,
-   "played": 4,
-   "won": 4,
+   "pts": 14,
+   "played": 5,
+   "won": 5,
    "lost": 0,
    "forfeits": 0,
-   "r30": 1,
+   "r30": 2,
    "r31": 2,
    "r32": 1,
    "r23": 0,
    "r13": 0,
    "r03": 0,
-   "setsFor": 12,
+   "setsFor": 15,
    "setsAgainst": 4,
-   "setsRatio": 3,
-   "ptsFor": 370,
-   "ptsAgainst": 314,
-   "ptsRatio": 1.178,
+   "setsRatio": 3.75,
+   "ptsFor": 454,
+   "ptsAgainst": 383,
+   "ptsRatio": 1.185,
    "equipe": "6",
    "clubId": "0622020",
    "website": null
@@ -101,6 +101,30 @@
   },
   {
    "rank": 3,
+   "team": "DUNKERQUE 2",
+   "pts": 6,
+   "played": 4,
+   "won": 3,
+   "lost": 1,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 3,
+   "r23": 0,
+   "r13": 1,
+   "r03": 0,
+   "setsFor": 10,
+   "setsAgainst": 9,
+   "setsRatio": 1.111,
+   "ptsFor": 421,
+   "ptsAgainst": 398,
+   "ptsRatio": 1.058,
+   "equipe": "5",
+   "clubId": "0599848",
+   "website": "http://www.dglvb.fr"
+  },
+  {
+   "rank": 4,
    "team": "OIGNIES 1",
    "pts": 6,
    "played": 4,
@@ -124,7 +148,7 @@
    "website": "https://www.facebook.com/etoileoigniesvolleyball/"
   },
   {
-   "rank": 4,
+   "rank": 5,
    "team": "SAINT POL SUR MER 1",
    "pts": 5,
    "played": 4,
@@ -148,7 +172,7 @@
    "website": "http://www2.vcsp-saintpol.com/"
   },
   {
-   "rank": 5,
+   "rank": 6,
    "team": "WATTIGNIES 1",
    "pts": 5,
    "played": 4,
@@ -172,31 +196,31 @@
    "website": "http://wattigniesvolley.fr/"
   },
   {
-   "rank": 6,
-   "team": "LIEVIN 2",
+   "rank": 7,
+   "team": "LILLERS 1",
    "pts": 5,
-   "played": 4,
+   "played": 5,
    "won": 1,
-   "lost": 3,
+   "lost": 4,
    "forfeits": 0,
-   "r30": 0,
+   "r30": 1,
    "r31": 0,
-   "r32": 1,
-   "r23": 3,
-   "r13": 0,
+   "r32": 0,
+   "r23": 2,
+   "r13": 2,
    "r03": 0,
    "setsFor": 9,
-   "setsAgainst": 11,
-   "setsRatio": 0.818,
-   "ptsFor": 409,
-   "ptsAgainst": 416,
-   "ptsRatio": 0.983,
-   "equipe": "1",
-   "clubId": "0628986",
-   "website": null
+   "setsAgainst": 12,
+   "setsRatio": 0.75,
+   "ptsFor": 451,
+   "ptsAgainst": 465,
+   "ptsRatio": 0.97,
+   "equipe": "2",
+   "clubId": "0622023",
+   "website": "http://lillers-val.clubeo.com/"
   },
   {
-   "rank": 7,
+   "rank": 8,
    "team": "ARRAS 1",
    "pts": 5,
    "played": 4,
@@ -220,31 +244,31 @@
    "website": "http://rcavb.clubeo.com/"
   },
   {
-   "rank": 8,
-   "team": "DUNKERQUE 2",
-   "pts": 4,
-   "played": 3,
-   "won": 2,
-   "lost": 1,
+   "rank": 9,
+   "team": "LIEVIN 2",
+   "pts": 5,
+   "played": 5,
+   "won": 1,
+   "lost": 4,
    "forfeits": 0,
    "r30": 0,
    "r31": 0,
-   "r32": 2,
-   "r23": 0,
-   "r13": 1,
-   "r03": 0,
-   "setsFor": 7,
-   "setsAgainst": 7,
-   "setsRatio": 1,
-   "ptsFor": 311,
-   "ptsAgainst": 289,
-   "ptsRatio": 1.076,
-   "equipe": "5",
-   "clubId": "0599848",
-   "website": "http://www.dglvb.fr"
+   "r32": 1,
+   "r23": 3,
+   "r13": 0,
+   "r03": 1,
+   "setsFor": 9,
+   "setsAgainst": 14,
+   "setsRatio": 0.643,
+   "ptsFor": 478,
+   "ptsAgainst": 500,
+   "ptsRatio": 0.956,
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null
   },
   {
-   "rank": 9,
+   "rank": 10,
    "team": "CALAIS SES 1",
    "pts": 4,
    "played": 3,
@@ -266,30 +290,6 @@
    "equipe": "4",
    "clubId": "0623082",
    "website": "http://www.stella-calais-volley.fr/"
-  },
-  {
-   "rank": 10,
-   "team": "LILLERS 1",
-   "pts": 4,
-   "played": 4,
-   "won": 1,
-   "lost": 3,
-   "forfeits": 0,
-   "r30": 1,
-   "r31": 0,
-   "r32": 0,
-   "r23": 1,
-   "r13": 2,
-   "r03": 0,
-   "setsFor": 7,
-   "setsAgainst": 9,
-   "setsRatio": 0.778,
-   "ptsFor": 342,
-   "ptsAgainst": 355,
-   "ptsRatio": 0.963,
-   "equipe": "2",
-   "clubId": "0622023",
-   "website": "http://lillers-val.clubeo.com/"
   }
  ],
  "teams": {
@@ -310,6 +310,15 @@
    "colors": "BLEU BLANC",
    "mainVenue": "salle-natalys-dumez-59270",
    "backupVenue": "salle-jean-bouin-59190"
+  },
+  "DUNKERQUE 2": {
+   "equipe": "5",
+   "clubId": "0599848",
+   "website": "http://www.dglvb.fr",
+   "clubName": "Dunkerque Grand Littoral V.B.",
+   "colors": "BLANC BLEU",
+   "mainVenue": "salle-lycee-jean-bart-59140",
+   "backupVenue": "salle-college-guilleminot-59140"
   },
   "OIGNIES 1": {
    "equipe": "10",
@@ -338,14 +347,14 @@
    "mainVenue": "salle-pierre-de-coubertin-59139",
    "backupVenue": "salle-roland-garros-59139"
   },
-  "LIEVIN 2": {
-   "equipe": "1",
-   "clubId": "0628986",
-   "website": null,
-   "clubName": "Volley Club Liévin",
-   "colors": "ROUGE ET BLANC",
-   "mainVenue": "salle-noel-josephe-62800",
-   "backupVenue": "salle-senechal-62800"
+  "LILLERS 1": {
+   "equipe": "2",
+   "clubId": "0622023",
+   "website": "http://lillers-val.clubeo.com/",
+   "clubName": "FLJEP Lillers",
+   "colors": "BLEU BLANC ORANGE",
+   "mainVenue": "salle-delplace-62190",
+   "backupVenue": "salle-coubertin-62190"
   },
   "ARRAS 1": {
    "equipe": "8",
@@ -356,14 +365,14 @@
    "mainVenue": "salle-lycee-jules-ferry-62000",
    "backupVenue": "salle-lycee-guy-mollet-62000"
   },
-  "DUNKERQUE 2": {
-   "equipe": "5",
-   "clubId": "0599848",
-   "website": "http://www.dglvb.fr",
-   "clubName": "Dunkerque Grand Littoral V.B.",
-   "colors": "BLANC BLEU",
-   "mainVenue": "salle-lycee-jean-bart-59140",
-   "backupVenue": "salle-college-guilleminot-59140"
+  "LIEVIN 2": {
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null,
+   "clubName": "Volley Club Liévin",
+   "colors": "ROUGE ET BLANC",
+   "mainVenue": "salle-noel-josephe-62800",
+   "backupVenue": "salle-senechal-62800"
   },
   "CALAIS SES 1": {
    "equipe": "4",
@@ -373,15 +382,6 @@
    "colors": "BLANC BLEU",
    "mainVenue": "salle-porte-de-lille-62100",
    "backupVenue": "college-jean-jaures-62100"
-  },
-  "LILLERS 1": {
-   "equipe": "2",
-   "clubId": "0622023",
-   "website": "http://lillers-val.clubeo.com/",
-   "clubName": "FLJEP Lillers",
-   "colors": "BLEU BLANC ORANGE",
-   "mainVenue": "salle-delplace-62190",
-   "backupVenue": "salle-coubertin-62190"
   }
  },
  "venues": {
@@ -1495,10 +1495,35 @@
    "time": "21:00",
    "home": "LIEVIN 2",
    "away": "AGNY 1",
-   "played": false,
-   "venueName": "SALLE SÉNÉCHAL",
-   "referee": "LILLERS",
-   "venue": "salle-senechal-62800"
+   "played": true,
+   "sets": [
+    0,
+    3
+   ],
+   "setScores": [
+    [
+     14,
+     25
+    ],
+    [
+     28,
+     30
+    ],
+    [
+     27,
+     29
+    ]
+   ],
+   "points": [
+    69,
+    84
+   ],
+   "forfeit": false,
+   "referee": "MALVETTI TONI",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA023",
+   "venue": "salle-senechal-62800",
+   "venueGuessed": false,
+   "venueName": "SALLE SÉNÉCHAL"
   },
   {
    "code": "1MA024",
@@ -1507,10 +1532,43 @@
    "time": "20:30",
    "home": "LILLERS 1",
    "away": "DUNKERQUE 2",
-   "played": false,
-   "venueName": "SALLE DELPLACE",
-   "referee": "CALAIS SES",
-   "venue": "salle-delplace-62190"
+   "played": true,
+   "sets": [
+    2,
+    3
+   ],
+   "setScores": [
+    [
+     25,
+     23
+    ],
+    [
+     25,
+     27
+    ],
+    [
+     21,
+     25
+    ],
+    [
+     25,
+     20
+    ],
+    [
+     13,
+     15
+    ]
+   ],
+   "points": [
+    109,
+    110
+   ],
+   "forfeit": false,
+   "referee": "DEHAUT ROMAIN",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA024",
+   "venue": "salle-delplace-62190",
+   "venueGuessed": false,
+   "venueName": "SALLE DELPLACE"
   },
   {
    "code": "1MA025",

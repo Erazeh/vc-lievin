@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-10T12:38:36.539Z",
+ "generatedAt": "2026-11-11T11:51:48.837Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -101,6 +101,30 @@
   },
   {
    "rank": 3,
+   "team": "CALAIS SES 1",
+   "pts": 9,
+   "played": 5,
+   "won": 3,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 1,
+   "r31": 0,
+   "r32": 2,
+   "r23": 2,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 13,
+   "setsAgainst": 10,
+   "setsRatio": 1.3,
+   "ptsFor": 470,
+   "ptsAgainst": 461,
+   "ptsRatio": 1.02,
+   "equipe": "4",
+   "clubId": "0623082",
+   "website": "http://www.stella-calais-volley.fr/"
+  },
+  {
+   "rank": 4,
    "team": "OIGNIES 1",
    "pts": 8,
    "played": 5,
@@ -124,7 +148,31 @@
    "website": "https://www.facebook.com/etoileoigniesvolleyball/"
   },
   {
-   "rank": 4,
+   "rank": 5,
+   "team": "DUNKERQUE 2",
+   "pts": 7,
+   "played": 5,
+   "won": 3,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 3,
+   "r23": 1,
+   "r13": 1,
+   "r03": 0,
+   "setsFor": 12,
+   "setsAgainst": 12,
+   "setsRatio": 1,
+   "ptsFor": 515,
+   "ptsAgainst": 494,
+   "ptsRatio": 1.043,
+   "equipe": "5",
+   "clubId": "0599848",
+   "website": "http://www.dglvb.fr"
+  },
+  {
+   "rank": 6,
    "team": "SAINT POL SUR MER 1",
    "pts": 7,
    "played": 5,
@@ -146,54 +194,6 @@
    "equipe": "7",
    "clubId": "0595712",
    "website": "http://www2.vcsp-saintpol.com/"
-  },
-  {
-   "rank": 5,
-   "team": "CALAIS SES 1",
-   "pts": 7,
-   "played": 4,
-   "won": 2,
-   "lost": 2,
-   "forfeits": 0,
-   "r30": 1,
-   "r31": 0,
-   "r32": 1,
-   "r23": 2,
-   "r13": 0,
-   "r03": 0,
-   "setsFor": 10,
-   "setsAgainst": 8,
-   "setsRatio": 1.25,
-   "ptsFor": 374,
-   "ptsAgainst": 367,
-   "ptsRatio": 1.019,
-   "equipe": "4",
-   "clubId": "0623082",
-   "website": "http://www.stella-calais-volley.fr/"
-  },
-  {
-   "rank": 6,
-   "team": "DUNKERQUE 2",
-   "pts": 6,
-   "played": 4,
-   "won": 3,
-   "lost": 1,
-   "forfeits": 0,
-   "r30": 0,
-   "r31": 0,
-   "r32": 3,
-   "r23": 0,
-   "r13": 1,
-   "r03": 0,
-   "setsFor": 10,
-   "setsAgainst": 9,
-   "setsRatio": 1.111,
-   "ptsFor": 421,
-   "ptsAgainst": 398,
-   "ptsRatio": 1.058,
-   "equipe": "5",
-   "clubId": "0599848",
-   "website": "http://www.dglvb.fr"
   },
   {
    "rank": 7,
@@ -311,24 +311,6 @@
    "mainVenue": "salle-natalys-dumez-59270",
    "backupVenue": "salle-jean-bouin-59190"
   },
-  "OIGNIES 1": {
-   "equipe": "10",
-   "clubId": "0622439",
-   "website": "https://www.facebook.com/etoileoigniesvolleyball/",
-   "clubName": "Étoile d'Oignies",
-   "colors": "BLEU ET BLANC",
-   "mainVenue": "complexe-coubertin-lemaire-62590",
-   "backupVenue": "salle-lycee-joliot-curie-62590"
-  },
-  "SAINT POL SUR MER 1": {
-   "equipe": "7",
-   "clubId": "0595712",
-   "website": "http://www2.vcsp-saintpol.com/",
-   "clubName": "Volley Club Saint Polois",
-   "colors": "VERT BLANC",
-   "mainVenue": "complexe-de-la-ferme-marchand-59430",
-   "backupVenue": "salle-coubertin-59430"
-  },
   "CALAIS SES 1": {
    "equipe": "4",
    "clubId": "0623082",
@@ -338,6 +320,15 @@
    "mainVenue": "salle-porte-de-lille-62100",
    "backupVenue": "college-jean-jaures-62100"
   },
+  "OIGNIES 1": {
+   "equipe": "10",
+   "clubId": "0622439",
+   "website": "https://www.facebook.com/etoileoigniesvolleyball/",
+   "clubName": "Étoile d'Oignies",
+   "colors": "BLEU ET BLANC",
+   "mainVenue": "complexe-coubertin-lemaire-62590",
+   "backupVenue": "salle-lycee-joliot-curie-62590"
+  },
   "DUNKERQUE 2": {
    "equipe": "5",
    "clubId": "0599848",
@@ -346,6 +337,15 @@
    "colors": "BLANC BLEU",
    "mainVenue": "salle-lycee-jean-bart-59140",
    "backupVenue": "salle-college-guilleminot-59140"
+  },
+  "SAINT POL SUR MER 1": {
+   "equipe": "7",
+   "clubId": "0595712",
+   "website": "http://www2.vcsp-saintpol.com/",
+   "clubName": "Volley Club Saint Polois",
+   "colors": "VERT BLANC",
+   "mainVenue": "complexe-de-la-ferme-marchand-59430",
+   "backupVenue": "salle-coubertin-59430"
   },
   "ARRAS 1": {
    "equipe": "8",
@@ -1246,10 +1246,43 @@
    "time": "20:30",
    "home": "CALAIS SES 1",
    "away": "DUNKERQUE 2",
-   "played": false,
-   "venueName": "SALLE PORTE DE LILLE",
+   "played": true,
+   "sets": [
+    3,
+    2
+   ],
+   "setScores": [
+    [
+     25,
+     18
+    ],
+    [
+     13,
+     25
+    ],
+    [
+     18,
+     25
+    ],
+    [
+     25,
+     14
+    ],
+    [
+     15,
+     12
+    ]
+   ],
+   "points": [
+    96,
+    94
+   ],
+   "forfeit": false,
    "referee": "DANGLEANT LILIA",
-   "venue": "salle-porte-de-lille-62100"
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA015",
+   "venue": "salle-porte-de-lille-62100",
+   "venueGuessed": false,
+   "venueName": "SALLE PORTE DE LILLE"
   },
   {
    "code": "1MA016",

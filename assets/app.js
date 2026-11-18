@@ -99,7 +99,8 @@ let M; // modèle dérivé
 const state = {
   view: 'accueil',
   calMode: store.get('calMode') || 'team',
-  calFilter: 'all',
+  calWhen: 'next',
+  calWhere: 'all',
   pouleJ: null,
   pouleTeam: '',
   showAll: false,
@@ -251,7 +252,8 @@ function luminance(hex) {
 }
 function badge(team, size = '') {
   const [c1, c2] = clubColors(team);
-  const fg = luminance(c1) > 0.4 ? '#17151B' : '#FFFFFF';
+  const L = luminance(c1);
+  const fg = (L + 0.05) / (luminance('#17151B') + 0.05) > 1.05 / (L + 0.05) ? '#17151B' : '#FFFFFF';
   return `<span class="badge${size ? ' badge--' + size : ''}" style="--c1:${c1};--c2:${c2};--fg:${fg}" aria-hidden="true">${esc(S(team))}</span>`;
 }
 function teamHTML(team, { size = 'sm', link = true, right = false } = {}) {
@@ -308,7 +310,8 @@ function renderChrome() {
   ab.innerHTML = icon(DEVICE.standalone ? 'bell' : 'phone');
   ab.setAttribute('aria-label', abLabel);
   ab.title = abLabel;
-  fresh.innerHTML = `<span>Mis à jour ${ago}</span>`;
+  const short = age < 24 ? fmt(new Date(D.generatedAt), { hour: '2-digit', minute: '2-digit' }).replace(':', 'h') : fmt(new Date(D.generatedAt), { day: 'numeric', month: 'short' });
+  fresh.innerHTML = `<span class="fresh__long">Mis à jour ${ago}</span><span class="fresh__short">MAJ ${short}</span>`;
   $('#brand-sub').textContent = D.source.pouleLabel.replace('Régionale 1 Masculins', 'R1 Masculins');
   $('#brand-name').textContent = N(M.T);
   const v = D.venues[D.homeVenue];
@@ -320,23 +323,26 @@ function renderChrome() {
 // ---------- Accueil ----------
 
 function viewHome() {
+  // Sur mobile, les deux colonnes se fondent en une seule liste et --o fixe l'ordre de lecture.
+  const slot = (o, html) => (html ? `<div class="slot" style="--o:${o}">${html}</div>` : '');
   return `
-  <div class="cols cols--home">
+  <div class="cols cols--home home-grid">
     <div class="stack">
-      ${heroHTML()}
-      ${appPromo()}
-      ${M.pending.map(m => `<div class="alert">${icon('clock')}<div><b>Résultat en attente</b> · ${esc(N(m.home))} – ${esc(N(m.away))} (${esc(shortDate(m))}). La FFVB ne l'a pas encore publié ; il apparaîtra ici dès sa saisie.</div></div>`).join('')}
+      ${slot(1, heroHTML())}
+      ${slot(2, appPromo())}
+      ${slot(3, M.pending.map(m => `<div class="alert">${icon('clock')}<div><b>Résultat en attente</b> · ${esc(N(m.home))} – ${esc(N(m.away))} (${esc(shortDate(m))}). La FFVB ne l'a pas encore publié ; il apparaîtra ici dès sa saisie.</div></div>`).join(''))}
       <div class="cols cols--2">
-        ${lastResultCard()}
-        ${scoutCard()}
+        ${slot(6, lastResultCard())}
+        ${slot(7, scoutCard())}
       </div>
-      ${journeeCard()}
+      ${slot(8, journeeCard())}
     </div>
     <div class="stack">
-      ${positionCard()}
-      ${seasonCard()}
-      ${refCard()}
-      ${subscribeCard()}
+      ${slot(4, positionCard())}
+      ${slot(5, raceCard())}
+      ${slot(9, seasonCard())}
+      ${slot(10, refCard())}
+      ${slot(11, subscribeCard())}
     </div>
   </div>`;
 }
@@ -355,16 +361,14 @@ function heroHTML() {
   const us = M.row(M.T), them = M.row(p.opp);
   const t = travel(m);
   const prev = previousMeeting(m);
-  const rd = relDay(m);
   const live = Date.now() >= m.ko.getTime();
-  const left = `<div class="hero__team"><b>${esc(N(m.home))}</b><span class="rank">${ordTxt(M.row(m.home).rank)}</span></div>`;
-  const right = `<div class="hero__team"><b>${esc(N(m.away))}</b><span class="rank">${ordTxt(M.row(m.away).rank)}</span></div>`;
   const facts = [
     `<span>Classement <b>${ordTxt(us.rank)}</b> (${plural(us.pts, 'pt')}) contre <b>${ordTxt(them.rank)}</b> (${plural(them.pts, 'pt')})</span>`,
     m.referee ? `<span>Arbitrage <b>${esc(prettyName(m.referee))}</b></span>` : '',
     prev?.played ? `<span>Match aller <b>${esc(`${RES[persp(prev).code].letter} ${persp(prev).sf}-${persp(prev).sa}`)}</b></span>` : '',
     t ? `<span>${esc(t.label)} <b>${clock(t.at)}</b>${t.drive ? ` (${dur(t.drive)} de route${t.est ? ' estimée' : ''})` : ` (${t.buf} min avant)`}</span>` : ''
   ].filter(Boolean).join('');
+  const tile = (attrs, ic, label) => `<${attrs.startsWith('href') ? 'a' : 'button type="button"'} class="tile" ${attrs}>${icon(ic)}<span>${label}</span></${attrs.startsWith('href') ? 'a' : 'button'}>`;
   return `
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__court">${COURT}</div>
@@ -373,9 +377,13 @@ function heroHTML() {
       <span>Journée ${m.journee}</span><span aria-hidden="true">·</span>
       <span>${p.home ? 'À domicile' : 'À l\'extérieur'}</span>
     </div>
-    <h2 id="hero-title" class="sr">Prochain match : ${esc(N(m.home))} contre ${esc(N(m.away))}</h2>
+    <h2 id="hero-title" class="sr">Prochain match : ${esc(N(M.T))} ${p.home ? 'reçoit' : 'chez'} ${esc(N(p.opp))}</h2>
     <p class="hero__when">${esc(whenText(m))} · ${esc(hour(m.time))}</p>
-    <div class="hero__teams">${left}<span class="hero__vs">CONTRE</span>${right}</div>
+    <div class="hero__teams">
+      <div class="hero__team"><b>${esc(N(M.T))}</b><span class="rank">${ordTxt(us.rank)}</span></div>
+      <span class="hero__vs">${p.home ? 'reçoit' : 'chez'}</span>
+      <div class="hero__team hero__team--them"><b>${esc(N(p.opp))}</b><span class="rank">${ordTxt(them.rank)}</span></div>
+    </div>
     <div class="hero__row">
       <div>
         <div class="count__label">${live ? 'Coup d\'envoi donné à ' + esc(hour(m.time)) : 'Coup d\'envoi dans'}</div>
@@ -386,14 +394,81 @@ function heroHTML() {
         <span class="sub">${esc(vAddr(v) || vCity(v))}${v.driveMin && !p.home ? ` · ${dur(v.driveMin)} · ${Math.round(v.driveKm)} km` : ''}</span>
       </div>` : ''}
     </div>
-    <div class="btns">
-      ${v ? `<a class="btn btn--light" href="${esc(mapsUrl(v))}" target="_blank" rel="noopener">${icon('nav')}Itinéraire</a>` : ''}
-      ${v && wazeUrl(v) ? `<a class="btn" href="${esc(wazeUrl(v))}" target="_blank" rel="noopener">${icon('car')}Waze</a>` : ''}
-      <button class="btn" type="button" data-action="agenda" data-code="${m.code}">${icon('calplus')}Agenda</button>
-      <button class="btn" type="button" data-action="share" data-code="${m.code}">${icon('share')}Partager</button>
-      <button class="btn" type="button" data-action="poster" data-kind="next" data-code="${m.code}">${icon('image')}Affiche</button>
+    <div class="tiles">
+      ${v ? tile(`data-action="route" data-code="${m.code}"`, 'nav', 'Itinéraire') : ''}
+      ${tile(`data-action="agenda" data-code="${m.code}"`, 'calplus', 'Agenda')}
+      ${tile(`data-action="share" data-code="${m.code}"`, 'share', 'Partager')}
+      ${tile(`data-action="poster" data-kind="next" data-code="${m.code}"`, 'image', 'Affiche')}
     </div>
     <div class="hero__facts">${facts}</div>
+  </section>`;
+}
+
+/** Choix de l'application de navigation, plus l'adresse à copier. */
+function routeMenu(m) {
+  const v = venueOf(m);
+  if (!v) return;
+  const apple = v.lat != null ? `https://maps.apple.com/?daddr=${v.lat},${v.lon}` : `https://maps.apple.com/?daddr=${encodeURIComponent(`${vName(v)} ${vAddr(v)}`)}`;
+  const t = travel(m);
+  const dlg = $('#sheet');
+  dlg.innerHTML = `<div class="sheet__in">
+    <button type="button" class="iconbtn sheet__close" data-action="close" aria-label="Fermer">${icon('x')}</button>
+    <h2 class="card__title" style="font-size:28px">Itinéraire</h2>
+    <p><b>${esc(vName(v))}</b><br><span class="muted">${esc(vAddr(v))}${v.note ? ' · ' + esc(cap(v.note.toLowerCase())) : ''}</span></p>
+    ${t?.drive ? `<p class="small">${dur(t.drive)} de route depuis ${esc(homeCity())} · ${Math.round(t.km)} km · <b>départ conseillé ${clock(t.at)}</b></p>` : ''}
+    <div class="btns">
+      <a class="btn btn--primary" href="${esc(mapsUrl(v))}" target="_blank" rel="noopener">${icon('nav')}Google Maps</a>
+      ${wazeUrl(v) ? `<a class="btn" href="${esc(wazeUrl(v))}" target="_blank" rel="noopener">${icon('car')}Waze</a>` : ''}
+      <a class="btn" href="${esc(apple)}" target="_blank" rel="noopener">${icon('pin')}Plans (Apple)</a>
+      <button class="btn" type="button" data-action="copy" data-text="${esc(`${vName(v)}, ${vAddr(v)}`)}">Copier l'adresse</button>
+    </div>
+  </div>`;
+  if (!dlg.open) dlg.showModal();
+}
+
+/** Course au maintien (ou à la montée) : n'apparaît que si les zones sont renseignées dans site.config.json. */
+function raceCard() {
+  const z = D.config.zones || {};
+  const st = D.standings;
+  const n = st.length;
+  const r = M.row(M.T);
+  const rel = z.relegation || 0, pro = z.promotion || 0;
+  const mode = rel && r.rank > n - rel - 3 ? 'down' : pro && r.rank <= pro + 2 ? 'up' : null;
+  if (!mode) return '';
+  const total = (n - 1) * 2;
+  const line = mode === 'down' ? n - rel : pro; // dernière place à l'abri / dernière place qualificative
+  const inZone = mode === 'down' ? r.rank > line : r.rank <= line;
+  const pivot = mode === 'down' ? (inZone ? st[line - 1] : st[line]) : (inZone ? st[line] : st[line - 1]);
+  const gap = Math.abs(r.pts - pivot.pts);
+  const field = mode === 'down' ? st.slice(Math.max(0, n - rel - 3)) : st.slice(0, Math.min(n, pro + 3));
+  const rivals = new Set(field.map(s => s.team).filter(t => t !== M.T));
+  const left = M.ours.filter(m => !m.played);
+  const sixPointers = left.filter(m => rivals.has(persp(m).opp));
+  const oppRank = team => {
+    const rest = M.matches.filter(m => !m.played && (m.home === team || m.away === team));
+    const ranks = rest.map(m => M.row(m.home === team ? m.away : m.home).rank);
+    return ranks.length ? ranks.reduce((a, b) => a + b, 0) / ranks.length : null;
+  };
+  const proj = field.map(s => ({ ...s, proj: s.played ? Math.round((s.pts / s.played) * total) : 0, cal: oppRank(s.team) }))
+    .sort((a, b) => b.proj - a.proj || a.rank - b.rank);
+  const status = mode === 'down'
+    ? (inZone ? `<span class="chip chip--bonus">En zone de descente</span> ${gap ? `à ${plural(gap, 'pt')} de la ${ordTxt(line)} place` : `à égalité de points avec le ${ordTxt(line)}, devancé aux victoires ou aux sets`} (${esc(N(pivot.team))})`
+      : `<span class="chip chip--win">Hors zone</span> ${gap ? `${plural(gap, 'pt')} d'avance sur la ${ordTxt(line + 1)} place` : `à égalité de points avec le ${ordTxt(line + 1)}, devant aux victoires ou aux sets`} (${esc(N(pivot.team))})`)
+    : (inZone ? `<span class="chip chip--win">Place qualificative</span> ${plural(gap, 'pt')} d'avance sur le ${ordTxt(line + 1)}`
+      : `<span class="chip">Hors place qualificative</span> à ${plural(gap, 'pt')} de la ${ordTxt(line)} place`);
+  return `<section class="card" aria-labelledby="race-t">
+    <div class="card__head"><h2 class="card__title" id="race-t">${mode === 'down' ? 'Course au maintien' : 'Course à la montée'}</h2><span class="eyebrow">${mode === 'down' ? `Descente : ${rel > 1 ? `${ordTxt(n - rel + 1)} à ${ordTxt(n)}` : ordTxt(n)}` : `Montée : ${pro > 1 ? `1er à ${ordTxt(pro)}` : '1er'}`}</span></div>
+    <p class="small">${status}.</p>
+    <p class="small muted" style="margin-top:4px">${plural(left.length, 'match', 'matchs')} à jouer, ${left.length * 3} points en jeu.</p>
+    ${sixPointers.length ? `<div class="stack" style="gap:6px;margin-top:12px"><span class="eyebrow">Matchs à 6 points</span>${sixPointers.map(m => {
+      const pp = persp(m);
+      return `<div class="result-line small"><span>${esc(fmt(m.ko, { day: 'numeric', month: 'short' }))} · ${pp.home ? 'contre' : 'à'} ${esc(N(pp.opp))}</span><span class="muted">${ordTxt(M.row(pp.opp).rank)}</span></div>`;
+    }).join('')}</div>` : ''}
+    <div class="tablewrap" style="margin:12px -18px 0"><table>
+      <thead><tr><th class="t-left">Au rythme actuel</th><th title="Points aujourd'hui">Pts</th><th title="Projection en fin de saison">Fin</th><th title="Classement moyen des adversaires restants (petit = calendrier difficile)">Calendrier</th></tr></thead>
+      <tbody>${proj.map(s => `<tr class="mini${s.team === M.T ? ' us' : ''}"><td class="t-left">${teamHTML(s.team)}</td><td>${s.pts}</td><td class="pts">${s.proj}</td><td>${s.cal ? s.cal.toFixed(1) + '<span class="muted">e</span>' : '–'}</td></tr>`).join('')}</tbody>
+    </table></div>
+    <p class="note" style="margin-top:8px">Projection indicative : points par match × ${total} matchs. « Calendrier » : classement moyen des adversaires restants, plus c'est petit, plus c'est dur.</p>
   </section>`;
 }
 
@@ -607,11 +682,11 @@ function viewCalendar() {
 }
 
 function teamCalendar() {
-  const filters = [['all', 'Tous'], ['next', 'À venir'], ['played', 'Joués'], ['home', 'Domicile'], ['away', 'Extérieur']];
-  const keep = {
-    all: () => true, next: m => !m.played, played: m => m.played, home: m => persp(m).home, away: m => !persp(m).home
-  }[state.calFilter];
-  const list = M.ours.filter(keep);
+  const when = { next: m => !m.played, played: m => m.played, all: () => true }[state.calWhen];
+  const where = { all: () => true, home: m => persp(m).home, away: m => !persp(m).home }[state.calWhere];
+  const list = M.ours.filter(m => when(m) && where(m));
+  if (state.calWhen === 'played') list.reverse(); // le plus récent d'abord
+  const seg = (key, opts, label) => `<div class="seg" role="group" aria-label="${label}">${opts.map(([k, l]) => `<button type="button" data-cal="${key}" data-val="${k}" aria-pressed="${state[key] === k}">${l}</button>`).join('')}</div>`;
   let month = '';
   const rows = list.map(m => {
     const mo = cap(fmt(m.ko, { month: 'long', year: 'numeric' }));
@@ -623,8 +698,8 @@ function teamCalendar() {
   <div class="cols cols--home">
     <section class="card card--flush">
       <div class="toolbar" style="padding:14px 18px;border-bottom:1px solid var(--line)">
-        <div class="filters" role="group" aria-label="Filtrer les matchs">${filters.map(([k, l]) => `<button type="button" data-filter="${k}" aria-pressed="${state.calFilter === k}">${l}</button>`).join('')}</div>
-        <span class="small muted">${plural(list.length, 'match', 'matchs')}</span>
+        ${seg('calWhen', [['next', 'À venir'], ['played', 'Joués'], ['all', 'Tous']], 'Période')}
+        ${seg('calWhere', [['all', 'Partout'], ['home', 'Domicile'], ['away', 'Extérieur']], 'Lieu')}
       </div>
       <div class="mlist">${rows || '<p class="empty">Aucun match pour ce filtre.</p>'}</div>
     </section>
@@ -741,9 +816,11 @@ function viewStandings() {
       <tbody>${rows}</tbody>
     </table></div>
     <div style="padding:12px 18px;border-top:1px solid var(--line)" class="legend">
+      ${z.promotion ? '<span><i class="zkey zkey--up"></i>Montée</span>' : ''}${z.relegation ? '<span><i class="zkey zkey--down"></i>Descente</span>' : ''}
       <span><span class="form"><i class="W">V</i></span>3-0 / 3-1 · 3 pts</span><span><span class="form"><i class="W2">V</i></span>3-2 · 2 pts</span><span><span class="form"><i class="L1">D</i></span>2-3 · 1 pt</span><span><span class="form"><i class="L">D</i></span>1-3 / 0-3 · 0 pt</span>
     </div>
   </section>
+  ${raceCard()}
   <section class="card"><div class="card__head"><h2 class="card__title">Évolution des places</h2><span class="eyebrow">Semaine après semaine</span></div>
     ${hist.length > 1 ? `<div class="chartbox" id="bump" data-chart="bump"></div><p class="note" style="margin-top:8px">Survolez ou touchez une équipe pour suivre sa courbe. Recalcul à partir des résultats officiels.</p>` : '<p class="empty">La courbe apparaîtra après la deuxième semaine de matchs.</p>'}
   </section>
@@ -773,7 +850,7 @@ function bumpChart(hist, width) {
     const last = pts.at(-1);
     return `<g class="tl${us ? ' us' : ''}" data-hl="${esc(t)}">
       <path class="tline" d="${d}"/>
-      ${pts.map((p, i) => `<circle class="tdot" cx="${p[0]}" cy="${p[1]}" r="${us ? 4.5 : 3.5}"/><circle class="hit" cx="${p[0]}" cy="${p[1]}" r="11" data-tip="${esc(`<b>${N(t)}</b><br>${ordTxt(p[2].rank)} après le ${hist[i].label} · ${plural(p[2].pts, 'pt')}`)}"/>`).join('')}
+      ${pts.map((p, i) => `<circle class="tdot" cx="${p[0]}" cy="${p[1]}" r="${us ? 4.5 : 3.5}"/><circle class="hit" cx="${p[0]}" cy="${p[1]}" r="11" data-tip="${esc(`<b>${esc(N(t))}</b><br>${ordTxt(p[2].rank)} après le ${esc(hist[i].label)} · ${plural(p[2].pts, 'pt')}`)}"/>`).join('')}
       <text x="${W - pr + 12}" y="${last[1] + 4}" class="${us ? 'lbl-us' : ''}">${esc(narrow ? S(t) : N(t))}</text>
     </g>`;
   }).join('');
@@ -914,7 +991,7 @@ function roseChart(width) {
   for (let d = 25; d <= max; d += 25) rings.push(`<circle class="ring" cx="${CX}" cy="${C}" r="${d * sc}"/><text x="${CX + 4}" y="${C + d * sc + 13}">${d} km</text>`);
   const dots = pts.map(p => {
     const lx = (p.lx ?? p.x) + (p.right ? 10 : -10);
-    const tip = `<b>${N(p.t)}</b><br>${vName(p.v)}, ${vCity(p.v)}<br>${p.v.driveMin ? `${dur(p.v.driveMin)} · ${Math.round(p.v.driveKm)} km en voiture` : `${Math.round(p.d)} km à vol d'oiseau`}`;
+    const tip = `<b>${esc(N(p.t))}</b><br>${esc(vName(p.v))}, ${esc(vCity(p.v))}<br>${p.v.driveMin ? `${dur(p.v.driveMin)} · ${Math.round(p.v.driveKm)} km en voiture` : `${Math.round(p.d)} km à vol d'oiseau`}`;
     return `<g>${Math.abs(p.ly - 4 - p.y) > 3 || (p.lx ?? p.x) !== p.x ? `<path d="M${p.x},${p.y}L${lx - (p.right ? 3 : -3)},${p.ly - 4}" stroke="var(--line-strong)"/>` : ''}
       <circle cx="${p.x}" cy="${p.y}" r="5" fill="var(--ink)" stroke="var(--card)" stroke-width="2"/>
       <text x="${lx}" y="${p.ly}" text-anchor="${p.right ? 'start' : 'end'}" class="lbl-strong">${esc(S(p.t))}<tspan class="muted-t" dx="5">${p.v.driveMin ? dur(p.v.driveMin) : ''}</tspan></text>
@@ -1025,7 +1102,7 @@ function marginChart(list) {
       const d = v >= 0
         ? `M${bx},${y0}V${y1 + r}Q${bx},${y1} ${bx + r},${y1}H${bx + bw - r}Q${bx + bw},${y1} ${bx + bw},${y1 + r}V${y0}Z`
         : `M${bx},${y0}V${y1 - r}Q${bx},${y1} ${bx + r},${y1}H${bx + bw - r}Q${bx + bw},${y1} ${bx + bw},${y1 - r}V${y0}Z`;
-      const tip = `<b>${i === 4 ? 'Tie-break' : 'Set ' + (i + 1)} · ${s[0]}-${s[1]}</b><br>${x.home ? 'contre' : 'à'} ${N(x.opp)}, ${shortDate(x.m)}`;
+      const tip = `<b>${i === 4 ? 'Tie-break' : 'Set ' + (i + 1)} · ${s[0]}-${s[1]}</b><br>${x.home ? 'contre' : 'à'} ${esc(N(x.opp))}, ${esc(shortDate(x.m))}`;
       return `<path d="${d}" fill="${v > 0 ? 'var(--win)' : 'var(--loss)'}"/><rect class="hit" x="${bx - 2}" y="${pt}" width="${bw + 4}" height="${H - pt - pb}" data-tip="${esc(tip)}"/>`;
     }).join('');
     const mid = (start + cx - gap) / 2;
@@ -1362,6 +1439,8 @@ function notifCard() {
         ['Service hors connexion', swReg?.active ? 'actif' : 'pas encore actif'],
         ['Abonnement', push.sub ? 'enregistré' : 'aucun']
       ].map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+      ${push.sub ? `<label class="switch" style="margin-top:8px"><input type="checkbox" data-topic="admin" data-autosave${push.topics.includes('admin') ? ' checked' : ''}>
+        <span class="switch__ui" aria-hidden="true"></span><span class="switch__txt"><b>Alertes techniques</b><small>Pour l'administrateur du site : panne de mise à jour, jeton expiré.</small></span></label>` : ''}
     </details>
   </section>`;
 }
@@ -1400,11 +1479,24 @@ function shareAppCard() {
     <div class="qrline">${qrSVG('qr--lg')}<div class="stack" style="gap:10px">
       <p class="small">Montrez ce code à l'entraînement : il ouvre directement la page d'installation, avec les étapes adaptées au téléphone.</p>
       <div class="btns">
-        <button type="button" class="btn btn--primary btn--sm" data-action="share-app">${icon('share')}Envoyer le lien</button>
+        <a class="btn btn--primary btn--sm" href="https://wa.me/?text=${encodeURIComponent(inviteText())}" target="_blank" rel="noopener">${icon('share')}Inviter sur WhatsApp</a>
+        <button type="button" class="btn btn--sm" data-action="copy" data-text="${esc(inviteText())}">Copier le message</button>
+        <button type="button" class="btn btn--sm" data-action="share-app">Autre appli</button>
         <button type="button" class="btn btn--sm" data-action="poster" data-kind="app">${icon('image')}Affiche pour le gymnase</button>
       </div>
     </div></div>
   </section>`;
+}
+
+/** Message d'invitation pour le groupe de l'équipe. */
+function inviteText() {
+  const m = M.next;
+  return [
+    `🏐 L'appli de ${N(M.T)} est en ligne : prochain match, résultats, classement, itinéraires.`,
+    m ? `Prochain match : ${longDate(m).toLowerCase()} à ${hour(m.time)}, ${N(m.home)} – ${N(m.away)}.` : '',
+    '📲 Installez-la en 30 secondes et activez les notifications (rappel la veille, score dès sa publication) :',
+    appUrl()
+  ].filter(Boolean).join('\n');
 }
 
 async function installApp() {
@@ -1599,12 +1691,12 @@ function go(view) {
 }
 
 document.addEventListener('click', e => {
-  const el = e.target.closest('[data-team],[data-action],[data-filter],[data-calmode],[data-j],[data-sim],[data-goto-poule]');
+  const el = e.target.closest('[data-team],[data-action],[data-cal],[data-calmode],[data-j],[data-sim],[data-goto-poule]');
   if (!el) return;
   const code = el.dataset.code && M.byCode.get(el.dataset.code);
   if (el.dataset.gotoPoule) { state.calMode = 'poule'; state.pouleJ = +el.dataset.gotoPoule; state.pouleTeam = ''; return; }
   if (el.dataset.team && !el.dataset.action) { e.preventDefault(); openTeam(el.dataset.team); return; }
-  if (el.dataset.filter) { state.calFilter = el.dataset.filter; render(); return; }
+  if (el.dataset.cal) { state[el.dataset.cal] = el.dataset.val; render(); return; }
   if (el.dataset.calmode) { state.calMode = el.dataset.calmode; store.set('calMode', state.calMode); render(); return; }
   if (el.dataset.j) { state.pouleJ = +el.dataset.j; render(); return; }
   if (el.dataset.sim) {
@@ -1615,6 +1707,7 @@ document.addEventListener('click', e => {
   switch (el.dataset.action) {
     case 'share': share(code); break;
     case 'agenda': agendaMenu(code); break;
+    case 'route': routeMenu(code); break;
     case 'ics': download(`${code.code}.ics`, new Blob([buildIcs({ name: N(M.T), events: [matchEvent(code, D)] })], { type: 'text/calendar' })); break;
     case 'poster': poster(el.dataset.kind, code); break;
     case 'poster-share': sharePoster(el.dataset.file); break;
@@ -1638,6 +1731,7 @@ document.addEventListener('click', e => {
 document.addEventListener('change', e => {
   if (e.target.id === 'poule-team') { state.pouleTeam = e.target.value; render(); }
   if (e.target.id === 'sim-j') { state.simJ = +e.target.value; render(); }
+  if (e.target.matches('[data-autosave]') && push.sub) savePush();
 });
 
 // Fermer une feuille en touchant le fond.

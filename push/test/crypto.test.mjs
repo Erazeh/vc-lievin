@@ -6,6 +6,7 @@ import { readFileSync } from 'node:fs';
 import ece from 'http_ece';
 import { encrypt, vapidAuth, b64u } from '../src/webpush.js';
 import { computeEvents } from '../src/events.js';
+import { updateDue } from '../src/updates.js';
 
 // 1. Chiffrement : un « navigateur » fictif doit relire le message.
 const ua = createECDH('prime256v1');
@@ -38,7 +39,16 @@ assert.ok(verify('sha256', Buffer.from(`${h}.${p}`), { key: pub, dsaEncoding: 'i
 console.log('✓ jeton VAPID ES256 valide');
 
 // 3. Scénario : premier passage silencieux, puis résultat, changement d'horaire et rappels.
-const data = JSON.parse(readFileSync(new URL('../../data/data.json', import.meta.url)));
+const live = JSON.parse(readFileSync(new URL('../../data/data.json', import.meta.url)));
+// Données figées au 22 octobre : ces matchs n'étaient pas encore joués (le test ne dépend pas de la date du jour).
+const data = structuredClone(live);
+for (const code of ['1MA012', '1MA019', '1MA020']) {
+  const m = data.matches.find(x => x.code === code);
+  Object.assign(m, { played: false, venueName: m.venueName || data.venues[m.venue]?.name || null });
+  delete m.sets; delete m.setScores; delete m.points;
+}
+// Avant le match, la FFVB indiquait le club désigné pour l'arbitrage.
+data.matches.find(x => x.code === '1MA020').referee = 'LIEVIN';
 const at = iso => new Date(iso).getTime();
 const first = computeEvents(data, null, at('2026-10-22T08:00:00Z'));
 assert.equal(first.notifications.length, 0, 'premier passage silencieux');
@@ -70,3 +80,20 @@ console.log('  ', chg.title, '—', chg.body);
 const refs = computeEvents(data, first.state, at('2026-10-30T17:10:00Z')).notifications.filter(n => n.topic === 'referee');
 assert.equal(refs[0]?.title, 'Arbitrage demain : Arras 1 – Cœur de Flandre 2');
 console.log('✓ rappel d\'arbitrage :', refs[0].title, '—', refs[0].body);
+
+// 4. Planification des mises à jour : matin, soirs de match, filet de sécurité, pas de doublon.
+{
+  const T = data.config.team;
+  const m = data.matches.find(x => x.code === '1MA012'); // Liévin – Arras, samedi 24/10 à 21h
+  const unplayed = structuredClone(data);
+  Object.assign(unplayed.matches.find(x => x.code === '1MA012'), { played: false });
+  unplayed.matches.forEach(x => { if (x.code !== '1MA012') x.played = true; });
+  const recent = at('2026-10-24T20:00:00Z');
+  assert.equal(updateDue(unplayed, at('2026-10-24T04:35:00Z'), { at: recent - 864e5 }), 'full', '6h35 à Paris : mise à jour complète');
+  assert.equal(updateDue(unplayed, at('2026-10-24T20:00:00Z'), { at: recent - 3600e3 }), null, '22h : trop tôt après le coup d\'envoi');
+  assert.equal(updateDue(unplayed, at('2026-10-24T20:35:00Z'), { at: recent - 3600e3 }), 'quick', '22h35 : on guette le résultat');
+  assert.equal(updateDue(unplayed, at('2026-10-24T20:50:00Z'), { at: at('2026-10-24T20:35:00Z') }), null, 'pas deux fois en 25 min');
+  assert.equal(updateDue(unplayed, at('2026-10-25T05:15:00Z'), { at: at('2026-10-25T04:00:00Z') }), null, 'fenêtre de 10 h passée, avant 6h30');
+  assert.equal(updateDue(data, at('2026-10-25T15:00:00Z'), { at: at('2026-10-25T04:30:00Z') }), 'quick', 'filet : plus de 8 h sans mise à jour');
+  console.log('✓ planification : matin, soir de match, anti-doublon, filet de sécurité');
+}

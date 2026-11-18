@@ -15,6 +15,8 @@ const ACRONYMS = new Set(['VB', 'VC', 'SES', 'FLJEP', 'SP', 'RI', 'ASPTT', 'US',
 
 function word(w, i) {
   if (!w) return w;
+  const ord = w.match(/^(\d+)(EME|ÈME)$/);
+  if (ord) return ord[1] + 'e';
   if (/^\d/.test(w)) return w;
   if (ACRONYMS.has(w) || w.includes('.')) return w;
   const elided = w.match(/^([DL])'(.+)$/);
@@ -29,7 +31,7 @@ function word(w, i) {
 /** "SALLE NOEL JOSEPHE" → "Salle Noël Josèphe" */
 export function prettyName(s) {
   if (!s) return s;
-  return s.trim().replace(/\b([DL]) (?=[AEIOUYHÉ])/g, "$1'").split(/\s+/)
+  return s.trim().replace(/\b([DL]) (?=[AEIOUYHÉ])/g, "$1'").replace(/(\d+)\s+(EME|ÈME)(?=\s|$)/g, '$1$2').split(/\s+/)
     .map((w, i) => w.split('-').map((p, k) => word(p, i + k)).join('-')).join(' ');
 }
 

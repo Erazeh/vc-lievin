@@ -1,9 +1,15 @@
 // Service de notifications du site VC Liévin.
-// - POST /subscribe, /unsubscribe, /test : appelés par l'application installée.
-// - Toutes les 15 min : lit data/data.json du site, repère rappels, résultats et changements, puis notifie.
+// - POST /subscribe, /unsubscribe, /test, /log : appelés par l'application installée.
+// - POST /refresh, /alert : appelés par le workflow GitHub (clé partagée) juste après une mise à jour ou un échec.
+// - Toutes les 15 min : lit data/data.json du site, repère rappels, résultats et changements, notifie,
+//   puis relance la mise à jour du site quand il faut (matin, soirs de match).
 
 import { sendPush, b64u } from './webpush.js';
 import { computeEvents, TOPICS } from './events.js';
+import { updateDue, dispatch } from './updates.js';
+
+// Sujets qu'un abonné peut choisir ; « admin » = alertes techniques pour l'administrateur du site.
+const ALL_TOPICS = [...TOPICS, 'admin'];
 
 // Seuls les vrais services de push des navigateurs sont acceptés (Apple, Google, Mozilla, Microsoft).
 const PUSH_HOSTS = /(^|\.)(web\.push\.apple\.com|fcm\.googleapis\.com|push\.services\.mozilla\.com|notify\.windows\.com)$/;
@@ -69,14 +75,7 @@ async function flush(env, ctx, jobs) {
   return { sent: now.length - dead.size, removed: dead.size, pending: later.length };
 }
 
-async function run(env, ctx) {
-  const res = await fetch(new URL('data/data.json', env.SITE_URL), { cf: { cacheTtl: 60 } });
-  if (!res.ok) throw new Error(`data.json : HTTP ${res.status}`);
-  const data = await res.json();
-  const prev = await env.KV.get('state', 'json');
-  const { notifications, state } = computeEvents(data, prev);
-  const next = JSON.stringify(state);
-  if (next !== JSON.stringify(prev)) await env.KV.put('state', next);
+async function notifyTopic(env, ctx, notifications) {
   if (!notifications.length) return { notifications: 0 };
   const subs = await listSubs(env);
   const jobs = [];
@@ -85,14 +84,76 @@ async function run(env, ctx) {
   return flush(env, ctx, jobs);
 }
 
+/** Alerte technique à l'administrateur, au plus une fois par période. */
+async function alertAdmin(env, ctx, key, title, body, hours) {
+  if (await env.KV.get(`alert:${key}`)) return;
+  await env.KV.put(`alert:${key}`, '1', { expirationTtl: Math.max(60, hours * 3600) });
+  console.warn('alerte', key, body);
+  await notifyTopic(env, ctx, [{ topic: 'admin', title, body, url: '#app', tag: `admin-${key}` }]);
+}
+
+async function run(env, ctx, { schedule = true } = {}) {
+  const now = Date.now();
+  // Adresse unique : on contourne les caches pour lire les données fraîchement publiées.
+  const res = await fetch(new URL(`data/data.json?t=${now}`, env.SITE_URL));
+  if (!res.ok) throw new Error(`data.json : HTTP ${res.status}`);
+  const data = await res.json();
+  const prev = await env.KV.get('state', 'json');
+  const { notifications, state } = computeEvents(data, prev, now);
+  state.generatedAt = data.generatedAt;
+  const next = JSON.stringify(state);
+  if (next !== JSON.stringify(prev)) await env.KV.put('state', next);
+  const out = { fresh: data.generatedAt !== prev?.generatedAt, ...(await notifyTopic(env, ctx, notifications)) };
+
+  const age = (now - Date.parse(data.generatedAt)) / 36e5;
+  if (age > 30) {
+    await alertAdmin(env, ctx, 'stale', 'Données du site en retard', `Dernière mise à jour FFVB il y a ${Math.round(age)} h. Vérifiez l'onglet Actions du dépôt GitHub.`, 12);
+  }
+
+  if (schedule && env.GITHUB_TOKEN) {
+    const last = await env.KV.get('dispatch', 'json');
+    const mode = updateDue(data, now, last);
+    if (mode) {
+      const status = await dispatch(env, mode);
+      await env.KV.put('dispatch', JSON.stringify({ at: now, mode, status }));
+      out.dispatch = { mode, status };
+      if (status === 401 || status === 403 || status === 404) {
+        await alertAdmin(env, ctx, 'token', 'Jeton GitHub refusé', `La mise à jour rapide est en pause (code ${status}) : le jeton a sans doute expiré. Créez-en un nouveau.`, 24);
+      }
+    }
+  }
+  return out;
+}
+
+/** Après une mise à jour GitHub : notifier tout de suite (en réessayant une fois si la publication n'est pas encore visible). */
+async function refresh(env, ctx) {
+  let r = await run(env, ctx, { schedule: false });
+  if (!r.fresh) {
+    await scheduler.wait(20000); // waitUntil ne dure que 30 s après la réponse
+    r = await run(env, ctx, { schedule: false });
+  }
+  console.log('rafraîchissement', JSON.stringify(r));
+}
+
 export default {
   async fetch(req, env, ctx) {
     const url = new URL(req.url);
     const origin = req.headers.get('Origin');
     const allowed = [env.ALLOWED_ORIGIN, 'http://localhost:8080'].includes(origin) ? origin : env.ALLOWED_ORIGIN;
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors(allowed) });
-    if (req.method === 'GET' && url.pathname === '/') return json({ ok: true, service: 'vc-lievin-push', topics: TOPICS }, 200, allowed);
+    if (req.method === 'GET' && url.pathname === '/') return json({ ok: true, service: 'vc-lievin-push', topics: ALL_TOPICS }, 200, allowed);
     if (req.method !== 'POST') return json({ error: 'Méthode non prise en charge' }, 405, allowed);
+
+    if (url.pathname === '/refresh' || url.pathname === '/alert') {
+      if (!env.REFRESH_KEY || req.headers.get('x-key') !== env.REFRESH_KEY) return json({ error: 'Refusé' }, 403, allowed);
+      if (url.pathname === '/refresh') {
+        ctx.waitUntil(refresh(env, ctx).catch(e => console.error('rafraîchissement en échec', e.message)));
+      } else {
+        const body = await req.json().catch(() => ({}));
+        ctx.waitUntil(alertAdmin(env, ctx, 'workflow', 'Mise à jour du site en échec', String(body.message || 'Le workflow GitHub a échoué.').slice(0, 200), 6));
+      }
+      return json({ ok: true }, 202, allowed);
+    }
 
     if (url.pathname === '/flush') {
       if (req.headers.get('x-flush') !== await hash(env.VAPID_PRIVATE_KEY)) return json({ error: 'Refusé' }, 403, allowed);
@@ -107,7 +168,7 @@ export default {
     if (url.pathname === '/subscribe') {
       const s = body.subscription;
       if (!s || !validSubscription(s)) return json({ error: 'Abonnement invalide' }, 400, allowed);
-      const topics = (Array.isArray(body.topics) ? body.topics : TOPICS).filter(t => TOPICS.includes(t));
+      const topics = (Array.isArray(body.topics) ? body.topics : TOPICS).filter(t => ALL_TOPICS.includes(t));
       await env.KV.put(`sub:${await hash(s.endpoint)}`, JSON.stringify({ endpoint: s.endpoint, keys: { p256dh: s.keys.p256dh, auth: s.keys.auth }, topics, since: new Date().toISOString() }));
       return json({ ok: true, topics }, 200, allowed);
     }
@@ -120,6 +181,7 @@ export default {
 
     if (url.pathname === '/log') {
       // Erreurs remontées par l'app (aucune donnée personnelle) : visibles avec « wrangler tail ».
+      if (origin !== env.ALLOWED_ORIGIN) return json({ ok: false }, 403, allowed);
       console.warn('app', JSON.stringify(body).slice(0, 600));
       return json({ ok: true }, 200, allowed);
     }

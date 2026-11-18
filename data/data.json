@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T13:23:40.151Z",
+ "generatedAt": "2026-11-18T02:25:11.853Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -1714,9 +1714,9 @@
    "home": "WATTIGNIES 1",
    "away": "OIGNIES 1",
    "played": false,
-   "venueName": "SALLE PIERRE DE COUBERTIN",
+   "venueName": "SALLE ROLAND GARROS",
    "referee": "POILLION JEAN",
-   "venue": "salle-pierre-de-coubertin-59139"
+   "venue": "salle-roland-garros-59139"
   },
   {
    "code": "1MA027",

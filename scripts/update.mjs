@@ -18,6 +18,8 @@ const config = JSON.parse(await readFile(path.join(ROOT, 'site.config.json'), 'u
 const { season, codent, poule } = config;
 const previous = await readJson(DATA_FILE);
 const log = (...a) => console.log('•', ...a);
+// --quick : calendrier et classement seulement (soirs de match), on reprend salles, couleurs et trajets de la veille.
+const QUICK = process.argv.includes('--quick');
 
 async function readJson(file) {
   try { return JSON.parse(await readFile(file, 'utf8')); } catch { return null; }
@@ -274,7 +276,7 @@ for (const m of upcoming) {
 }
 
 const ficheVenues = {};
-for (const code of ficheCodes) {
+for (const code of QUICK ? [] : ficheCodes) {
   try {
     const f = await fetchFiche(code);
     if (f.venue) ficheVenues[code] = addVenue(f.venue);
@@ -293,7 +295,7 @@ for (const code of ficheCodes) {
   }
   await sleep(400);
 }
-log(`${ficheCodes.length} fiches de match lues`);
+log(QUICK ? 'mode rapide : fiches de match non relues' : `${ficheCodes.length} fiches de match lues`);
 
 // Salle de chaque match.
 const prevMatches = Object.fromEntries((previous?.matches ?? []).map(m => [m.code, m]));
@@ -314,7 +316,7 @@ for (const m of matches) {
     if (!m.venue && m.venueName) missing.push(m);
   }
 }
-for (const m of missing.slice(0, 10)) {
+for (const m of QUICK ? [] : missing.slice(0, 10)) {
   try {
     const f = await fetchFiche(m.code);
     m.venue = addVenue(f.venue);
@@ -324,7 +326,7 @@ for (const m of missing.slice(0, 10)) {
 
 // Géolocalisation (une seule fois par adresse) puis trajet depuis la salle principale de l'équipe.
 const homeVenue = teams[config.team]?.mainVenue ?? previous?.homeVenue ?? null;
-for (const [key, v] of Object.entries(venues)) {
+for (const [key, v] of Object.entries(QUICK ? {} : venues)) {
   if (v.lat == null) {
     const g = await geocode(v);
     if (g) Object.assign(v, g);
@@ -333,7 +335,7 @@ for (const [key, v] of Object.entries(venues)) {
   }
 }
 const home = homeVenue && venues[homeVenue];
-if (home?.lat != null) {
+if (home?.lat != null && !QUICK) {
   for (const v of Object.values(venues)) {
     if (v.lat == null) continue;
     const fromKey = `${home.lat.toFixed(5)},${home.lon.toFixed(5)}`;

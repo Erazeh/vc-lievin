@@ -57,6 +57,22 @@ npx wrangler deploy
 Puis renseigner l'adresse du service dans `site.config.json` (`pushApi`). La clé publique (`vapidPublicKey`)
 y est déjà ; la clé privée ne doit jamais être publiée.
 
+## Rapidité des mises à jour
+
+GitHub retarde ses tâches programmées de plusieurs heures. Le service `push/` (ponctuel) lance donc lui-même le workflow :
+
+- chaque matin vers 6h30 (mise à jour complète) ;
+- après chaque match de la poule, toutes les 30 min jusqu'à la publication du score (mode rapide `--quick` :
+  calendrier et classement seulement, une seule page FFVB lue) ;
+- jamais plus de 8 h sans mise à jour en journée.
+
+Il lui faut un jeton GitHub à droits réduits (secret `GITHUB_TOKEN` du service : jeton « fine-grained » limité au dépôt,
+permission *Actions : lecture et écriture*). Après chaque publication, le workflow prévient le service (`/refresh`, clé partagée
+`PUSH_REFRESH_KEY` / `REFRESH_KEY`) qui envoie aussitôt les notifications. En cas d'échec, ou si les données ont plus de 30 h,
+une alerte part vers les abonnés « Alertes techniques » (interrupteur dans *Application › Infos techniques*).
+
+Chaque passage régénère aussi `assets/og.png`, l'image d'aperçu des liens partagés (WhatsApp, SMS…), avec le prochain match.
+
 ## Comment marche la mise à jour
 
 `scripts/update.mjs` (Node 20+, sans dépendance) :

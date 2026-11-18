@@ -1,11 +1,18 @@
 name: Mise à jour FFVB
 
 on:
+  # Déclencheur principal : le service de notifications (Cloudflare), ponctuel, le matin et les soirs de match.
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "full = tout relire, quick = calendrier et classement seulement"
+        type: choice
+        options: [full, quick]
+        default: full
+  # Filet de sécurité si le service ne déclenche rien (GitHub peut retarder ces créneaux de plusieurs heures).
   schedule:
-    - cron: '15 4 * * *'     # chaque matin (≈ 6 h à Paris)
-    - cron: '0 18 * * 0'     # dimanche soir, après les matchs de l'après-midi
-    - cron: '30 22 * * 6,0'  # samedi et dimanche soir, après les matchs du soir
-  workflow_dispatch:         # bouton « Run workflow » pour forcer une mise à jour
+    - cron: '15 4 * * *'
+    - cron: '30 22 * * 6,0'
   push:
     branches: [main]
 
@@ -30,19 +37,28 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
 
       - name: Récupérer les données FFVB
         # Si la FFVB est injoignable, on publie quand même le site avec les données de la veille.
         continue-on-error: ${{ github.event_name == 'push' }}
-        run: node scripts/update.mjs
+        run: node scripts/update.mjs ${{ inputs.mode == 'quick' && '--quick' || '' }}
+
+      - name: Image d'aperçu des liens
+        run: node scripts/og.mjs
 
       - name: Enregistrer les nouvelles données
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data calendar
+          git add data calendar assets/og.png index.html
           git diff --cached --quiet || git commit -m "Données FFVB du $(TZ=Europe/Paris date +'%d/%m/%Y %H:%M')"
-          git push
+          git pull --rebase --autostash && git push
+
+      - name: Ne pas publier les outils
+        run: rm -rf node_modules
 
       - uses: actions/configure-pages@v5
 
@@ -52,3 +68,19 @@ jobs:
 
       - id: deploiement
         uses: actions/deploy-pages@v4
+
+      - name: Prévenir le service de notifications
+        env:
+          KEY: ${{ secrets.PUSH_REFRESH_KEY }}
+        run: |
+          [ -n "$KEY" ] || exit 0
+          curl -fsS -m 20 -X POST "$(jq -r .pushApi site.config.json)/refresh" -H "x-key: $KEY" || true
+
+      - name: Signaler l'échec à l'administrateur
+        if: failure()
+        env:
+          KEY: ${{ secrets.PUSH_REFRESH_KEY }}
+        run: |
+          [ -n "$KEY" ] || exit 0
+          curl -fsS -m 20 -X POST "$(jq -r .pushApi site.config.json)/alert" -H "x-key: $KEY" -H "Content-Type: application/json" \
+            -d "{\"message\":\"Le workflow « ${{ github.workflow }} » a échoué (déclenché par ${{ github.event_name }}).\"}" || true

@@ -426,6 +426,14 @@ function routeMenu(m) {
   if (!dlg.open) dlg.showModal();
 }
 
+/** Ce qui départage deux équipes à égalité de points (règlement FFVB). */
+function tieReason(ahead, behind) {
+  if (ahead.won !== behind.won) return 'au nombre de victoires';
+  const ratio = (a, b) => (b ? a / b : Infinity);
+  if (ratio(ahead.setsFor, ahead.setsAgainst) !== ratio(behind.setsFor, behind.setsAgainst)) return 'au coefficient de sets';
+  return 'au coefficient de points';
+}
+
 /** Course au maintien (ou à la montée) : n'apparaît que si les zones sont renseignées dans site.config.json. */
 function raceCard() {
   const z = D.config.zones || {};
@@ -452,8 +460,8 @@ function raceCard() {
   const proj = field.map(s => ({ ...s, proj: s.played ? Math.round((s.pts / s.played) * total) : 0, cal: oppRank(s.team) }))
     .sort((a, b) => b.proj - a.proj || a.rank - b.rank);
   const status = mode === 'down'
-    ? (inZone ? `<span class="chip chip--bonus">En zone de descente</span> ${gap ? `à ${plural(gap, 'pt')} de la ${ordTxt(line)} place` : `à égalité de points avec le ${ordTxt(line)}, devancé aux victoires ou aux sets`} (${esc(N(pivot.team))})`
-      : `<span class="chip chip--win">Hors zone</span> ${gap ? `${plural(gap, 'pt')} d'avance sur la ${ordTxt(line + 1)} place` : `à égalité de points avec le ${ordTxt(line + 1)}, devant aux victoires ou aux sets`} (${esc(N(pivot.team))})`)
+    ? (inZone ? `<span class="chip chip--bonus">En zone de descente</span> ${gap ? `à ${plural(gap, 'pt')} de la ${ordTxt(line)} place` : `à égalité de points avec le ${ordTxt(line)}, devancé ${tieReason(pivot, r)}`} (${esc(N(pivot.team))})`
+      : `<span class="chip chip--win">Hors zone</span> ${gap ? `${plural(gap, 'pt')} d'avance sur la ${ordTxt(line + 1)} place` : `à égalité de points avec le ${ordTxt(line + 1)}, devant ${tieReason(r, pivot)}`} (${esc(N(pivot.team))})`)
     : (inZone ? `<span class="chip chip--win">Place qualificative</span> ${plural(gap, 'pt')} d'avance sur le ${ordTxt(line + 1)}`
       : `<span class="chip">Hors place qualificative</span> à ${plural(gap, 'pt')} de la ${ordTxt(line)} place`);
   return `<section class="card" aria-labelledby="race-t">
@@ -466,7 +474,7 @@ function raceCard() {
     }).join('')}</div>` : ''}
     <div class="tablewrap" style="margin:12px -18px 0"><table>
       <thead><tr><th class="t-left">Au rythme actuel</th><th title="Points aujourd'hui">Pts</th><th title="Projection en fin de saison">Fin</th><th title="Classement moyen des adversaires restants (petit = calendrier difficile)">Calendrier</th></tr></thead>
-      <tbody>${proj.map(s => `<tr class="mini${s.team === M.T ? ' us' : ''}"><td class="t-left">${teamHTML(s.team)}</td><td>${s.pts}</td><td class="pts">${s.proj}</td><td>${s.cal ? s.cal.toFixed(1) + '<span class="muted">e</span>' : '–'}</td></tr>`).join('')}</tbody>
+      <tbody>${proj.map(s => `<tr class="mini${s.team === M.T ? ' us' : ''}"><td class="t-left">${teamHTML(s.team)}</td><td>${s.pts}</td><td class="pts">${s.proj}</td><td>${s.cal ? s.cal.toFixed(1).replace('.', ',') + '<span class="muted">e</span>' : '–'}</td></tr>`).join('')}</tbody>
     </table></div>
     <p class="note" style="margin-top:8px">Projection indicative : points par match × ${total} matchs. « Calendrier » : classement moyen des adversaires restants, plus c'est petit, plus c'est dur.</p>
   </section>`;

@@ -1,6 +1,7 @@
 // Service de notifications du site VC Liévin.
 // - POST /subscribe, /unsubscribe, /test, /log : appelés par l'application installée.
 // - POST /refresh, /alert : appelés par le workflow GitHub (clé partagée) juste après une mise à jour ou un échec.
+// - POST /update (clé partagée) : forcer une mise à jour du site, pour la maintenance.
 // - Toutes les 15 min : lit data/data.json du site, repère rappels, résultats et changements, notifie,
 //   puis relance la mise à jour du site quand il faut (matin, soirs de match).
 
@@ -144,8 +145,16 @@ export default {
     if (req.method === 'GET' && url.pathname === '/') return json({ ok: true, service: 'vc-lievin-push', topics: ALL_TOPICS }, 200, allowed);
     if (req.method !== 'POST') return json({ error: 'Méthode non prise en charge' }, 405, allowed);
 
-    if (url.pathname === '/refresh' || url.pathname === '/alert') {
+    if (url.pathname === '/refresh' || url.pathname === '/alert' || url.pathname === '/update') {
       if (!env.REFRESH_KEY || req.headers.get('x-key') !== env.REFRESH_KEY) return json({ error: 'Refusé' }, 403, allowed);
+      if (url.pathname === '/update') {
+        // Forcer une mise à jour du site (maintenance) : même chemin que le déclenchement automatique.
+        if (!env.GITHUB_TOKEN) return json({ error: 'Jeton GitHub absent' }, 409, allowed);
+        const mode = (await req.json().catch(() => ({}))).mode === 'quick' ? 'quick' : 'full';
+        const status = await dispatch(env, mode);
+        await env.KV.put('dispatch', JSON.stringify({ at: Date.now(), mode, status, manual: true }));
+        return json({ ok: status === 204, status, mode }, status === 204 ? 200 : 502, allowed);
+      }
       if (url.pathname === '/refresh') {
         ctx.waitUntil(refresh(env, ctx).catch(e => console.error('rafraîchissement en échec', e.message)));
       } else {

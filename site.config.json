@@ -9,7 +9,7 @@
   "vapidPublicKey": "BEZZQhYcbdnSKO9ccFEJE6hv-xWqIkKGRy9V6YghMdbm-BwiX3-uw2w1mPEEbmPCdji83-cvwQCZYAhFzyfOAhA",
   "arrivalBufferMinutes": 60,
   "matchDurationMinutes": 120,
-  "zones": { "promotion": 0, "relegation": 0 },
+  "zones": { "promotion": 1, "relegation": 2 },
   "displayNames": {
     "LIEVIN 2": "Liévin 2",
     "AGNY 1": "Agny 1",

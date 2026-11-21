@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T21:30:52.283Z",
+ "generatedAt": "2026-11-21T22:00:55.971Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -173,30 +173,54 @@
   },
   {
    "rank": 6,
+   "team": "LIEVIN 2",
+   "pts": 8,
+   "played": 6,
+   "won": 2,
+   "lost": 4,
+   "forfeits": 0,
+   "r30": 1,
+   "r31": 0,
+   "r32": 1,
+   "r23": 3,
+   "r13": 0,
+   "r03": 1,
+   "setsFor": 12,
+   "setsAgainst": 14,
+   "setsRatio": 0.857,
+   "ptsFor": 553,
+   "ptsAgainst": 563,
+   "ptsRatio": 0.982,
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null
+  },
+  {
+   "rank": 7,
    "team": "DUNKERQUE 2",
    "pts": 7,
-   "played": 5,
+   "played": 6,
    "won": 3,
-   "lost": 2,
+   "lost": 3,
    "forfeits": 0,
    "r30": 0,
    "r31": 0,
    "r32": 3,
    "r23": 1,
    "r13": 1,
-   "r03": 0,
+   "r03": 1,
    "setsFor": 12,
-   "setsAgainst": 12,
-   "setsRatio": 1,
-   "ptsFor": 515,
-   "ptsAgainst": 494,
-   "ptsRatio": 1.043,
+   "setsAgainst": 15,
+   "setsRatio": 0.8,
+   "ptsFor": 578,
+   "ptsAgainst": 569,
+   "ptsRatio": 1.016,
    "equipe": "5",
    "clubId": "0599848",
    "website": "http://www.dglvb.fr"
   },
   {
-   "rank": 7,
+   "rank": 8,
    "team": "ARRAS 1",
    "pts": 6,
    "played": 6,
@@ -220,7 +244,7 @@
    "website": "http://rcavb.clubeo.com/"
   },
   {
-   "rank": 8,
+   "rank": 9,
    "team": "WATTIGNIES 1",
    "pts": 5,
    "played": 5,
@@ -242,30 +266,6 @@
    "equipe": "3",
    "clubId": "0595763",
    "website": "http://wattigniesvolley.fr/"
-  },
-  {
-   "rank": 9,
-   "team": "LIEVIN 2",
-   "pts": 5,
-   "played": 5,
-   "won": 1,
-   "lost": 4,
-   "forfeits": 0,
-   "r30": 0,
-   "r31": 0,
-   "r32": 1,
-   "r23": 3,
-   "r13": 0,
-   "r03": 1,
-   "setsFor": 9,
-   "setsAgainst": 14,
-   "setsRatio": 0.643,
-   "ptsFor": 478,
-   "ptsAgainst": 500,
-   "ptsRatio": 0.956,
-   "equipe": "1",
-   "clubId": "0628986",
-   "website": null
   },
   {
    "rank": 10,
@@ -338,6 +338,15 @@
    "mainVenue": "complexe-coubertin-lemaire-62590",
    "backupVenue": "salle-lycee-joliot-curie-62590"
   },
+  "LIEVIN 2": {
+   "equipe": "1",
+   "clubId": "0628986",
+   "website": null,
+   "clubName": "Volley Club Liévin",
+   "colors": "ROUGE ET BLANC",
+   "mainVenue": "salle-noel-josephe-62800",
+   "backupVenue": "salle-senechal-62800"
+  },
   "DUNKERQUE 2": {
    "equipe": "5",
    "clubId": "0599848",
@@ -364,15 +373,6 @@
    "colors": "BLEU ET JAUNE",
    "mainVenue": "salle-pierre-de-coubertin-59139",
    "backupVenue": "salle-roland-garros-59139"
-  },
-  "LIEVIN 2": {
-   "equipe": "1",
-   "clubId": "0628986",
-   "website": null,
-   "clubName": "Volley Club Liévin",
-   "colors": "ROUGE ET BLANC",
-   "mainVenue": "salle-noel-josephe-62800",
-   "backupVenue": "salle-senechal-62800"
   },
   "LILLERS 1": {
    "equipe": "2",
@@ -1762,10 +1762,35 @@
    "time": "20:30",
    "home": "DUNKERQUE 2",
    "away": "LIEVIN 2",
-   "played": false,
-   "venueName": "SALLE LYCEE JEAN BART",
-   "referee": "CALAIS SES",
-   "venue": "salle-lycee-jean-bart-59140"
+   "played": true,
+   "sets": [
+    0,
+    3
+   ],
+   "setScores": [
+    [
+     22,
+     25
+    ],
+    [
+     22,
+     25
+    ],
+    [
+     19,
+     25
+    ]
+   ],
+   "points": [
+    63,
+    75
+   ],
+   "forfeit": false,
+   "referee": "DEHAUT ROMAIN",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA028",
+   "venue": "salle-lycee-jean-bart-59140",
+   "venueGuessed": false,
+   "venueName": "SALLE LYCEE JEAN BART"
   },
   {
    "code": "1MA029",

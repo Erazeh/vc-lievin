@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T21:00:57.975Z",
+ "generatedAt": "2026-11-21T21:30:52.283Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -54,23 +54,23 @@
   {
    "rank": 1,
    "team": "AGNY 1",
-   "pts": 14,
-   "played": 5,
-   "won": 5,
+   "pts": 17,
+   "played": 6,
+   "won": 6,
    "lost": 0,
    "forfeits": 0,
-   "r30": 2,
+   "r30": 3,
    "r31": 2,
    "r32": 1,
    "r23": 0,
    "r13": 0,
    "r03": 0,
-   "setsFor": 15,
+   "setsFor": 18,
    "setsAgainst": 4,
-   "setsRatio": 3.75,
-   "ptsFor": 454,
-   "ptsAgainst": 383,
-   "ptsRatio": 1.185,
+   "setsRatio": 4.5,
+   "ptsFor": 529,
+   "ptsAgainst": 440,
+   "ptsRatio": 1.202,
    "equipe": "6",
    "clubId": "0622020",
    "website": null
@@ -127,22 +127,22 @@
    "rank": 4,
    "team": "COEUR DE FLANDRE 2",
    "pts": 9,
-   "played": 5,
+   "played": 6,
    "won": 3,
-   "lost": 2,
+   "lost": 3,
    "forfeits": 0,
    "r30": 1,
    "r31": 0,
    "r32": 2,
    "r23": 2,
    "r13": 0,
-   "r03": 0,
+   "r03": 1,
    "setsFor": 13,
-   "setsAgainst": 10,
-   "setsRatio": 1.3,
-   "ptsFor": 493,
-   "ptsAgainst": 462,
-   "ptsRatio": 1.067,
+   "setsAgainst": 13,
+   "setsRatio": 1,
+   "ptsFor": 550,
+   "ptsAgainst": 537,
+   "ptsRatio": 1.024,
    "equipe": "9",
    "clubId": "0599142",
    "website": null
@@ -1774,10 +1774,35 @@
    "time": "21:00",
    "home": "AGNY 1",
    "away": "COEUR DE FLANDRE 2",
-   "played": false,
-   "venueName": "SALLE LEO LAGRANGE",
-   "referee": "ARRAS",
-   "venue": "salle-leo-lagrange-62217"
+   "played": true,
+   "sets": [
+    3,
+    0
+   ],
+   "setScores": [
+    [
+     25,
+     15
+    ],
+    [
+     25,
+     21
+    ],
+    [
+     25,
+     21
+    ]
+   ],
+   "points": [
+    75,
+    57
+   ],
+   "forfeit": false,
+   "referee": "MARTINET PIERRICK",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA029",
+   "venue": "salle-leo-lagrange-62217",
+   "venueGuessed": false,
+   "venueName": "SALLE LEO LAGRANGE"
   },
   {
    "code": "1MA030",

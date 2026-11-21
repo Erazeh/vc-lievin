@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T13:30:53.221Z",
+ "generatedAt": "2026-11-21T20:00:54.310Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -77,6 +77,30 @@
   },
   {
    "rank": 2,
+   "team": "CALAIS SES 1",
+   "pts": 12,
+   "played": 6,
+   "won": 4,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 2,
+   "r31": 0,
+   "r32": 2,
+   "r23": 2,
+   "r13": 0,
+   "r03": 0,
+   "setsFor": 16,
+   "setsAgainst": 10,
+   "setsRatio": 1.6,
+   "ptsFor": 545,
+   "ptsAgainst": 520,
+   "ptsRatio": 1.048,
+   "equipe": "4",
+   "clubId": "0623082",
+   "website": "http://www.stella-calais-volley.fr/"
+  },
+  {
+   "rank": 3,
    "team": "COEUR DE FLANDRE 2",
    "pts": 9,
    "played": 5,
@@ -98,30 +122,6 @@
    "equipe": "9",
    "clubId": "0599142",
    "website": null
-  },
-  {
-   "rank": 3,
-   "team": "CALAIS SES 1",
-   "pts": 9,
-   "played": 5,
-   "won": 3,
-   "lost": 2,
-   "forfeits": 0,
-   "r30": 1,
-   "r31": 0,
-   "r32": 2,
-   "r23": 2,
-   "r13": 0,
-   "r03": 0,
-   "setsFor": 13,
-   "setsAgainst": 10,
-   "setsRatio": 1.3,
-   "ptsFor": 470,
-   "ptsAgainst": 461,
-   "ptsRatio": 1.02,
-   "equipe": "4",
-   "clubId": "0623082",
-   "website": "http://www.stella-calais-volley.fr/"
   },
   {
    "rank": 4,
@@ -245,30 +245,6 @@
   },
   {
    "rank": 9,
-   "team": "LILLERS 1",
-   "pts": 5,
-   "played": 5,
-   "won": 1,
-   "lost": 4,
-   "forfeits": 0,
-   "r30": 1,
-   "r31": 0,
-   "r32": 0,
-   "r23": 2,
-   "r13": 2,
-   "r03": 0,
-   "setsFor": 9,
-   "setsAgainst": 12,
-   "setsRatio": 0.75,
-   "ptsFor": 451,
-   "ptsAgainst": 465,
-   "ptsRatio": 0.97,
-   "equipe": "2",
-   "clubId": "0622023",
-   "website": "http://lillers-val.clubeo.com/"
-  },
-  {
-   "rank": 10,
    "team": "LIEVIN 2",
    "pts": 5,
    "played": 5,
@@ -290,6 +266,30 @@
    "equipe": "1",
    "clubId": "0628986",
    "website": null
+  },
+  {
+   "rank": 10,
+   "team": "LILLERS 1",
+   "pts": 5,
+   "played": 6,
+   "won": 1,
+   "lost": 5,
+   "forfeits": 0,
+   "r30": 1,
+   "r31": 0,
+   "r32": 0,
+   "r23": 2,
+   "r13": 2,
+   "r03": 1,
+   "setsFor": 9,
+   "setsAgainst": 15,
+   "setsRatio": 0.6,
+   "ptsFor": 510,
+   "ptsAgainst": 540,
+   "ptsRatio": 0.944,
+   "equipe": "2",
+   "clubId": "0622023",
+   "website": "http://lillers-val.clubeo.com/"
   }
  ],
  "teams": {
@@ -302,15 +302,6 @@
    "mainVenue": "salle-leo-lagrange-62217",
    "backupVenue": null
   },
-  "COEUR DE FLANDRE 2": {
-   "equipe": "9",
-   "clubId": "0599142",
-   "website": null,
-   "clubName": "Volley Ball Cœur de Flandre",
-   "colors": "BLEU BLANC",
-   "mainVenue": "salle-natalys-dumez-59270",
-   "backupVenue": "salle-jean-bouin-59190"
-  },
   "CALAIS SES 1": {
    "equipe": "4",
    "clubId": "0623082",
@@ -319,6 +310,15 @@
    "colors": "BLANC BLEU",
    "mainVenue": "salle-porte-de-lille-62100",
    "backupVenue": "college-jean-jaures-62100"
+  },
+  "COEUR DE FLANDRE 2": {
+   "equipe": "9",
+   "clubId": "0599142",
+   "website": null,
+   "clubName": "Volley Ball Cœur de Flandre",
+   "colors": "BLEU BLANC",
+   "mainVenue": "salle-natalys-dumez-59270",
+   "backupVenue": "salle-jean-bouin-59190"
   },
   "OIGNIES 1": {
    "equipe": "10",
@@ -365,15 +365,6 @@
    "mainVenue": "salle-pierre-de-coubertin-59139",
    "backupVenue": "salle-roland-garros-59139"
   },
-  "LILLERS 1": {
-   "equipe": "2",
-   "clubId": "0622023",
-   "website": "http://lillers-val.clubeo.com/",
-   "clubName": "FLJEP Lillers",
-   "colors": "BLEU BLANC ORANGE",
-   "mainVenue": "salle-delplace-62190",
-   "backupVenue": "salle-coubertin-62190"
-  },
   "LIEVIN 2": {
    "equipe": "1",
    "clubId": "0628986",
@@ -382,6 +373,15 @@
    "colors": "ROUGE ET BLANC",
    "mainVenue": "salle-noel-josephe-62800",
    "backupVenue": "salle-senechal-62800"
+  },
+  "LILLERS 1": {
+   "equipe": "2",
+   "clubId": "0622023",
+   "website": "http://lillers-val.clubeo.com/",
+   "clubName": "FLJEP Lillers",
+   "colors": "BLEU BLANC ORANGE",
+   "mainVenue": "salle-delplace-62190",
+   "backupVenue": "salle-coubertin-62190"
   }
  },
  "venues": {
@@ -1725,10 +1725,35 @@
    "time": "19:00",
    "home": "CALAIS SES 1",
    "away": "LILLERS 1",
-   "played": false,
-   "venueName": "SALLE PORTE DE LILLE",
+   "played": true,
+   "sets": [
+    3,
+    0
+   ],
+   "setScores": [
+    [
+     25,
+     21
+    ],
+    [
+     25,
+     20
+    ],
+    [
+     25,
+     18
+    ]
+   ],
+   "points": [
+    75,
+    59
+   ],
+   "forfeit": false,
    "referee": "DEFER SIMON",
-   "venue": "salle-porte-de-lille-62100"
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA027",
+   "venue": "salle-porte-de-lille-62100",
+   "venueGuessed": false,
+   "venueName": "SALLE PORTE DE LILLE"
   },
   {
    "code": "1MA028",

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T20:00:54.310Z",
+ "generatedAt": "2026-11-21T21:00:57.975Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -101,6 +101,30 @@
   },
   {
    "rank": 3,
+   "team": "SAINT POL SUR MER 1",
+   "pts": 10,
+   "played": 6,
+   "won": 4,
+   "lost": 2,
+   "forfeits": 0,
+   "r30": 1,
+   "r31": 0,
+   "r32": 3,
+   "r23": 1,
+   "r13": 0,
+   "r03": 1,
+   "setsFor": 14,
+   "setsAgainst": 12,
+   "setsRatio": 1.167,
+   "ptsFor": 561,
+   "ptsAgainst": 542,
+   "ptsRatio": 1.035,
+   "equipe": "7",
+   "clubId": "0595712",
+   "website": "http://www2.vcsp-saintpol.com/"
+  },
+  {
+   "rank": 4,
    "team": "COEUR DE FLANDRE 2",
    "pts": 9,
    "played": 5,
@@ -124,7 +148,7 @@
    "website": null
   },
   {
-   "rank": 4,
+   "rank": 5,
    "team": "OIGNIES 1",
    "pts": 8,
    "played": 5,
@@ -148,7 +172,7 @@
    "website": "https://www.facebook.com/etoileoigniesvolleyball/"
   },
   {
-   "rank": 5,
+   "rank": 6,
    "team": "DUNKERQUE 2",
    "pts": 7,
    "played": 5,
@@ -172,49 +196,25 @@
    "website": "http://www.dglvb.fr"
   },
   {
-   "rank": 6,
-   "team": "SAINT POL SUR MER 1",
-   "pts": 7,
-   "played": 5,
-   "won": 3,
-   "lost": 2,
-   "forfeits": 0,
-   "r30": 0,
-   "r31": 0,
-   "r32": 3,
-   "r23": 1,
-   "r13": 0,
-   "r03": 1,
-   "setsFor": 11,
-   "setsAgainst": 12,
-   "setsRatio": 0.917,
-   "ptsFor": 486,
-   "ptsAgainst": 489,
-   "ptsRatio": 0.994,
-   "equipe": "7",
-   "clubId": "0595712",
-   "website": "http://www2.vcsp-saintpol.com/"
-  },
-  {
    "rank": 7,
    "team": "ARRAS 1",
    "pts": 6,
-   "played": 5,
+   "played": 6,
    "won": 1,
-   "lost": 4,
+   "lost": 5,
    "forfeits": 0,
    "r30": 0,
    "r31": 1,
    "r32": 0,
    "r23": 3,
    "r13": 0,
-   "r03": 1,
+   "r03": 2,
    "setsFor": 9,
-   "setsAgainst": 13,
-   "setsRatio": 0.692,
-   "ptsFor": 447,
-   "ptsAgainst": 482,
-   "ptsRatio": 0.927,
+   "setsAgainst": 16,
+   "setsRatio": 0.563,
+   "ptsFor": 500,
+   "ptsAgainst": 557,
+   "ptsRatio": 0.898,
    "equipe": "8",
    "clubId": "0628859",
    "website": "http://rcavb.clubeo.com/"
@@ -311,6 +311,15 @@
    "mainVenue": "salle-porte-de-lille-62100",
    "backupVenue": "college-jean-jaures-62100"
   },
+  "SAINT POL SUR MER 1": {
+   "equipe": "7",
+   "clubId": "0595712",
+   "website": "http://www2.vcsp-saintpol.com/",
+   "clubName": "Volley Club Saint Polois",
+   "colors": "VERT BLANC",
+   "mainVenue": "complexe-de-la-ferme-marchand-59430",
+   "backupVenue": "salle-coubertin-59430"
+  },
   "COEUR DE FLANDRE 2": {
    "equipe": "9",
    "clubId": "0599142",
@@ -337,15 +346,6 @@
    "colors": "BLANC BLEU",
    "mainVenue": "salle-lycee-jean-bart-59140",
    "backupVenue": "salle-college-guilleminot-59140"
-  },
-  "SAINT POL SUR MER 1": {
-   "equipe": "7",
-   "clubId": "0595712",
-   "website": "http://www2.vcsp-saintpol.com/",
-   "clubName": "Volley Club Saint Polois",
-   "colors": "VERT BLANC",
-   "mainVenue": "complexe-de-la-ferme-marchand-59430",
-   "backupVenue": "salle-coubertin-59430"
   },
   "ARRAS 1": {
    "equipe": "8",
@@ -1786,10 +1786,35 @@
    "time": "20:00",
    "home": "SAINT POL SUR MER 1",
    "away": "ARRAS 1",
-   "played": false,
-   "venueName": "COMPLEXE DE LA FERME MARCHAND",
-   "referee": "DUNKERQUE",
-   "venue": "complexe-de-la-ferme-marchand-59430"
+   "played": true,
+   "sets": [
+    3,
+    0
+   ],
+   "setScores": [
+    [
+     25,
+     19
+    ],
+    [
+     25,
+     12
+    ],
+    [
+     25,
+     22
+    ]
+   ],
+   "points": [
+    75,
+    53
+   ],
+   "forfeit": false,
+   "referee": "DE WALSCHE WILFRID",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA030",
+   "venue": "complexe-de-la-ferme-marchand-59430",
+   "venueGuessed": false,
+   "venueName": "COMPLEXE DE LA FERME MARCHAND"
   },
   {
    "code": "1MA031",

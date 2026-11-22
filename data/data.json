@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T12:00:53.960Z",
+ "generatedAt": "2026-11-22T12:30:52.894Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -150,23 +150,23 @@
   {
    "rank": 5,
    "team": "OIGNIES 1",
-   "pts": 8,
-   "played": 5,
+   "pts": 9,
+   "played": 6,
    "won": 3,
-   "lost": 2,
+   "lost": 3,
    "forfeits": 0,
    "r30": 0,
    "r31": 0,
    "r32": 3,
-   "r23": 2,
+   "r23": 3,
    "r13": 0,
    "r03": 0,
-   "setsFor": 13,
-   "setsAgainst": 12,
-   "setsRatio": 1.083,
-   "ptsFor": 500,
-   "ptsAgainst": 516,
-   "ptsRatio": 0.969,
+   "setsFor": 15,
+   "setsAgainst": 15,
+   "setsRatio": 1,
+   "ptsFor": 592,
+   "ptsAgainst": 623,
+   "ptsRatio": 0.95,
    "equipe": "10",
    "clubId": "0622439",
    "website": "https://www.facebook.com/etoileoigniesvolleyball/"
@@ -221,6 +221,30 @@
   },
   {
    "rank": 8,
+   "team": "WATTIGNIES 1",
+   "pts": 7,
+   "played": 6,
+   "won": 3,
+   "lost": 3,
+   "forfeits": 0,
+   "r30": 0,
+   "r31": 0,
+   "r32": 3,
+   "r23": 1,
+   "r13": 0,
+   "r03": 2,
+   "setsFor": 11,
+   "setsAgainst": 15,
+   "setsRatio": 0.733,
+   "ptsFor": 530,
+   "ptsAgainst": 557,
+   "ptsRatio": 0.952,
+   "equipe": "3",
+   "clubId": "0595763",
+   "website": "http://wattigniesvolley.fr/"
+  },
+  {
+   "rank": 9,
    "team": "ARRAS 1",
    "pts": 6,
    "played": 6,
@@ -242,30 +266,6 @@
    "equipe": "8",
    "clubId": "0628859",
    "website": "http://rcavb.clubeo.com/"
-  },
-  {
-   "rank": 9,
-   "team": "WATTIGNIES 1",
-   "pts": 5,
-   "played": 5,
-   "won": 2,
-   "lost": 3,
-   "forfeits": 0,
-   "r30": 0,
-   "r31": 0,
-   "r32": 2,
-   "r23": 1,
-   "r13": 0,
-   "r03": 2,
-   "setsFor": 8,
-   "setsAgainst": 13,
-   "setsRatio": 0.615,
-   "ptsFor": 423,
-   "ptsAgainst": 465,
-   "ptsRatio": 0.91,
-   "equipe": "3",
-   "clubId": "0595763",
-   "website": "http://wattigniesvolley.fr/"
   },
   {
    "rank": 10,
@@ -356,15 +356,6 @@
    "mainVenue": "salle-lycee-jean-bart-59140",
    "backupVenue": "salle-college-guilleminot-59140"
   },
-  "ARRAS 1": {
-   "equipe": "8",
-   "clubId": "0628859",
-   "website": "http://rcavb.clubeo.com/",
-   "clubName": "Racing Club d'Arras",
-   "colors": "ROUGE ET BLEU",
-   "mainVenue": "salle-lycee-jules-ferry-62000",
-   "backupVenue": "salle-lycee-guy-mollet-62000"
-  },
   "WATTIGNIES 1": {
    "equipe": "3",
    "clubId": "0595763",
@@ -373,6 +364,15 @@
    "colors": "BLEU ET JAUNE",
    "mainVenue": "salle-pierre-de-coubertin-59139",
    "backupVenue": "salle-roland-garros-59139"
+  },
+  "ARRAS 1": {
+   "equipe": "8",
+   "clubId": "0628859",
+   "website": "http://rcavb.clubeo.com/",
+   "clubName": "Racing Club d'Arras",
+   "colors": "ROUGE ET BLEU",
+   "mainVenue": "salle-lycee-jules-ferry-62000",
+   "backupVenue": "salle-lycee-guy-mollet-62000"
   },
   "LILLERS 1": {
    "equipe": "2",
@@ -1713,10 +1713,43 @@
    "time": "11:00",
    "home": "WATTIGNIES 1",
    "away": "OIGNIES 1",
-   "played": false,
-   "venueName": "SALLE ROLAND GARROS",
+   "played": true,
+   "sets": [
+    3,
+    2
+   ],
+   "setScores": [
+    [
+     25,
+     15
+    ],
+    [
+     20,
+     25
+    ],
+    [
+     25,
+     22
+    ],
+    [
+     22,
+     25
+    ],
+    [
+     15,
+     5
+    ]
+   ],
+   "points": [
+    107,
+    92
+   ],
+   "forfeit": false,
    "referee": "POILLION JEAN",
-   "venue": "salle-roland-garros-59139"
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA026",
+   "venue": "salle-roland-garros-59139",
+   "venueGuessed": false,
+   "venueName": "SALLE ROLAND GARROS"
   },
   {
    "code": "1MA027",

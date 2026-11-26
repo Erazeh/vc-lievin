@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T09:44:20.783Z",
+ "generatedAt": "2026-11-26T13:31:02.241Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -2011,7 +2011,7 @@
    "code": "1MA040",
    "journee": 8,
    "date": "2026-12-05",
-   "time": "21:00",
+   "time": "19:30",
    "home": "AGNY 1",
    "away": "SAINT POL SUR MER 1",
    "played": false,

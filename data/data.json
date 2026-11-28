@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T13:30:57.380Z",
+ "generatedAt": "2026-11-28T19:00:51.382Z",
  "config": {
   "season": "2026/2027",
   "codent": "LIFL",
@@ -54,23 +54,23 @@
   {
    "rank": 1,
    "team": "AGNY 1",
-   "pts": 17,
-   "played": 6,
-   "won": 6,
+   "pts": 20,
+   "played": 7,
+   "won": 7,
    "lost": 0,
    "forfeits": 0,
-   "r30": 3,
+   "r30": 4,
    "r31": 2,
    "r32": 1,
    "r23": 0,
    "r13": 0,
    "r03": 0,
-   "setsFor": 18,
+   "setsFor": 21,
    "setsAgainst": 4,
-   "setsRatio": 4.5,
-   "ptsFor": 529,
-   "ptsAgainst": 440,
-   "ptsRatio": 1.202,
+   "setsRatio": 5.25,
+   "ptsFor": 604,
+   "ptsAgainst": 493,
+   "ptsRatio": 1.225,
    "equipe": "6",
    "clubId": "0622020",
    "website": null
@@ -247,22 +247,22 @@
    "rank": 9,
    "team": "ARRAS 1",
    "pts": 6,
-   "played": 6,
+   "played": 7,
    "won": 1,
-   "lost": 5,
+   "lost": 6,
    "forfeits": 0,
    "r30": 0,
    "r31": 1,
    "r32": 0,
    "r23": 3,
    "r13": 0,
-   "r03": 2,
+   "r03": 3,
    "setsFor": 9,
-   "setsAgainst": 16,
-   "setsRatio": 0.563,
-   "ptsFor": 500,
-   "ptsAgainst": 557,
-   "ptsRatio": 0.898,
+   "setsAgainst": 19,
+   "setsRatio": 0.474,
+   "ptsFor": 553,
+   "ptsAgainst": 632,
+   "ptsRatio": 0.875,
    "equipe": "8",
    "clubId": "0628859",
    "website": "http://rcavb.clubeo.com/"
@@ -1918,10 +1918,35 @@
    "time": "18:00",
    "home": "ARRAS 1",
    "away": "AGNY 1",
-   "played": false,
-   "venueName": "SALLE LYCEE JULES FERRY",
-   "referee": "NOYELLES SOUS LENS",
-   "venue": "salle-lycee-jules-ferry-62000"
+   "played": true,
+   "sets": [
+    0,
+    3
+   ],
+   "setScores": [
+    [
+     17,
+     25
+    ],
+    [
+     18,
+     25
+    ],
+    [
+     18,
+     25
+    ]
+   ],
+   "points": [
+    53,
+    75
+   ],
+   "forfeit": false,
+   "referee": "BENOIT JEAN-JACQUES",
+   "sheetUrl": "https://www.ffvbbeach.org/ffvbapp/resu/ffvolley_fdme.php?saison=2026/2027&codent=LIFL&codmatch=1MA032",
+   "venue": "salle-lycee-jules-ferry-62000",
+   "venueGuessed": false,
+   "venueName": "SALLE LYCEE JULES FERRY"
   },
   {
    "code": "1MA033",
